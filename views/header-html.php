@@ -1,5 +1,11 @@
 <?php 
-if( !defined('cmsdp') ) exit(); 
+if( !defined('cmsdp') ) exit();
+
+if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
+  $loged = true;
+}else{
+  $loged = false;
+}
 ?>
 
 <body>
@@ -63,16 +69,19 @@ if( !defined('cmsdp') ) exit();
                 <li><a href="/menu/service/service_1.php">Изграждане на Фотоволтаични системи</a></li>
                 <li><a href="/menu/service/service_2.php">Наблюдение на електростанцията в реално време</a></li>
                 <li><a href="/menu/service/service_3.php">Поддръжка и ремонт на фотоволтаични системи</a></li>
-
               </ul>
           <li><a href="/menu/projects.php"<?php if ($activemenu == 'projects'){ ?>class="active"<?php } ?>>Проекти</a></li>
           <li><a href="/menu/offer.php"<?php if ($activemenu == 'offer'){ ?>class="active"<?php } ?>>Поискай оферта</a></li>
           <li><a href="/menu/team.php"<?php if ($activemenu == 'team'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/team_white_24dp.svg" class="icon1">Екип</a></li>
 
           <a href="/menu/contact.php"<?php if ($activemenu == 'contact'){ ?>class="active"<?php } ?>>Контакти</a>
-          <a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/login_white_24dp.svg" class="icon1">Вход</a>
           <a href="/reg.php" <?php if ($activemenu == 'reg'){ ?>class="active"<?php } ?>>Регистрация</a>
-          <a href="/logout.php" <?php if ($activemenu == 'logout'){ ?>class="active"<?php } ?>>Изход<img src="/assets/img/Icons/logout_white_24dp.svg" class="icon2"></a>
+          <?php
+            if( !$loged ){?>
+              <a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/login_white_24dp.svg" class="icon1">Вход</a>
+            <?}else{?>
+              <a href="/logout.php" <?php if ($activemenu == 'logout'){ ?>class="active"<?php } ?>>Изход<img src="/assets/img/Icons/logout_white_24dp.svg" class="icon2"></a>
+            <?}?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
