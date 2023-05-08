@@ -2,7 +2,7 @@
 
 session_start();
 define("cmsdp", true);
-// session_destroy();
+// session_destroy(); or  // session_unset();
 if( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] > 5 ){
     die("Server error 500");
 }

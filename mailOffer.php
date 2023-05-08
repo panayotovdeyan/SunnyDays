@@ -1,10 +1,6 @@
 <?php 
 if( !defined('cmsdp') ) exit();
-
-
-
-require_once 'includes/functions.php';
-require_once 'includes/db_cmsdp.php';
+include_once 'views/offer-html.php';
 
 if( isset($_REQUEST['mailOffer']) && $_REQUEST['mailOffer'] == 1){
     //Sent email Offer
@@ -25,16 +21,12 @@ if( isset($_REQUEST['mailOffer']) && $_REQUEST['mailOffer'] == 1){
     $fromPhone = mysqli_real_escape_string($conn, $fromPhone);
     $fromAdress = cleanInput($_REQUEST['adress']);
     $fromAdress = mysqli_real_escape_string($conn, $fromAdress);
-    $message = cleanInput($_REQUEST['register_family']);
+    $message = cleanInput($_REQUEST['message']);
     $message = mysqli_real_escape_string($conn, $message);
 
     if( !empty($email) ){ 
         //not empty email
-        die('D2');
-
     }
 }
-
-require_once 'views/offer-html.php';
 
 ?>

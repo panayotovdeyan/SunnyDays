@@ -37,9 +37,8 @@ $activemenu = 'offer'; // $activemenu - за активна страница
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-            <input type="hidden" name="mailOffer" value="0" id="mailOffer">
-            <!-- <input type="hidden" name="csrf_token" value="<?=$_SESSION['csrf_token'] ?>" > -->
+            <form method="post" role="form">
+            <input type="hidden" name="mailOffer" value="1" id="mailOffer">
 
               <div class="row">
               <div class="col-md-6 form-group mt-3 mt-md-0">
@@ -59,12 +58,12 @@ $activemenu = 'offer'; // $activemenu - за активна страница
                 <input type="text" class="form-control" name="adress" id="adress" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-                <label for="text1">Kонсумация на месец в kw/h</label>
-                <input type="text" class="form-control" name="text1" id="text1" >
+                <label for="consume">Kонсумация на месец в kw/h</label>
+                <input type="text" class="form-control" name="consume" id="consume" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-                <label for="text2">Kвадратура на покрива</label>
-                <input class="form-control" name="text2" id="text2" >
+                <label for="quadrature">Kвадратура на покрива</label>
+                <input class="form-control" name="quadrature" id="quadrature" >
               </div>
               <div class="form-group mt-2">
                 <label for="message">Добавете коментар ако желаете</label>
@@ -72,7 +71,7 @@ $activemenu = 'offer'; // $activemenu - за активна страница
               </div>
               <div class="my-3">
                 <div class="text-center">
-                  <button type="submit" onclick="document.getElementById('mailOffer').value=1;">Изпрати запитването</button>
+                  <button class="btn btn-primary active" type="submit" onclick="document.getElementById('mailOffer').value=1;">Изпрати запитването</button>
                 </div>
               </div>
             </form>

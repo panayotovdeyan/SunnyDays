@@ -1,4 +1,19 @@
 <?php
+function sendMailContact($fromName, $fromEmail, $fromPhone, $fromAdress, $message, 
+    $to = 'contact@sunnydays.com', 
+    $subject = 'Запитване за оферта'){
+
+    $message = wordwrap($message, 70, "\r\n");
+    $headers = 'From:'.trim($fromName)."\n";
+    $headers = 'Email:'.trim($fromEmail)."\n";
+    $headers = 'Tel:'.trim($fromPhone)."\n";
+    $headers = 'Adress:'.trim($fromAdress)."\n";
+    $headers .= 'Reply-To:'.trim($fromName)."\n";
+    $headers .= 'MIME-Version: 1.0'."\n";
+    $headers .= 'Content-type: text/html; charset=UTF-8'."\n";
+    @mail($to, $subject, $message, $headers);
+}
+
 function sendMailOffer($fromName, $fromEmail, $fromPhone, $fromAdress, $message, 
     $to = 'contact@sunnydays.com', 
     $subject = 'Запитване за оферта'){
