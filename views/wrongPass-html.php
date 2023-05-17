@@ -1,11 +1,12 @@
 <?php 
-session_start();
 define("cmsdp", true);
-require_once 'views/head-html.php';
+session_start();
+
+require_once 'head-html.php';
 
 ?>
 <body>
-    <?php require_once 'views/header-html.php'; ?>
+    <?php require_once 'header-html.php'; ?>
 
     <main id="main">
 
@@ -21,4 +22,4 @@ require_once 'views/head-html.php';
     </section>
 </main><!-- End #main -->
 
-<?php require_once 'views/footer-html.php'; ?>
+<?php require_once 'footer-html.php'; ?>

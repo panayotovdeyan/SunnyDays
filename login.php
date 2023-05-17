@@ -1,10 +1,19 @@
 <?php
-
 session_start();
 define("cmsdp", true);
-// session_destroy(); or  // session_unset();
-if( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] > 5 ){
-    die("Server error 500");
+// session_destroy();
+
+if( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] == 3 ){
+    echo "<script> 
+    alert ('Имате още 3 (три) опита за влизане в сайта, въвеждайте внимателно данните си!')
+    </script>";
+}
+
+if ( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] > 5){
+    die("<script> 
+        alert ('Изчерпахте опитите си за влизане в сайта!')
+        document.location.href = 'index.php'
+        </script>");
 }
 
 if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
@@ -75,7 +84,7 @@ $_SESSION['csrf_token'] = createCsrfToken();
 </style>
 <?php
 if( $formerror ){
-    header ('Location: wrongPass.php');
+    header ('Location: views/wrongPass-html.php');
 }
 if( $rformerror ){
     echo 'Error on registration!';
