@@ -21,7 +21,8 @@ if(isset($_POST['send'])) {
     $adress = htmlentities($_POST['adress']);
     $consume = htmlentities($_POST['consume']);
     $quadrature = htmlentities($_POST['quadrature']);
-    $subject = "Sended from Contact Form";
+    $subject = "from SunnyDays Offer form";
+    $subjectClient = "Успешно изпратено запитване";
     $message = htmlentities($_POST['message']);
     
     //Create an instance; passing `true` enables exceptions
@@ -41,9 +42,9 @@ if(isset($_POST['send'])) {
     //Recipients
     $mail->setFrom($email, $name);
     $mail->addAddress("panayotov.deyan@gmail.com");             //Add a recipient
+    $mail->addCC($email);
     // $mail->addAddress($_POST['name']);                       //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
-    // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
 
     //Attachments
@@ -51,14 +52,14 @@ if(isset($_POST['send'])) {
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
     //Content
-    $mail->Subject = ("$email ($subject)");
+    $mail->Subject = ("$email ($subjectClient - $subject)");
 
-    $mail->Body = ("Изпратено от: <strong>$name</strong>,<br>
-                    Email: <strong>$email</strong>,<br>
-                    Телефон: <strong>$phone</strong>,<br>
-                    Адрес: <strong>$adress</strong>,<br>
-                    Kонсумация на месец: <strong>$consume kw/h</strong>,<br>
-                    Квадратура на покрива: <strong>$quadrature кв.</strong>,<br>
+    $mail->Body = ("Изпратено от: <strong>$name</strong><br>
+                    Email: <strong>$email</strong><br>
+                    Телефон: <strong>$phone</strong><br>
+                    Адрес: <strong>$adress</strong><br>
+                    Kонсумация на месец: <strong>$consume kw/h</strong><br>
+                    Квадратура на покрива: <strong>$quadrature кв.</strong><br>
                     Коментар: <strong>$message</strong>");
 
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';

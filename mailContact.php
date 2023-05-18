@@ -17,7 +17,8 @@ if(isset($_POST['send'])) {
 
     $name = htmlentities($_POST['name']);
     $email = htmlentities($_POST['email']);
-    $subject = "Sended from Contact Form";
+    $subject = "from SunnyDays Contact form";
+    $subjectClient = "Успешно изпратено запитване";
     $message = htmlentities($_POST['message']);
     
     //Create an instance; passing `true` enables exceptions
@@ -37,6 +38,7 @@ if(isset($_POST['send'])) {
     //Recipients
     $mail->setFrom($email, $name);
     $mail->addAddress("panayotov.deyan@gmail.com");             //Add a recipient
+    $mail->addCC($email);
     // $mail->addAddress($_POST['name']);                       //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -47,7 +49,7 @@ if(isset($_POST['send'])) {
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
     //Content
-    $mail->Subject = ("$email ($subject)");
+    $mail->Subject = ("$email ($subjectClient - $subject)");
     $mail->Body = $message;
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
