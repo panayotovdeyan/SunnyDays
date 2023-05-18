@@ -3,9 +3,9 @@ session_start();
 if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
     
 define("admindp", true);
-require_once 'C:\xampp\htdocs\cmsdp\includes\db_cmsdp.php';
-require_once 'C:\xampp\htdocs\cmsdp\includes\functions.php';
-require_once 'C:\xampp\htdocs\cmsdp\classes\offer.php';
+require_once 'C:\xampp\htdocs\SunnyDays\includes\db_SunnyDays.php';
+require_once 'C:\xampp\htdocs\SunnyDays\includes\functions.php';
+require_once 'C:\xampp\htdocs\SunnyDays\classes\offer.php';
 
 $saveEdit = '';
 $offer = new Offer(1);
