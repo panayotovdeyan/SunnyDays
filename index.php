@@ -1,4 +1,4 @@
 <?php
 session_start();
-define("cmsdp", true);
+define("SunnyDays", true);
 include_once 'views/index-html.php';

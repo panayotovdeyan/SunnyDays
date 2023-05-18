@@ -1,6 +1,6 @@
 <?php
 session_start();
-define("cmsdp", true);
+define("SunnyDays", true);
 if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
     $loged = true;
     require_once 'profile.php';
@@ -11,7 +11,7 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
 require_once 'includes/functions.php';
 if( isset($_REQUEST['register']) && $_REQUEST['register'] == 1 && !$loged ){
     //register new user
-    require_once 'includes/db_cmsdp.php';
+    require_once 'includes/db_SunnyDays.php';
     $csrf = cleanInput($_REQUEST['csrf_token']);
     $csrf = mysqli_real_escape_string($conn, $csrf);
     if( $_SESSION['csrf_token'] != $csrf ){

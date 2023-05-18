@@ -1,6 +1,6 @@
 <?php 
 session_start();
-define("cmsdp", true);
+define("SunnyDays", true);
 
 if( $_SESSION['user']['admin'] == 1 ){
     header ('Location: admin/index.php');

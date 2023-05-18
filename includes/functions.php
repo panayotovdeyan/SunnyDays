@@ -56,7 +56,7 @@ function getPageAbout($id=0){
         $sql_req = " AND id={$id} ";
     }
     if( empty($GLOBALS['SQL']) ){
-        require_once 'db_cmsdp.php';
+        require_once 'db_SunnyDays.php';
     }else{
         $conn = $GLOBALS['SQL'];
     }
@@ -80,7 +80,7 @@ function getServices($id=0){
         $sql_req = " AND id={$id} ";
     }
     if( empty($GLOBALS['SQL']) ){
-        require_once 'db_cmsdp.php';
+        require_once 'db_SunnyDays.php';
     }else{
         $conn = $GLOBALS['SQL'];
     }
@@ -104,7 +104,7 @@ function getProject($id=0){
         $sql_req = " AND id={$id} ";
     }
     if( empty($GLOBALS['SQL']) ){
-        require_once 'db_cmsdp.php';
+        require_once 'db_SunnyDays.php';
     }else{
         $conn = $GLOBALS['SQL'];
     }
@@ -128,7 +128,7 @@ function getOffer($id=0){
         $sql_req = " AND id={$id} ";
     }
     if( empty($GLOBALS['SQL']) ){
-        require_once 'db_cmsdp.php';
+        require_once 'db_SunnyDays.php';
     }else{
         $conn = $GLOBALS['SQL'];
     }
@@ -152,7 +152,7 @@ function getTeam($id=0){
         $sql_req = " AND id={$id} ";
     }
     if( empty($GLOBALS['SQL']) ){
-        require_once 'db_cmsdp.php';
+        require_once 'db_SunnyDays.php';
     }else{
         $conn = $GLOBALS['SQL'];
     }
@@ -176,7 +176,7 @@ function getTeam($id=0){
 //         $sql_req = " AND reportId={$reportId} ";
 //     }
 //     if( empty($GLOBALS['SQL']) ){
-//         require_once 'db_cmsdp.php';
+//         require_once 'db_SunnyDays.php';
 //     }else{
 //         $conn = $GLOBALS['SQL'];
 //     }
@@ -200,7 +200,7 @@ function getReportingByUser($userId=0){
         $sql_req = " AND userId={$userId} ";
     }
     if( empty($GLOBALS['SQL']) ){
-        require_once 'db_cmsdp.php';
+        require_once 'db_SunnyDays.php';
     }else{
         $conn = $GLOBALS['SQL'];
     }
@@ -221,7 +221,7 @@ function getMonitoring($reportId=0){
         $sql_req = " AND reportId={$reportId} ";
     }
     if( empty($GLOBALS['SQL']) ){
-        require_once 'db_cmsdp.php';
+        require_once 'db_SunnyDays.php';
     }else{
         $conn = $GLOBALS['SQL'];
     }
@@ -262,7 +262,7 @@ function getNames($id=0){
         $sql_name = " AND id={$id} ";
     }
     if( empty($GLOBALS['SQL']) ){
-        require_once 'db_cmsdp.php';
+        require_once 'db_SunnyDays.php';
     }else{
         $conn = $GLOBALS['SQL'];
     }

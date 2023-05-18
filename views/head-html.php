@@ -1,5 +1,5 @@
 <?php 
-if( !defined('cmsdp') ) exit(); 
+if( !defined('SunnyDays') ) exit(); 
 ?>
 
 <head>

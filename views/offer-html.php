@@ -1,5 +1,5 @@
 <?php 
-if( !defined('cmsdp') ) exit();
+if( !defined('SunnyDays') ) exit();
 ?>
 
 <?php
@@ -37,9 +37,7 @@ $activemenu = 'offer'; // $activemenu - за активна страница
           </div>
 
           <div class="col-lg-6">
-            <form method="post" role="form">
-            <input type="hidden" name="mailOffer" value="1" id="mailOffer">
-
+          <form action="/mailOffer.php" method="post" role="form">
               <div class="row">
               <div class="col-md-6 form-group mt-3 mt-md-0">
                 <label for="name">Име</label>
@@ -55,7 +53,7 @@ $activemenu = 'offer'; // $activemenu - за активна страница
               </div>
               <div class="form-group mt-2">
                 <label for="adress">Адрес (моля, посочете задълнително и етажа)</label>
-                <input type="text" class="form-control" name="adress" id="adress" >
+                <input type="text" class="form-control" name="adress" id="adress" required>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
                 <label for="consume">Kонсумация на месец в kw/h</label>
@@ -71,7 +69,7 @@ $activemenu = 'offer'; // $activemenu - за активна страница
               </div>
               <div class="my-3">
                 <div class="text-center">
-                  <button class="btn btn-primary active" type="submit" onclick="document.getElementById('mailOffer').value=1;">Изпрати запитването</button>
+                <button class="btn btn-primary active" type="submit" name="send" value = "send">Изпрати запитването</button>
                 </div>
               </div>
             </form>

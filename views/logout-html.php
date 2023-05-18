@@ -1,5 +1,5 @@
 <?php 
-if( !defined('cmsdp') ) exit();
+if( !defined('SunnyDays') ) exit();
 require_once 'head-html.php';
 $activemenu = 'logout'; // $activemenu - за активна страница
 ?>

@@ -1,11 +1,11 @@
-<?php if( !defined('cmsdp') ) exit(); ?>
+<?php if( !defined('SunnyDays') ) exit(); ?>
 
-<?php require_once 'C:\xampp\htdocs\cmsdp\views\head-html.php'; 
+<?php require_once 'C:\xampp\htdocs\SunnyDays\views\head-html.php'; 
 $activemenu = 'services'; // $activemenu - за активна страница
 ?>
 
   <body>
-    <?php require_once 'C:\xampp\htdocs\cmsdp\views\header-html.php'; ?>
+    <?php require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php'; ?>
 
   <main id="main">
     <!-- ======= Services Section 1 ======= -->
@@ -32,4 +32,4 @@ $activemenu = 'services'; // $activemenu - за активна страница
   </main><!-- End #main -->
 
 
-  <?php require_once 'C:\xampp\htdocs\cmsdp\views\footer-html.php'; ?>
+  <?php require_once 'C:\xampp\htdocs\SunnyDays\views\footer-html.php'; ?>

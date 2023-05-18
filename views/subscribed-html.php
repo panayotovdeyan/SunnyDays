@@ -1,4 +1,4 @@
-<?php if( !defined('cmsdp') ) exit(); ?>
+<?php if( !defined('SunnyDays') ) exit(); ?>
 
 <?php
 require_once 'head-html.php';

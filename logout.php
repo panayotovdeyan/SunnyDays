@@ -1,6 +1,6 @@
 <?php
 session_start();
-define("cmsdp", true);
+define("SunnyDays", true);
 //- проверка, дали има потвърждение za izhod - виж views/logout-html.php  
 
 if( isset($_REQUEST['logout']) && $_REQUEST['logout'] == 1 ){

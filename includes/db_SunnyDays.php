@@ -2,7 +2,7 @@
 $dbhost = "localhost";	//$dbhost = "127.0.0.1";
 $dbuser = "root";
 $dbpass = "";
-$db = "cmsdp";
+$db = "SunnyDays";
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

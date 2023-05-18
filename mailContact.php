@@ -1,83 +1,61 @@
 <?php
 session_start();
-define("cmsdp", true);
+define("SunnyDays", true);
 
-require_once 'includes/functions.php';
-require_once 'includes/db_cmsdp.php';
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-if ($_REQUEST['email'] > 0)    {
-    $email = $_REQUEST['email'];
-    $email = mysqli_real_escape_string($conn, $email);
-    $email = filter_var($email, FILTER_VALIDATE_EMAIL);
-   
-    $csrf = cleanInput($_REQUEST['csrf_token']);
-    $csrf = mysqli_real_escape_string($conn, $csrf);
-    if( $_SESSION['csrf_token'] != $csrf ){
-        incrementWrongLogins();
-        die("Not found!");
-    }
-    $pass = cleanInput($_REQUEST['password']);
-    $pass = mysqli_real_escape_string($conn, $pass);
-    $email = cleanInput($_REQUEST['email']);
-    $email = mysqli_real_escape_string($conn, $email);
-    $email = filter_var($email, FILTER_VALIDATE_EMAIL);
-    if( !empty($email) && !empty($pass) ){
+require './PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
 
-        //check for valid user
 
-        $querySQL = "SELECT userId, name, family, email, password, admin FROM `users` WHERE email='$email'";
-        $result = mysqli_query($conn, $querySQL);
-        if( !empty($result) ){
-            $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            $count = mysqli_num_rows($result);
-            if( password_verify($pass, $data[0]['password']) ){
-                $loged = true;
-                $_SESSION['user']['userId'] = $data[0]['userId'];
-                $_SESSION['user']['name'] = $data[0]['name'];
-                $_SESSION['user']['family'] = $data[0]['family'];
-                $_SESSION['user']['email'] = $data[0]['email'];
-                $_SESSION['user']['admin'] = $data[0]['admin'];
-            }else{
-                $formerror = true;
-                incrementWrongLogins();
-            }
-        }else{
-            die('Query error');
-        }
-    }else{
-        $formerror = true;
-    }
-}
+if(isset($_POST['send'])) {
 
-elseif( isset($_REQUEST['logout']) && $_REQUEST['logout'] == 1 ){
-    //logout
-    $loged = false;
-    unset($_SESSION['user']);
-}
-$_SESSION['loged'] = $loged;
-$_SESSION['csrf_token'] = createCsrfToken();
-// print_r($_SESSION);die ('D2');
-?>
-<style>
-    body { font-size: 20px; }
-</style>
-<?php
-if( $formerror ){
-    header ('Location: wrongPass.php');
-}
-if( $rformerror ){
-    echo 'Error on registration!';
-}
-if( !$loged ){
-    include_once 'views/login-html.php';
-            
-}else{
 
+    $name = htmlentities($_POST['name']);
+    $email = htmlentities($_POST['email']);
+    $subject = "Sended from Contact Form";
+    $message = htmlentities($_POST['message']);
     
-    if( $_SESSION['user']['admin'] == 1 ){
-        header ('Location: admin/index.php');
-    }else{
-        header ('Location: profile.php');
-    }
+    //Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer(true);
 
+    //Server settings
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'panayotov.deyan@gmail.com';            //SMTP username
+    $mail->Password   = 'nxduoejhdukhlcai';                     //SMTP password //Real is in Google Account
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->SMTPSecure = 'ssl';                                  //Enable implicit TLS encryption
+    $mail->isHTML(true);                                        //Set email format to HTML
+    
+    $mail->CharSet = 'UTF-8';
+    //Recipients
+    $mail->setFrom($email, $name);
+    $mail->addAddress("panayotov.deyan@gmail.com");             //Add a recipient
+    // $mail->addAddress($_POST['name']);                       //Name is optional
+    // $mail->addReplyTo('info@example.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
+
+    //Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+    //Content
+    $mail->Subject = ("$email ($subject)");
+    $mail->Body = $message;
+    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+
+    echo "<script> 
+    alert ('Съобщението е изпратено успешно')
+    document.location.href = 'index.php';
+    </script>";
 }
+?>

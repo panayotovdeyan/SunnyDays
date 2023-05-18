@@ -1,4 +1,4 @@
-<?php if( !defined('cmsdp') ) exit(); ?>
+<?php if( !defined('SunnyDays') ) exit(); ?>
 <?php include_once '/subscribed.php';?>
 
 <body class = "footer-body">

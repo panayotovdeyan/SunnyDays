@@ -1,6 +1,6 @@
 <?php 
 session_start();
-define("cmsdp", true);
+define("SunnyDays", true);
 
-require_once 'C:\xampp\htdocs\cmsdp\views\contact-html.php';
-require_once 'C:\xampp\htdocs\cmsdp\mail.php';
+require_once 'C:\xampp\htdocs\SunnyDays\views\contact-html.php';
+require_once 'C:\xampp\htdocs\SunnyDays\mail.php';

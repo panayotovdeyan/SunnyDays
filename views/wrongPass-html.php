@@ -1,5 +1,5 @@
 <?php 
-define("cmsdp", true);
+define("SunnyDays", true);
 session_start();
 
 require_once 'head-html.php';

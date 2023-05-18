@@ -1,6 +1,6 @@
 <?php
 session_start();
-define("cmsdp", true);
+define("SunnyDays", true);
 // session_destroy();
 
 if( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] == 3 ){
@@ -31,7 +31,7 @@ if( isset($_REQUEST['login']) && $_REQUEST['login'] == 1 && !$loged ){
 
     //login
 
-    require_once 'includes/db_cmsdp.php';
+    require_once 'includes/db_SunnyDays.php';
     $csrf = cleanInput($_REQUEST['csrf_token']);
     $csrf = mysqli_real_escape_string($conn, $csrf);
     if( $_SESSION['csrf_token'] != $csrf ){

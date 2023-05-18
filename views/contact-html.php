@@ -1,5 +1,5 @@
 <?php 
-if( !defined('cmsdp') ) exit(); 
+if( !defined('SunnyDays') ) exit(); 
 ?>
 
 <?php
@@ -57,7 +57,7 @@ $activemenu = 'contact'; // $activemenu - за активна страница
           </div>
 
           <div class="col-lg-6">
-            <form action="/mail.php" method="post" role="form">  
+            <form action="/mailContact.php" method="post" role="form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Вашето Име" required>
@@ -70,7 +70,9 @@ $activemenu = 'contact'; // $activemenu - за активна страница
                 <textarea class="form-control" name="message" rows="5" placeholder="Как можем да Ви помогнем?" required></textarea>
               </div>
               <div class="my-3"></div>
-              <div class="text-center"><button class="btn btn-primary active" type="submit" name="send" value = "send">Изпрати</button></div>
+              <div class="text-center">
+                <button class="btn btn-primary active" type="submit" name="send" value = "send">Изпрати</button>
+              </div>
             </form>
           </div>
 

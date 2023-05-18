@@ -1,5 +1,5 @@
 <?php 
-if( !defined('cmsdp') ) exit();
+if( !defined('SunnyDays') ) exit();
 
 if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
   $loged = true;

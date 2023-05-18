@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-define("cmsdp", true);
+define("SunnyDays", true);
 require_once 'includes/functions.php';
-require_once 'includes/db_cmsdp.php';
+require_once 'includes/db_SunnyDays.php';
 
 
 if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
