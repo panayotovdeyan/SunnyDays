@@ -1465,3 +1465,13 @@ section {
   background-color: #bababa;
   opacity: 0.6;
 }
+
+#editLabel {
+  color: rgb(10, 41, 216);
+  font-weight: bold;
+}
+
+.editLabel p {
+  color: rgb(216, 216, 216);
+  font-style: italic;
+  }

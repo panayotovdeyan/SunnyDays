@@ -23,12 +23,15 @@ if( isset($_REQUEST['submited']) && $_REQUEST['submited'] == 1 ){
             $image = mysqli_real_escape_string($conn, $image);
             $text = cleanInput($_REQUEST['text']);
             $text = mysqli_real_escape_string($conn, $text);
+            $published = ($_REQUEST['published']);
+            $published = mysqli_real_escape_string($conn, $published);
 
             $page = new PageAbout($id);
             $page->title = $title;
             $page->subtitle = $subtitle;
             $page->image = $image;
             $page->text = $text;
+            $page->published = $published;
             if( !empty($page->title) ){
                 $page->update();
                 $saveEdit = $page->title;
