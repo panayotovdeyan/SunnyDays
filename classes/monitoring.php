@@ -1,6 +1,6 @@
 <?php
-require_once 'C:\xampp\htdocs\cmsdp\includes\functions.php';
-require_once 'C:\xampp\htdocs\cmsdp\includes\db_cmsdp.php';
+require_once 'C:\xampp\htdocs\sunnydays\includes\functions.php';
+require_once 'C:\xampp\htdocs\sunnydays\includes\db_sunnydays.php';
 
 class Monitoring{
 	public $reportId;

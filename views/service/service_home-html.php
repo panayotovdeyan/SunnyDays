@@ -20,7 +20,10 @@ $activemenu = 'services'; // $activemenu - за активна страница
 
         <div class="row">
 
-          <div class="col-lg-6 col-md-8 d-flex align-items-stretch" data-aos="fade-up">
+        <!-- ======= Services Section 1 ======= -->
+        <?php
+            if( $publishedYes1 == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <a href="/menu/service/service_1.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -29,8 +32,13 @@ $activemenu = 'services'; // $activemenu - за активна страница
               </div>
             </a>
           </div>
+          <?}
+            ?>
 
-          <div class="col-lg-6 col-md-8 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+        <!-- ======= Services Section 2 ======= -->
+        <?php
+            if( $publishedYes1 == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
           <a 
           <?php
               if (isset($_SESSION ['loged']) && ($_SESSION ['loged']) == true){
@@ -58,16 +66,35 @@ $activemenu = 'services'; // $activemenu - за активна страница
             </div>
           </a>
           </div>
+          <?}?>
 
-          <a href="/menu/service/service_3.php">
-          <div class="col-lg-6 col-md-8 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="450">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-support"></i></div>
-              <h4><a><?php echo $service3->service_name ?></a></h4>
+        <!-- ======= Services Section 3 ======= -->
+        <?php
+            if( $publishedYes1 == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <a href="/menu/service/service_3.php">
+             <div class="icon-box">
+                <div class="icon"><i class="bx bx-home"></i></div>
+                <h4><a><?php echo $service3->service_name ?></a></h4>
                 <p><?php echo $service3->service_subname ?></p>
-            </div>
+              </div>
+            </a>
           </div>
-          </a>
+          <?}?>
+
+        <!-- ======= Services Section 4 ======= -->
+        <?php
+            if( $publishedYes1 == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <a href="/menu/service/service_4.php">
+             <div class="icon-box">
+                <div class="icon"><i class="bx bx-home"></i></div>
+                <h4><a><?php echo $service4->service_name ?></a></h4>
+                <p><?php echo $service4->service_subname ?></p>
+              </div>
+            </a>
+          </div>
+          <?}?>
 
         </div>
       </div>

@@ -23,12 +23,16 @@ $serv = new Service(1);
             $service_image = mysqli_real_escape_string($conn, $service_image);
             $service_description = cleanInput($_REQUEST['service_description']);
             $service_description = mysqli_real_escape_string($conn, $service_description);
+            $published = ($_REQUEST['published']);
+            $published = mysqli_real_escape_string($conn, $published);
 
             $serv = new Service($id);
             $serv->service_name = $service_name;
             $serv->service_subname = $service_subname;
             $serv->service_image = $service_image;
             $serv->service_description = $service_description;
+            $serv->published = $published;
+            
             if( !empty($serv->service_name) ){
                 $serv->update();
                 $saveEdit = $serv->service_name;

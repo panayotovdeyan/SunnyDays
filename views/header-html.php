@@ -1,5 +1,6 @@
 <?php 
 if( !defined('SunnyDays') ) exit();
+require_once 'C:\xampp\htdocs\sunnydays\menu\service_header.php'; //for load sub services drop-down menus
 
 if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
   $loged = true;
@@ -44,10 +45,10 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
               <!--End Profile -->
 
       <div class="social-links d-none d-md-block">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="https://twitter.com/" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
       </div>
     </div>
   </section>
@@ -66,9 +67,11 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
           <li><a href="/menu/about.php"<?php if ($activemenu == 'about'){ ?>class="active"<?php } ?>>За нас</a></li>
             <li class="dropdown"><a href="/menu/service/service_home.php"<?php if ($activemenu == 'services'){ ?>class="active"<?php } ?> ><span>Услуги</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
-                <li><a href="/menu/service/service_1.php">Изграждане на Фотоволтаични системи</a></li>
-                <li><a href="/menu/service/service_2.php">Наблюдение на електростанцията в реално време</a></li>
-                <li><a href="/menu/service/service_3.php">Поддръжка и ремонт на фотоволтаични системи</a></li>
+                <li><a href="/menu/service/service_1.php"><?php echo "$service1->service_name";?></a></li>
+                <li><a href="/menu/service/service_2.php"><?php echo "$service2->service_name";?></a></li>
+                <li><a href="/menu/service/service_3.php"><?php echo "$service3->service_name";?></a></li>
+                <li><a href="/menu/service/service_4.php"><?php echo "$service4->service_name";?></a></li>
+
               </ul>
           <li><a href="/menu/projects.php"<?php if ($activemenu == 'projects'){ ?>class="active"<?php } ?>>Проекти</a></li>
           <li><a href="/menu/offer.php"<?php if ($activemenu == 'offer'){ ?>class="active"<?php } ?>>Поискай оферта</a></li>

@@ -16,7 +16,7 @@ if( !defined('admindp') ) exit();
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
 
     <div class="section-header">
-          <h2>Редакция на Меню: Услуги</h2>
+      <a id="editLabel"><h2>Редакция на Меню: Услуги</h2></a>
         </div>
         <div class="col-lg-12">
             <form action="" method="post" role="form" >
@@ -24,21 +24,38 @@ if( !defined('admindp') ) exit();
             <input type="hidden" name="submited" value="2" >
               <div class="row">
                 <div class="col-md-6 form-group mt-3 mt-md-2">
+                <label for="title" id="editLabel">Въвеждане/Редактиране на заглавие</label>
                   <input type="text" class="form-control" name="service_name" id="service_name" value="<?= $serv->service_name ?>" placeholder="Въведете заглавие" required>
                 </div>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
+              <label for="subtitle" id="editLabel">Въвеждане/Редактиране на подзаглавие</label>
                 <input type="text" class="form-control" name="service_subname" id="service_subname" value="<?= $serv->service_subname ?>" placeholder="Въведете подзаглавие" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
+              <label for="image" id="editLabel">Въвеждане/Редактиране на път до изображението</label>
                 <input type="text" class="form-control" name="service_image" id="service_image" value="<?= $serv->service_image ?>" placeholder="Въведете път до изображението" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
+              <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
                 <textarea class="form-control" name="service_description" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= $serv->service_description ?></textarea>
               </div>
               <br>
+              <label for="published" id="editLabel">Публикуване</label>
+              <br><br>
+              <?php
+              $publishedYes=$serv->published;
+                  if( $publishedYes == 0 ){?>
+                    Маркирай за публикуване на Услугата и редакциите: <input type="checkbox" name="published" value="1">
+                    <div class="editLabel"><br><p>* Моля, отбележете за да Публикувате Услугата. Ако не маркирате, Услугата се сваля от Публикация</p></div>
+                  <?}else{?>
+                    Свали публикацията / Публикувай на по-късен етап: <input type="checkbox" name="published" value="0">
+                    <div class="editLabel"><br><p>* Моля, маркирайте за да свалите Публикацията</p></div>
+                  <?}
+                ?>
+                <br>
               <div class="text-left mt-3">
-                <button class="btn-get-started" type="submit" value="1">Запис</button>
+                <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис</button>
                 <a href="services.php" class="btn-get-started">Отказ</a>
               </div>
             </form>

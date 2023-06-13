@@ -27,8 +27,9 @@ if( !defined('admindp') ) exit();
             <tr class="tr">
               <th scope="col">№</th>
               <th scope="col">Наименование на услугата</th>
-              <th scope="col">Редакция</th>
               <th scope="col">Публикувано</th>
+              <th scope="col">Редакция</th>
+
             </tr>
           </thead>
             <tbody class="tableBody">
@@ -37,8 +38,8 @@ if( !defined('admindp') ) exit();
                 echo "<tr>";
                 echo "<th scope='row'>".$serv['id']."</th>";
                 echo "<td>".$serv['service_name']."</td>";
-                echo "<td><a class='btn-get-started' href='services.php?id=".$serv['id']."'>Редактирай</a></td>";
                 echo "<td>".$serv['published']."</td>";
+                echo "<td><a class='btn-get-started' href='services.php?id=".$serv['id']."'>Редактирай</a></td>";
               }
               ?>
             </tbody>
