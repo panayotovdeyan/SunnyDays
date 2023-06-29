@@ -19,4 +19,6 @@ $publishedYes3=$pageAbout3->published;
 $pageAbout4 = new PageAbout(4);
 $publishedYes4=$pageAbout4->published;
 
+// print_r($publishedYes1);die;
+
 require_once 'C:\xampp\htdocs\SunnyDays\views\about-html.php';

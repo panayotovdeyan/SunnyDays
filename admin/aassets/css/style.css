@@ -1475,3 +1475,15 @@ section {
   color: rgb(216, 216, 216);
   font-style: italic;
   }
+
+#checkboxUncheck {
+  background-color:#b159b9;
+  height: 20px;
+  width: 20px;
+}
+
+#checkboxChecked {
+  background-color:#18d26e;
+  height: 20px;
+  width: 20px;
+}
