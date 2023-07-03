@@ -67,10 +67,12 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
           <li><a href="/menu/about.php"<?php if ($activemenu == 'about'){ ?>class="active"<?php } ?>>За нас</a></li>
             <li class="dropdown"><a href="/menu/service/service_home.php"<?php if ($activemenu == 'services'){ ?>class="active"<?php } ?> ><span>Услуги</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
-                <li><a href="/menu/service/service_1.php"><?php echo "$service1->service_name";?></a></li>
-                <li><a href="/menu/service/service_2.php"><?php echo "$service2->service_name";?></a></li>
-                <li><a href="/menu/service/service_3.php"><?php echo "$service3->service_name";?></a></li>
-                <li><a href="/menu/service/service_4.php"><?php echo "$service4->service_name";?></a></li>
+                <li><?php if( $service1->published == 1 ){?><a href="/menu/service/service_1.php"><?php echo "$service1->service_name";?></a></li><?}?>
+                <li><?php if( $service2->published == 1 ){?><a href="/menu/service/service_2.php"><?php echo "$service2->service_name";?></a></li><?}?>
+                <li><?php if( $service3->published == 1 ){?><a href="/menu/service/service_3.php"><?php echo "$service3->service_name";?></a></li><?}?>
+                <li><?php if( $service4->published == 1 ){?><a href="/menu/service/service_4.php"><?php echo "$service4->service_name";?></a></li><?}?>
+                <li><?php if( $service5->published == 1 ){?><a href="/menu/service/service_5.php"><?php echo "$service5->service_name";?></a></li><?}?>
+                <li><?php if( $service6->published == 1 ){?><a href="/menu/service/service_6.php"><?php echo "$service6->service_name";?></a></li><?}?>
 
               </ul>
           <li><a href="/menu/projects.php"<?php if ($activemenu == 'projects'){ ?>class="active"<?php } ?>>Проекти</a></li>

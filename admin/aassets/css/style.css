@@ -1487,3 +1487,15 @@ section {
   height: 20px;
   width: 20px;
 }
+
+.containerService {
+  display: flex;
+}
+
+.left, .middle, .right {
+  flex: 1;
+}
+
+.right {
+  text-align: right;
+}

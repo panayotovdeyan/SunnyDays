@@ -1743,6 +1743,20 @@ section {
 
   }
 
+  .containerService {
+    display: flex;
+
+  }
+  
+  .left, .middle, .right {
+    flex: 1;
+  }
+  
+  .right {
+    text-align: right;
+  }
+  
+
   /* .footer-body {
     background-color: rgb(219, 255, 255);
   }

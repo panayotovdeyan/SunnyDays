@@ -25,5 +25,4 @@ $publishedYes5=$service5->published;
 $service6 = new Service(6);
 $publishedYes6=$service4->published;
 
-// print_r ($service1);die;
-require_once 'C:\xampp\htdocs\SunnyDays\views\service\service_1-html.php';
+require_once 'C:\xampp\htdocs\SunnyDays\views\service\service_6-html.php';

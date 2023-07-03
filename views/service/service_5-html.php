@@ -12,19 +12,13 @@ $activemenu = 'services'; // $activemenu - за активна страница
     <section id="services" style class="inner-page" data-aos="fade-up">
 
       <div class="container">
-        <h2><a><?php echo $service2->service_name ?></a></h2>
+      <h2><a><?php echo $service5->service_name ?></a></h2>
         <br>
-        <h4><a><?php echo $service2->service_subname ?></a></h4>
+        <h4><a><?php echo $service5->service_subname ?></a></h4>
         <br>
-        <p><?php echo $service2->service_description ?></p>
+        <p><?php echo $service5->service_description ?></p>
         <br>
-        <center>
-          <div data-aos="fade-up" data-aos-delay="450">
-            <video autoplay="" hide-on-mobile="" loop="" muted="" playsinline="" preload="metadata" width="50%">
-            <?php echo "<source src='" . $service2->service_image . "'>";?>>
-            </video>
-          </div>
-        </center>
+        <center><?php echo "<img src='" . $service5->service_image . "' style='width: auto';>"; ?></center>
       </div>
 
     </section><!-- End Services Section -->

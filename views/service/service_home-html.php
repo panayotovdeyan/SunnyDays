@@ -4,11 +4,10 @@
 $activemenu = 'services'; // $activemenu - за активна страница
 ?>
 
-  <body>
     <?php require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php'; ?>
 
-  <main id="main">
-
+<main id="main">
+  <body>
     <!-- ======= Services Section ======= -->
     <section class="services" data-aos="fade-up">
       <div class="container">
@@ -18,12 +17,25 @@ $activemenu = 'services'; // $activemenu - за активна страница
           <h2>Услуги</h2>
         </div>
 
+        <div class="containerService" data-aos="fade-up" data-aos-delay="300">
+          <div class="left">
+            <!-- Content for the left section -->
+          </div>
+          <div class="middle">
+            <!-- Content for the middle section -->
+          </div>
+          <div class="right">
+            <!-- Content for the right section -->
+            <p>Ние проектираме и изграждаме соларни централи от всякакъв размер и тип. Вниманието към детайлите, голям опит и оборудване от висок клас ни позволяват да гарантираме ефективността на нашите фотоволтаични системи в продължение на много години.</p>
+          </div>
+        </div>
+
         <div class="row">
 
         <!-- ======= Services Section 1 ======= -->
         <?php
-            if( $publishedYes1 == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            if( $service1->published == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <a href="/menu/service/service_1.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -37,8 +49,8 @@ $activemenu = 'services'; // $activemenu - за активна страница
 
         <!-- ======= Services Section 2 ======= -->
         <?php
-            if( $publishedYes1 == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            if( $service2->published == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
           <a 
           <?php
               if (isset($_SESSION ['loged']) && ($_SESSION ['loged']) == true){
@@ -70,8 +82,8 @@ $activemenu = 'services'; // $activemenu - за активна страница
 
         <!-- ======= Services Section 3 ======= -->
         <?php
-            if( $publishedYes1 == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            if( $service3->published == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="700">
             <a href="/menu/service/service_3.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -82,10 +94,14 @@ $activemenu = 'services'; // $activemenu - за активна страница
           </div>
           <?}?>
 
+      </div>
+      
+      <div class="row">
+
         <!-- ======= Services Section 4 ======= -->
         <?php
-            if( $publishedYes1 == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            if( $service4->published == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="900">
             <a href="/menu/service/service_4.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -96,18 +112,38 @@ $activemenu = 'services'; // $activemenu - за активна страница
           </div>
           <?}?>
 
-        </div>
+                  <!-- ======= Services Section 5 ======= -->
+        <?php
+            if( $service5->published == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="1100">
+            <a href="/menu/service/service_4.php">
+             <div class="icon-box">
+                <div class="icon"><i class="bx bx-home"></i></div>
+                <h4><a><?php echo $service5->service_name ?></a></h4>
+                <p><?php echo $service5->service_subname ?></p>
+              </div>
+            </a>
+          </div>
+          <?}?>
+
+                  <!-- ======= Services Section 6 ======= -->
+        <?php
+            if( $service6->published == 1 ){?>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="1300">
+            <a href="/menu/service/service_4.php">
+             <div class="icon-box">
+                <div class="icon"><i class="bx bx-home"></i></div>
+                <h4><a><?php echo $service6->service_name ?></a></h4>
+                <p><?php echo $service6->service_subname ?></p>
+              </div>
+            </a>
+          </div>
+          <?}?>
       </div>
-    </section><!-- End Services Section -->
-
-  <section class="inner-page">
-    <div class="container">
-      <p>Ние проектираме и изграждаме соларни централи от всякакъв размер и тип. Вниманието към детайлите, голям опит и оборудване от висок клас ни позволяват да гарантираме ефективността на нашите фотоволтаични системи в продължение на много години.
-      </p>
     </div>
-  </section>
-
-  </main><!-- End #main -->
+    </section><!-- End Services Section -->
+    </body>
+</main><!-- End #main -->
 
 
   <?php require_once 'C:\xampp\htdocs\SunnyDays\views\footer-html.php'; ?>

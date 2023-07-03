@@ -9,7 +9,7 @@ $activemenu = 'services'; // $activemenu - за активна страница
 
   <main id="main">
     <!-- ======= Services Section 1 ======= -->
-    <section id="services3" style class="inner-page" data-aos="fade-up">
+    <section id="services" style class="inner-page" data-aos="fade-up">
 
       <div class="container">
       <h2><a><?php echo $service3->service_name ?></a></h2>

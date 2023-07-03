@@ -19,5 +19,11 @@ $publishedYes3=$service3->published;
 $service4 = new Service(4);
 $publishedYes4=$service4->published;
 
+$service5 = new Service(5);
+$publishedYes5=$service5->published;
+
+$service6 = new Service(6);
+$publishedYes6=$service4->published;
+
 // print_r ($service);die;
 require_once 'C:\xampp\htdocs\SunnyDays\views\service\service_3-html.php';

@@ -45,14 +45,13 @@ if( !defined('admindp') ) exit();
               <br><br>
               <?php
               $publishedYes=$pageAbout->published;
-                  if( $publishedYes == 0 ){?>
-                    Маркирай за публикуване на Темата и редакциите: <input type="checkbox" name="published" id="checkboxUncheck" value="1">
-                    <div class="editLabel"><br><p>* Моля, отбележете за да Публикувате Темата.</p></div>
-                  <?}else{?>
-                    Темата е публикувана. <br>
-                    Размаркирайте за да скриете публикацията.* <input type="checkbox" name="published" id="checkboxChecked" value="0">
-                    <div class="editLabel"><br><p>Ще имате възможност да публикувате на по-късен етап.</p></div>
-                  <?}
+              if( $publishedYes == 0 ){?>
+                Маркирай за публикуване: <input type="checkbox" name="published" value="1">
+                <div class="editLabel"><br><p>* Моля, отбележете за да Публикувате. Ако не маркирате, публикацията няма да се показва</p></div>
+              <?}else{?>
+                Свали публикацията / Публикувай на по-късен етап: <input type="checkbox" name="published" value="0">
+                <div class="editLabel"><br><p>* Моля, маркирайте за да свалите Публикацията</p></div>
+              <?}
               ?>
               <br>
               <div class="text-left mt-3">

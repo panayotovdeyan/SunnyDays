@@ -3,7 +3,7 @@ if( !defined('SunnyDays') ) exit();
 
 require_once 'head-html.php'; 
 $activemenu = 'about'; // $activemenu - за активна страница
-require_once 'header-html.php'; 
+require_once 'header-html.php';
 ?>
 
 <main id="main">
@@ -15,7 +15,7 @@ require_once 'header-html.php';
 
           <!-- ======= Menu About 1 ======= -->
           <?php
-            if( $publishedYes1 == 1 ){?>
+            if( $pageAbout1->published == 1 ){?>
               <section id="about1" class="inner-page">
                 <div class="container">
                   <h2><?php echo $pageAbout1->title ?></h2>
@@ -31,7 +31,7 @@ require_once 'header-html.php';
 
           <!-- ======= Menu About 2 ======= -->
           <?php
-            if( $publishedYes2 == 1 ){?>
+            if( $pageAbout2->published == 1 ){?>
               <section id="about2" class="inner-page">
                 <div class="container">
                   <h2><?php echo $pageAbout2->title ?></h2>
@@ -45,7 +45,7 @@ require_once 'header-html.php';
 
           <!-- ======= Menu About 3 ======= -->
           <?php
-            if( $publishedYes3 == 1 ){?>
+            if( $pageAbout3->published == 1 ){?>
               <section id="about3" class="inner-page">
                 <div class="container">
                   <h2><?php echo $pageAbout3->title ?></h2>
@@ -61,7 +61,7 @@ require_once 'header-html.php';
 
           <!-- ======= Menu About 4 ======= -->
           <?php
-            if( $publishedYes4 == 1 ){?>
+            if( $pageAbout4->published == 1 ){?>
               <section id="about4" class="inner-page">
                 <div class="container">
                   <h2><?php echo $pageAbout4->title ?></h2>
