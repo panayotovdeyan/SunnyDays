@@ -28,6 +28,7 @@ if( !defined('admindp') ) exit();
               <th scope="col">№</th>
               <th scope="col">Имена</th>
               <th scope="col">Позиция</th>
+              <th scope="col">Публикувано</th>
               <th scope="col">Редакция</th>
             </tr>
           </thead>
@@ -38,6 +39,7 @@ if( !defined('admindp') ) exit();
                 echo "<th scope='row'>".$member['id']."</th>";
                 echo "<td>".$member['memberName']."</td>";
                 echo "<td>".$member['memberPosition']."</td>";
+                echo "<td>".$member['published']."</td>";
                 echo "<td><a class='btn-get-started' href='team.php?id=".$member['id']."'>Редактирай</a></td>";
               }
               ?>

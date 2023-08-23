@@ -19,16 +19,19 @@ if( isset($_REQUEST['submited']) && $_REQUEST['submited'] == 3 ){
             $title = mysqli_real_escape_string($conn, $title);
             $subtitle = cleanInput($_REQUEST['subtitle']);
             $subtitle = mysqli_real_escape_string($conn, $subtitle);
-            $image = cleanInput($_REQUEST['image']);
-            $image = mysqli_real_escape_string($conn, $image);
             $text = cleanInput($_REQUEST['text']);
             $text = mysqli_real_escape_string($conn, $text);
+            $image = cleanInput($_REQUEST['image']);
+            $image = mysqli_real_escape_string($conn, $image);
+            $published = ($_REQUEST['published']);
+            $published = mysqli_real_escape_string($conn, $published);
 
             $proj = new Project($id);
             $proj->title = $title;
             $proj->subtitle = $subtitle;
             $proj->image = $image;
             $proj->text = $text;
+            $proj->published = $published;
             if( !empty($proj->title) ){
                 $proj->update();
                 $saveEdit = $proj->title;

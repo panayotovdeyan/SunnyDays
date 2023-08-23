@@ -5,9 +5,10 @@ class Team{
 	public $memberPosition;
 	public $memberDescription;
 	public $memberImage;
+	public $published;
 
     
-	public function __construct($Sid='', $Sname='',$Ssubname='', $Sdescription='', $Simage=''){
+	public function __construct($Sid='', $Sname='',$Ssubname='', $Sdescription='', $Simage='', $Spublished=''){
 		if( (int)$Sid == $Sid && $Sid > 0 ){
 			$this->id = $Sid;
 		}
@@ -15,6 +16,7 @@ class Team{
 		$this->memberPosition = $Ssubname;
 		$this->memberDescription = $Sdescription;
 		$this->memberImage = $Simage;
+		$this->published = $Spublished;
 
 
 		if( $this->id > 0 ){
@@ -32,6 +34,7 @@ class Team{
 			$this->memberPosition = $row['memberPosition'];
 			$this->memberDescription = $row['memberDescription'];
 			$this->memberImage = $row['memberImage'];
+			$this->published = $row['published'];
 
 		}
 	}
@@ -41,12 +44,13 @@ class Team{
 		if( empty( (int)$this->id ) ){
 			$this->id = 'NULL';
 		}
-		$sql = "INSERT INTO `team`(`id`, `memberName`, `memberPosition`, `memberDescription`, `memberImage`) VALUES ("
+		$sql = "INSERT INTO `team`(`id`, `memberName`, `memberPosition`, `memberDescription`, `memberImage`, `published`) VALUES ("
 						.mysqli_real_escape_string($con, $this->id) .", '"
 						.mysqli_real_escape_string($con, $this->memberName) ."', '"
 						.mysqli_real_escape_string($con, $this->memberPosition) ."', '"
 						.mysqli_real_escape_string($con, $this->memberDescription) ."', '"
-						.mysqli_real_escape_string($con, $this->memberImage)
+						.mysqli_real_escape_string($con, $this->memberImage) ."', '"
+						.mysqli_real_escape_string($con, $this->published)
 					."');"	;
 
 		$result = mysqli_query($con, $sql);

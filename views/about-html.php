@@ -26,8 +26,7 @@ require_once 'header-html.php';
                   </video></center>
                 </div>
               </section>
-              <?}
-            ?>
+              <?}?>
 
           <!-- ======= Menu About 2 ======= -->
           <?php

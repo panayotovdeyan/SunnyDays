@@ -36,7 +36,12 @@ if( !defined('admindp') ) exit();
           <li><a href="projects.php"<?php if ($activemenu == 'projects'){ ?>class="active"<?php } ?>>Меню: Проекти</a></li>
           <li><a href="offers.php"<?php if ($activemenu == 'offer'){ ?>class="active"<?php } ?>>Меню: Поискай ферта</a></li>
           <li><a href="team.php"<?php if ($activemenu == 'team'){ ?>class="active"<?php } ?>>Меню: Екип</a></li>
-          <li><a href="/" <?php if ($activemenu == 'logout'){ ?>class="active"<?php } ?>>Връщане към сайта</a></li>
+          <li><a <?php if ($activemenu == 'about'){?>href="/menu/about.php" <?}?>
+                 <?php if ($activemenu == 'serv'){?>href="/menu/service/service_home.php" <?}?>
+                 <?php if ($activemenu == 'projects'){?>href="/menu/projects.php" <?}?>
+                 <?php if ($activemenu == 'offer'){?>href="/menu/offer.php" <?}?>
+                 <?php if ($activemenu == 'team'){?>href="/menu/team.php" <?}?>
+                >Връщане към сайта</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

@@ -23,12 +23,15 @@ $member = new Team(1);
             $memberImage = mysqli_real_escape_string($conn, $memberImage);
             $memberDescription = cleanInput($_REQUEST['memberDescription']);
             $memberDescription = mysqli_real_escape_string($conn, $memberDescription);
+            $published = ($_REQUEST['published']);
+            $published = mysqli_real_escape_string($conn, $published);
 
             $member = new Team($id);
             $member->memberName = $memberName;
             $member->memberPosition = $memberPosition;
             $member->memberImage = $memberImage;
             $member->memberDescription = $memberDescription;
+            $member->published = $published;
             if( !empty($member->memberName) ){
                 $member->update();
                 $saveEdit = $member->memberName;

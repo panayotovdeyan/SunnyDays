@@ -17,26 +17,32 @@ if( !defined('SunnyDays') ) exit();
       <div class="container">
 
           <!-- ======= Menu Project 1 ======= -->
-        <section id="projects" class="inner-page">
-        <div class="container">
-              <h2><?php echo $project1->title ?></h2>
-              <h4><?php echo $project1->subtitle ?></h4>
-              <p><?php echo $project1->text ?></p>
-              <?php echo "<img id='img' src='" . $project1->image . "'>"; ?>
-            </div>
-          </section>
+          <?php
+            if( $project1->published == 1 ){?>
+              <section id="about1" class="inner-page">
+                <div class="container">
+                  <h2><?php echo $project1->title ?></h2>
+                  <h3><?php echo $project1->subtitle ?></h3>
+                  <p><?php echo $project1->text ?></p>
+                  <center><?php echo "<img src='" . $project1->image . "'>"; ?></center>
+                </div>
+              </section>
+              <?}?>
 
           <!-- ======= End Menu Project 1 ======= -->
 
           <!-- ======= Menu Project 2 ======= -->
+          <?php
+            if( $project2->published == 1 ){?>
           <section id="projects" class="inner-page">
             <div class="container">
               <h2><?php echo $project2->title ?></h2>
               <h4><?php echo $project2->subtitle ?></h4>
               <p><?php echo $project2->text ?></p>
-              <?php echo "<img src='" . $project2->image . "'>"; ?>
+              <center><?php echo "<img src='" . $project2->image . "'>"; ?></center>
             </div>
           </section>
+          <?}?>
 
           <!-- ======= End Menu Project 2 ======= -->
 

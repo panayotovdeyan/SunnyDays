@@ -46,11 +46,11 @@ if( !defined('admindp') ) exit();
               <?php
               $publishedYes=$serv->published;
                   if( $publishedYes == 0 ){?>
-                    Маркирай за публикуване на Услугата и редакциите: <input type="checkbox" name="published" value="1">
-                    <div class="editLabel"><br><p>* Моля, отбележете за да Публикувате Услугата. Ако не маркирате, Услугата се сваля от Публикация</p></div>
+                    Маркирай за публикуване: <input type="checkbox" name="published" value="1">
+                    <div class="editLabel"><br><p>*  Моля, отбележете за да Публикувате.</p></div>
                   <?}else{?>
-                    Свали публикацията / Публикувай на по-късен етап: <input type="checkbox" name="published" value="0">
-                    <div class="editLabel"><br><p>* Моля, маркирайте за да свалите Публикацията</p></div>
+                    Публикувано: <input type="checkbox" checked id="checkboxChecked" name="published" value="1">
+                <div class="editLabel"><br><p>* Размаркирайте за сваляне на публикацията</p></div>
                   <?}
                 ?>
                 <br>

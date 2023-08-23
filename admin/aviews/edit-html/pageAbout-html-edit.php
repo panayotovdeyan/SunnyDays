@@ -46,16 +46,16 @@ if( !defined('admindp') ) exit();
               <?php
               $publishedYes=$pageAbout->published;
               if( $publishedYes == 0 ){?>
-                Маркирай за публикуване: <input type="checkbox" id="checkboxChecked" name="published" value="1">
-                <div class="editLabel"><br><p>* Моля, отбележете за да Публикувате. Ако не маркирате, публикацията няма да се показва</p></div>
+                Маркирай за публикуване: <input type="checkbox" id="checkboxUnChecked" name="published" value="1">
+                <div class="editLabel"><br><p>* Моля, отбележете за да Публикувате.</p></div>
               <?}else{?>
-                Свали публикацията / Публикувай на по-късен етап: <input type="checkbox" id="checkboxChecked" name="published" value="0">
-                <div class="editLabel"><br><p>* Моля, маркирайте за да свалите Публикацията</p></div>
+                Публикувано: <input type="checkbox" checked id="checkboxChecked" name="published" value="1">
+                <div class="editLabel"><br><p>* Размаркирайте за сваляне на публикацията</p></div>
               <?}
               ?>
               <br>
               <div class="text-left mt-3">
-                <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис</button>
+              <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис</button>
                 <a href="pageAbout.php" class="btn-get-started">Отказ</a>
               </div>
             </form>

@@ -30,8 +30,8 @@ class Project{
 			$row = $data[0];
 			$this->title = $row['title'];
 			$this->subtitle = $row['subtitle'];
-			$this->image = $row['image'];
 			$this->text = $row['text'];
+			$this->image = $row['image'];
 			$this->published = $row['published'];
 		}
 	}
@@ -40,11 +40,11 @@ class Project{
 		if( empty( (int)$this->id ) ){
 			$this->id = 'NULL';
 		}
-		$sql = "INSERT INTO `projects`(`id`, `text`, `title`, `subtitle`, `image`, `published`) VALUES ("
+		$sql = "INSERT INTO `projects`(`id`, `title`, `subtitle`, `text`, `image`, `published`) VALUES ("
 						.mysqli_real_escape_string($con, $this->id) .", '"
-						.mysqli_real_escape_string($con, $this->text) ."', '"
 						.mysqli_real_escape_string($con, $this->title) ."', '"
 						.mysqli_real_escape_string($con, $this->subtitle) ."', '"
+						.mysqli_real_escape_string($con, $this->text) ."', '"
 						.mysqli_real_escape_string($con, $this->image) ."', '"
 						.mysqli_real_escape_string($con, $this->published)
 					."');";
