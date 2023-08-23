@@ -67,7 +67,7 @@ if(isset($_POST['send'])) {
     $mail->send();
 
     echo "<script> 
-    alert ('Запитването е изпратено успешно')
+    alert ('Запитването за оферта е изпратено успешно')
     document.location.href = 'index.php';
     </script>";
 }

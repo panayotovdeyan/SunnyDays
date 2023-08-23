@@ -1723,7 +1723,10 @@ section {
 
   #projects {
     color: rgb(5, 5, 117);
-    background-color: rgb(167, 227, 241);
+  }
+
+  .projects-body {
+    background-color: rgb(219, 255, 255);
   }
 
   .projects-body p {

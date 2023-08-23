@@ -46,10 +46,10 @@ if( !defined('admindp') ) exit();
               <?php
               $publishedYes=$pageAbout->published;
               if( $publishedYes == 0 ){?>
-                Маркирай за публикуване: <input type="checkbox" name="published" value="1">
+                Маркирай за публикуване: <input type="checkbox" id="checkboxChecked" name="published" value="1">
                 <div class="editLabel"><br><p>* Моля, отбележете за да Публикувате. Ако не маркирате, публикацията няма да се показва</p></div>
               <?}else{?>
-                Свали публикацията / Публикувай на по-късен етап: <input type="checkbox" name="published" value="0">
+                Свали публикацията / Публикувай на по-късен етап: <input type="checkbox" id="checkboxChecked" name="published" value="0">
                 <div class="editLabel"><br><p>* Моля, маркирайте за да свалите Публикацията</p></div>
               <?}
               ?>
@@ -59,13 +59,12 @@ if( !defined('admindp') ) exit();
                 <a href="pageAbout.php" class="btn-get-started">Отказ</a>
               </div>
             </form>
-        </div><!-- End Contact Form -->
+        </div>
 
     </div>
   </section><!-- End Hero Section -->
 
-
-  </main><!-- End #main -->
+  </main>
 
 
   <?php require_once 'aviews/footer-html.php'; ?>

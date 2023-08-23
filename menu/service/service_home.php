@@ -23,7 +23,7 @@ $service5 = new Service(5);
 $publishedYes5=$service5->published;
 
 $service6 = new Service(6);
-$publishedYes6=$service4->published;
+$publishedYes6=$service6->published;
 
 
 require_once 'C:\xampp\htdocs\SunnyDays\views\service\service_home-html.php';

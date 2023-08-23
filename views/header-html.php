@@ -73,7 +73,6 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
                 <li><?php if( $service4->published == 1 ){?><a href="/menu/service/service_4.php"><?php echo "$service4->service_name";?></a></li><?}?>
                 <li><?php if( $service5->published == 1 ){?><a href="/menu/service/service_5.php"><?php echo "$service5->service_name";?></a></li><?}?>
                 <li><?php if( $service6->published == 1 ){?><a href="/menu/service/service_6.php"><?php echo "$service6->service_name";?></a></li><?}?>
-
               </ul>
           <li><a href="/menu/projects.php"<?php if ($activemenu == 'projects'){ ?>class="active"<?php } ?>>Проекти</a></li>
           <li><a href="/menu/offer.php"<?php if ($activemenu == 'offer'){ ?>class="active"<?php } ?>>Поискай оферта</a></li>
@@ -83,7 +82,7 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
           <a href="/reg.php" <?php if ($activemenu == 'reg'){ ?>class="active"<?php } ?>>Регистрация</a>
           <?php
             if( !$loged ){?>
-              <a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/login_white_24dp.svg" class="icon1">Вход</a>
+              <a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/login_white_24dp.svg" class="icon1">Влез</a>
             <?}else{?>
               <a href="/logout.php" <?php if ($activemenu == 'logout'){ ?>class="active"<?php } ?>>Изход<img src="/assets/img/Icons/logout_white_24dp.svg" class="icon2"></a>
             <?}?>

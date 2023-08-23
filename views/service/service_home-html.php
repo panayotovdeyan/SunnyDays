@@ -2,14 +2,15 @@
 
 <?php require_once 'C:\xampp\htdocs\SunnyDays\views\head-html.php'; 
 $activemenu = 'services'; // $activemenu - за активна страница
+require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
 ?>
 
-    <?php require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php'; ?>
-
 <main id="main">
+
   <body>
+  <section id="about1" class="inner-page" data-aos="fade-up">
     <!-- ======= Services Section ======= -->
-    <section class="services" data-aos="fade-up">
+    <section id="services" class="services">
       <div class="container">
 
         <div class="section-title">
@@ -30,15 +31,15 @@ $activemenu = 'services'; // $activemenu - за активна страница
           </div>
         </div>
 
-        <div class="row">
+      <div class="row">
 
         <!-- ======= Services Section 1 ======= -->
         <?php
             if( $service1->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <a href="/menu/service/service_1.php">
              <div class="icon-box">
-                <div class="icon"><i class="bx bx-home"></i></div>
+                <div class="icon"><i class="bx bx-world"></i></div>
                 <h4><a><?php echo $service1->service_name ?></a></h4>
                 <p><?php echo $service1->service_subname ?></p>
               </div>
@@ -50,24 +51,13 @@ $activemenu = 'services'; // $activemenu - за активна страница
         <!-- ======= Services Section 2 ======= -->
         <?php
             if( $service2->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
-          <a 
-          <?php
-              if (isset($_SESSION ['loged']) && ($_SESSION ['loged']) == true){
-                  ?>href="/profile.php"></a>
-              <?php
-              }else{
-                  ?><a href="/menu/service/service_2.php"></a>
-              <?php
-              }
-              ?>
-
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a 
+              <h4><a href="/profile.php">
               <?php
               if (isset($_SESSION ['loged']) && ($_SESSION ['loged']) == true){
-                  ?>href="/profile.php"><?php echo $service2->service_name ?></a></h4>
+                  echo $service2->service_name ?></a></h4>
               <?php
               }else{
                   ?><a href="/menu/service/service_2.php"><?php echo $service2->service_name ?></a></h4>
@@ -83,7 +73,7 @@ $activemenu = 'services'; // $activemenu - за активна страница
         <!-- ======= Services Section 3 ======= -->
         <?php
             if( $service3->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="700">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="700">
             <a href="/menu/service/service_3.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -93,15 +83,13 @@ $activemenu = 'services'; // $activemenu - за активна страница
             </a>
           </div>
           <?}?>
-
       </div>
       
-      <div class="row">
-
+      <div class="row">          
         <!-- ======= Services Section 4 ======= -->
         <?php
             if( $service4->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="900">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <a href="/menu/service/service_4.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -115,7 +103,7 @@ $activemenu = 'services'; // $activemenu - за активна страница
                   <!-- ======= Services Section 5 ======= -->
         <?php
             if( $service5->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="1100">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="500">
             <a href="/menu/service/service_4.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -129,7 +117,7 @@ $activemenu = 'services'; // $activemenu - за активна страница
                   <!-- ======= Services Section 6 ======= -->
         <?php
             if( $service6->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="1300">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="700">
             <a href="/menu/service/service_4.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -141,8 +129,9 @@ $activemenu = 'services'; // $activemenu - за активна страница
           <?}?>
       </div>
     </div>
-    </section><!-- End Services Section -->
-    </body>
+    </section>
+  </section><!-- End Services Section -->
+  </body>
 </main><!-- End #main -->
 
 

@@ -14,7 +14,7 @@ $activemenu = 'homepage'; // $activemenu - за активна страница
   <section id="hero" class="d-flex align-items-center">
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
       <h1>Вие сте в админ панела</h1>
-      <h2>Тук можете да управлявате съдържането на страниците</h2>
+      <h2>Тук управлявате съдържането на страниците</h2>
     </div>
   </section><!-- End Hero -->
 

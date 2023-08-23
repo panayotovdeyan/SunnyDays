@@ -1482,10 +1482,13 @@ section {
   width: 20px;
 }
 
-#checkboxChecked {
+#checkboxChecked:checked + span {
+  text-decoration: line-through;
+  color: red;
   background-color:#18d26e;
   height: 20px;
   width: 20px;
+
 }
 
 .containerService {
