@@ -7,9 +7,9 @@ define("SunnyDays", true);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require './PHPMailer/src/Exception.php';
-require './PHPMailer/src/PHPMailer.php';
-require './PHPMailer/src/SMTP.php';
+require 'C:/xampp/htdocs/sunnydays/PHPMailer/src/Exception.php';
+require 'C:/xampp/htdocs/sunnydays/PHPMailer/src/PHPMailer.php';
+require 'C:/xampp/htdocs/sunnydays/PHPMailer/src/SMTP.php';
 
 
 if(isset($_POST['send'])) {
