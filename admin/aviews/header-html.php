@@ -27,7 +27,7 @@ if( !defined('admindp') ) exit();
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-    <h1 class="logo"><a href="index.php">Админ</a></h1>
+    <h1 class="logo">Администратор: <?php echo "<br>{$_SESSION['user']['name']} {$_SESSION['user']['family']}"?></h1>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -41,6 +41,7 @@ if( !defined('admindp') ) exit();
                  <?php if ($activemenu == 'projects'){?>href="/menu/projects.php" <?}?>
                  <?php if ($activemenu == 'offer'){?>href="/menu/offer.php" <?}?>
                  <?php if ($activemenu == 'team'){?>href="/menu/team.php" <?}?>
+                 <?php if ($activemenu == 'homepage'){?>href="/" <?}?>
                 >Връщане към сайта</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

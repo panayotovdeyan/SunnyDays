@@ -32,7 +32,12 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
                       <span class="dd-text d-none d-md-inline">
                         <span style="text-decoration: underline">
                           <?php
-                          echo "{$_SESSION['user']['name']} {$_SESSION['user']['family']}";
+                          if(  $_SESSION['user']['admin'] == 1 ){ 
+                            // print_r($_SESSION); die('D2');
+                            echo "АДМИН ПАНЕЛ - Администратор: {$_SESSION['user']['name']} {$_SESSION['user']['family']} ({$_SESSION['user']['email']})";
+                          }else{
+                            echo "{$_SESSION['user']['name']} {$_SESSION['user']['family']}";
+                          }
                           ?>
                         </span>
                       </span>
@@ -79,7 +84,10 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
           <li><a href="/menu/team.php"<?php if ($activemenu == 'team'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/team_white_24dp.svg" class="icon1">Екип</a></li>
 
           <a href="/menu/contact.php"<?php if ($activemenu == 'contact'){ ?>class="active"<?php } ?>>Контакти</a>
-          <a href="/reg.php" <?php if ($activemenu == 'reg'){ ?>class="active"<?php } ?>>Регистрация</a>
+          <?php
+            if(!$loged ){?>
+              <a href="/reg.php" <?php if ($activemenu == 'reg'){ ?>class="active"<?php } ?>>Регистрация</a>
+            <?}?>
           <?php
             if( !$loged ){?>
               <a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/login_white_24dp.svg" class="icon1">Влез</a>

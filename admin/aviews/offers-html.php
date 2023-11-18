@@ -27,8 +27,7 @@ if( !defined('admindp') ) exit();
             <tr class="tr">
               <th scope="col">№</th>
               <th scope="col">Заглавие</th>
-              <th scope="col">Подзаглавие</th>
-              <th scope="col">Публикувано</th>
+              <th scope="col">Редакция</th>
             </tr>
           </thead>
             <tbody class="tableBody">
@@ -38,7 +37,6 @@ if( !defined('admindp') ) exit();
                 echo "<th scope='row'>".$offer['id']."</th>";
                 echo "<td>".$offer['title']."</td>";
                 echo "<td><a class='btn-get-started' href='offers.php?id=".$offer['id']."'>Редактирай</a></td>";
-                echo "<td>".$offer['published']."</td>";
               }
               ?>
             </tbody>
