@@ -133,8 +133,6 @@ if( !defined('SunnyDays') ) exit();
       </div>
     </section><!-- End Team Section -->
 
-<!-- ======= End Menu About ======= -->
-      </div>
     </section>
   </main><!-- End #main -->
   </body>

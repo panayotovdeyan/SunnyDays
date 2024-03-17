@@ -5,12 +5,13 @@ $activemenu = 'services'; // $activemenu - за активна страница
 require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
 ?>
 
-<main id="main">
+
 
   <body>
-  <section id="about1" class="inner-page" data-aos="fade-up">
+  <main id="main">
+
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="services" class="services" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
@@ -104,7 +105,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
         <?php
             if( $service5->published == 1 ){?>
           <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="500">
-            <a href="/menu/service/service_4.php">
+            <a href="/menu/service/service_5.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
                 <h4><a><?php echo $service5->service_name ?></a></h4>
@@ -118,7 +119,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
         <?php
             if( $service6->published == 1 ){?>
           <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="700">
-            <a href="/menu/service/service_4.php">
+            <a href="/menu/service/service_6.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
                 <h4><a><?php echo $service6->service_name ?></a></h4>
@@ -130,9 +131,10 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
       </div>
     </div>
     </section>
-  </section><!-- End Services Section -->
-  </body>
-</main><!-- End #main -->
 
-
+  </main><!-- End #main -->
   <?php require_once 'C:\xampp\htdocs\SunnyDays\views\footer-html.php'; ?>
+  </body>
+
+
+

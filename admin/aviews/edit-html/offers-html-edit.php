@@ -16,7 +16,7 @@ if( !defined('admindp') ) exit();
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="200">
 
     <div class="section-header">
-          <h2>Редакция на Меню: Проекти</h2>
+          <h2>Редакция на Меню: Поискай оферта</h2>
         </div>
         <div class="col-lg-12">
             <form action="" method="post" role="form" >
@@ -24,16 +24,20 @@ if( !defined('admindp') ) exit();
             <input type="hidden" name="submited" value="4" >
               <div class="row">
                 <div class="col-md-6 form-group mt-3 mt-md-2">
+                <label for="title" id="editLabel">Въвеждане/Редактиране на заглавие</label>
                   <input type="text" class="form-control" name="title" id="title" value="<?= $offer->title ?>" placeholder="Въведете заглавие" required>
                 </div>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
+              <label for="subtitle" id="editLabel">Въвеждане/Редактиране на подзаглавие</label>
                 <input type="text" class="form-control" name="subtitle" id="subtitle" value="<?= $offer->subtitle ?>" placeholder="Въведете подзаглавие" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
+              <label for="image" id="editLabel">Въвеждане/Редактиране на път до изображението</label>
                 <input type="text" class="form-control" name="image" id="image" value="<?= $offer->image ?>" placeholder="Въведете път до картинката" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
+              <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
                 <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= $offer->text ?></textarea>
               </div>
               <br>

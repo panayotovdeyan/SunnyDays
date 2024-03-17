@@ -90,7 +90,7 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
             <?}?>
           <?php
             if( !$loged ){?>
-              <a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/login_white_24dp.svg" class="icon1">Влез</a>
+              <a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/login_white_24dp.svg" class="icon1">Вход</a>
             <?}else{?>
               <a href="/logout.php" <?php if ($activemenu == 'logout'){ ?>class="active"<?php } ?>>Изход<img src="/assets/img/Icons/logout_white_24dp.svg" class="icon2"></a>
             <?}?>
