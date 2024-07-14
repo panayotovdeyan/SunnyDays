@@ -1632,9 +1632,9 @@ section {
 
 .services {
   width: 100%;
-  height: calc(120vh - 110px);
+  height: calc(auto);
   background: url("../img/services/services-background.gif") top center;
-  background-size: cover;
+  background-size: contain;
   position: relative;
 }
 

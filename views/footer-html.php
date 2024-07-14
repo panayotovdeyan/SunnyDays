@@ -42,7 +42,7 @@
             <div class="imput-wrapper">
               <form method="post" action="/subscribed.php">
               <input type="email" name="email" class="form-control">
-              <input type="submit" value="subscribed">
+              <input type="submit" value="Subscribe">
               </form>
           </div>
 

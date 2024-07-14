@@ -22,42 +22,67 @@ if( !defined('admindp') ) exit();
             <form action="/admin/pageAbout.php" method="post" role="form" >
             <input type="hidden" name="id" value="<?= $pageAbout->id ?>" >
             <input type="hidden" name="submited" value="1" >
-              <div class="row">
+
                 <div class="col-md-6 form-group mt-3 mt-md-2">
                 <label for="title" id="editLabel">Въвеждане/Редактиране на заглавие</label>
                   <input type="text" class="form-control" name="title" id="title" value="<?= $pageAbout->title ?>" placeholder="Въведете заглавие" required>
                 </div>
-              </div>
+
               <div class="col-md-6 form-group mt-3 mt-md-2">
               <label for="subtitle" id="editLabel">Въвеждане/Редактиране на подзаглавие</label>
                 <input type="text" class="form-control" name="subtitle" id="subtitle" value="<?= $pageAbout->subtitle ?>" placeholder="Въведете подзаглавие" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="image" id="editLabel">Въвеждане/Редактиране на път до изображението</label>
-                <input type="text" class="form-control" name="image" id="image" value="<?= $pageAbout->image ?>" placeholder="Въведете път до изображението" >
+              <label for="image" id="editLabel">Въвеждане/Редактиране на път до изображението</label>          
+                <input type="file" class="form-control-file" id="imageInput" onchange="updateImagePreview(this)">
+                <input type="text" class="form-control" name="image" id="image" value="<?= $pageAbout->image ?>" placeholder="Въведете път до картинката">
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
               <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
-                <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= $pageAbout->text ?></textarea>
+                <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="6" placeholder="Въведете текст"><?= $pageAbout->text ?></textarea>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-2, publish-box">
+                <label for="checkboxUnChecked" id="editLabel">Публикуване</label>
+                <br><br>
+                  <?php
+                  $publishedYes=$pageAbout->published;
+                  if( $publishedYes == 0 ){?>
+                    <input type="checkbox" id="checkboxUnChecked" name="published" value="1">
+                    <label for="checkboxUnChecked" id="checkboxUnChecked">Маркирай за публикуване</label>
+                    <div class="text-left mt-3, checked-box">
+                      <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис/Публикуване</button>
+                      <a href="pageAbout.php" class="btn-get-started">Отказ</a>
+                    </div>
+                    <div class="text-left mt-3, save-box">
+                      <button  name="save-box" class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис на промените</button>
+                      <a href="pageAbout.php" class="btn-get-started">Отказ</a>
+                    </div>
+
+                    <?}else{?>
+                    <input type="checkbox" checked name="published" id="checkboxChecked" value="1">
+                    <label for="checkboxChecked">Публикувано </label>
+                    <div class="editLabel">
+                      <br>
+                      <label for="checkboxChecked" id="checkboxChecked">
+                        * Размаркирай за сваляне на публикацията
+                      </label>
+                    </div>
+                    <div class="text-left mt-3, unchecked-box">
+                      <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис/сваляне</button>
+                      <a href="pageAbout.php" class="btn-get-started">Отказ</a>
+                    </div>
+                    <div class="text-left mt-3, save-box1" >
+                      <button name="save-box1" class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис на промените</button>
+                      <a href="pageAbout.php" class="btn-get-started">Отказ</a>
+                    </div>
+
+                  <?}
+                  ?>
               </div>
               <br>
-              <label for="published" id="editLabel">Публикуване</label>
-              <br><br>
-              <?php
-              $publishedYes=$pageAbout->published;
-              if( $publishedYes == 0 ){?>
-                Маркирай за публикуване: <input type="checkbox" id="checkboxUnChecked" name="published" value="1">
-                <div class="editLabel"><br><p>* Моля, отбележете за да Публикувате.</p></div>
-              <?}else{?>
-                Публикувано: <input type="checkbox" checked id="checkboxChecked" name="published" value="1">
-                <div class="editLabel"><br><p>* Размаркирайте за сваляне на публикацията</p></div>
-              <?}
-              ?>
-              <br>
-              <div class="text-left mt-3">
-              <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис</button>
-                <a href="pageAbout.php" class="btn-get-started">Отказ</a>
-              </div>
+
+
+
             </form>
         </div>
 

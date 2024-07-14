@@ -21,7 +21,7 @@ require_once 'header-html.php';
                   <h2><?php echo $pageAbout1->title ?></h2>
                   <h3><?php echo $pageAbout1->subtitle ?></h3>
                   <p><?php echo $pageAbout1->text ?></p>
-                  <center><video autoplay="" hide-on-mobile="" loop="" muted="" playsinline="" preload="metadata" width="60%">
+                  <center><video controls="" hide-on-mobile="" loop="" muted="" playsinline="" preload="metadata" width="60%">
                     <?php echo "<source src='" . $pageAbout1->image . "'>";?>>
                   </video></center>
                 </div>

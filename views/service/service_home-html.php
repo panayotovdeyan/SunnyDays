@@ -28,7 +28,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
           </div>
           <div class="right">
             <!-- Content for the right section -->
-            <p>Ние проектираме и изграждаме соларни централи от всякакъв размер и тип. Вниманието към детайлите, голям опит и оборудване от висок клас ни позволяват да гарантираме ефективността на нашите фотоволтаични системи в продължение на много години.</p>
+            <p>Ние проектираме и изграждаме соларни централи от всякакъв размер и тип. Вниманието към детайлите, големият опит и оборудването от висок клас ни позволяват да гарантираме ефективността на нашите фотоволтаични системи в продължение на много години.</p>
           </div>
         </div>
 
@@ -37,7 +37,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
         <!-- ======= Services Section 1 ======= -->
         <?php
             if( $service1->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="500">
             <a href="/menu/service/service_1.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-world"></i></div>
@@ -52,7 +52,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
         <!-- ======= Services Section 2 ======= -->
         <?php
             if( $service2->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="700">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4><a href="/profile.php">
@@ -74,7 +74,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
         <!-- ======= Services Section 3 ======= -->
         <?php
             if( $service3->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="700">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="900">
             <a href="/menu/service/service_3.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -90,7 +90,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
         <!-- ======= Services Section 4 ======= -->
         <?php
             if( $service4->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="500">
             <a href="/menu/service/service_4.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -104,7 +104,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
                   <!-- ======= Services Section 5 ======= -->
         <?php
             if( $service5->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="700">
             <a href="/menu/service/service_5.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>
@@ -118,7 +118,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
                   <!-- ======= Services Section 6 ======= -->
         <?php
             if( $service6->published == 1 ){?>
-          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="700">
+          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="900">
             <a href="/menu/service/service_6.php">
              <div class="icon-box">
                 <div class="icon"><i class="bx bx-home"></i></div>

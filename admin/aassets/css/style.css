@@ -1443,9 +1443,9 @@ section {
 }
 
 .headerTable {
-  background: rgba(46, 149, 175, 0.95);
+  background: rgba(125, 51, 194, 0.95);
   transition: all 0.5s;
-  z-index: 997;
+  z-index: 999;
   height: 40px;
   color: white;
   border: 3px solid #dddddd;
@@ -1476,21 +1476,6 @@ section {
   font-style: italic;
   }
 
-#checkboxUncheck {
-  background-color:#b159b9;
-  height: 20px;
-  width: 20px;
-}
-
-#checkboxChecked:checked + span {
-  text-decoration: line-through;
-  color: red;
-  background-color:#18d26e;
-  height: 20px;
-  width: 20px;
-
-}
-
 .containerService {
   display: flex;
 }
@@ -1502,3 +1487,70 @@ section {
 .right {
   text-align: right;
 }
+
+.btn-input-img {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 10px 28px;
+  transition: 0.5s;
+  border: 2px solid #0a51d4;
+  color: #eee;
+  background-color:rgba(111, 116, 122, 0.623);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.publish-box {
+  background-color: transparent;
+  border: solid;
+  padding: 20px;
+}
+
+#checkboxUnChecked {
+  color: red;
+  margin-bottom: 20px;
+}
+
+#checkboxChecked {
+  color: green;
+  background-color:#d5e0da;
+  margin-bottom: 20px;
+}
+
+.checked-box {
+  display: none;
+}
+
+[type="checkbox"]:checked ~ .checked-box {
+  display: block;
+}
+
+[type="checkbox"]:checked ~ .unchecked-box {
+  display: none;
+}
+
+.save-box {
+  display: none;
+  margin-top: 10px;
+}
+
+.save-box1 {
+  display: none;
+  margin-top: 10px;
+}
+
+[type="checkbox"]:not(:checked) ~ .save-box {
+  display: block;
+}
+
+[type="checkbox"]:checked ~ .save-box1 {
+  display: block;
+}
+
+/* [type="checkbox"]:not(:checked) ~ .save-box {
+  display: none;
+} */
