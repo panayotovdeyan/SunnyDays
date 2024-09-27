@@ -25,16 +25,16 @@ $activemenu = 'contact'; // $activemenu - за активна страница
         <div class="row" data-aos="fade-up">
           <div class="col-lg-6">
             <div class="info-box mb-4">
-              <i class="bx bx-map"></i>
+              <a href="https://maps.app.goo.gl/tw61st4buxxcoDt99"><i class="bx bx-map"></i></a>
               <h3>Адрес</h3>
-              <p>гр. София, бул. Цариградско шосе, 145, п.к. 1784</p>
-              <p>в сградата на SOFIA OFFICE CENTER</p>
+              <p>София, бул. Цариградско шосе, 145, п.к. 1784</p>
+              <p>SOFIA OFFICE CENTER</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
-              <i class="bx bx-envelope"></i>
+              <a href='/'><i class="bx bx-envelope"></i></a>
               <h3>Пишете ни</h3>
               <p>contact@sunnydays.com</p>
             </div>

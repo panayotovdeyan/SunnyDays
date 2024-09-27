@@ -85,12 +85,13 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
 
           <a href="/menu/contact.php"<?php if ($activemenu == 'contact'){ ?>class="active"<?php } ?>>Контакти</a>
           <?php
-            if(!$loged ){?>
-              <a href="/reg.php" <?php if ($activemenu == 'reg'){ ?>class="active"<?php } ?>>Регистрация</a>
-            <?}?>
-          <?php
             if( !$loged ){?>
-              <a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>><img src="/assets/img/Icons/login_white_24dp.svg" class="icon1">Вход</a>
+              <li class="dropdown"><a <?php if ($activemenu == 'account'){ ?>class="active"<?php } ?> ><img src="/assets/img/Icons/person_white_24dp.svg"> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>>Вход<img src="/assets/img/Icons/login_white_24dp.svg" class="icon1"></a></li>
+                  <li><a href="/reg.php" <?php if ($activemenu == 'reg'){ ?>class="hidden" <?php } ?>>Регистрация<img src="/assets/img/Icons/how_to_reg_24dp_FFFFFF.svg" class="icon1"></a></li>
+                </ul>
+              </li>
             <?}else{?>
               <a href="/logout.php" <?php if ($activemenu == 'logout'){ ?>class="active"<?php } ?>>Изход<img src="/assets/img/Icons/logout_white_24dp.svg" class="icon2"></a>
             <?}?>

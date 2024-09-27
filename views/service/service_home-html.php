@@ -53,12 +53,13 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
         <?php
             if( $service2->published == 1 ){?>
           <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="700">
+            <a href="/menu/service/service_2.php">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4><a href="/profile.php">
               <?php
               if (isset($_SESSION ['loged']) && ($_SESSION ['loged']) == true){
-                  echo $service2->service_name ?></a></h4>
+                ?><a href="/profile.php"><?php echo $service2->service_name ?></a></h4>
               <?php
               }else{
                   ?><a href="/menu/service/service_2.php"><?php echo $service2->service_name ?></a></h4>
@@ -77,7 +78,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
           <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="900">
             <a href="/menu/service/service_3.php">
              <div class="icon-box">
-                <div class="icon"><i class="bx bx-home"></i></div>
+                <div class="icon"><i class="bx bx-support"></i></div>
                 <h4><a><?php echo $service3->service_name ?></a></h4>
                 <p><?php echo $service3->service_subname ?></p>
               </div>
@@ -93,7 +94,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
           <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="500">
             <a href="/menu/service/service_4.php">
              <div class="icon-box">
-                <div class="icon"><i class="bx bx-home"></i></div>
+                <div class="icon"><i class="bx bx-wallet"></i></div>
                 <h4><a><?php echo $service4->service_name ?></a></h4>
                 <p><?php echo $service4->service_subname ?></p>
               </div>
@@ -107,7 +108,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
           <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="700">
             <a href="/menu/service/service_5.php">
              <div class="icon-box">
-                <div class="icon"><i class="bx bx-home"></i></div>
+                <div class="icon"><i class="bx bx-tv"></i></div>
                 <h4><a><?php echo $service5->service_name ?></a></h4>
                 <p><?php echo $service5->service_subname ?></p>
               </div>
@@ -121,7 +122,7 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
           <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="fade-up" data-aos-delay="900">
             <a href="/menu/service/service_6.php">
              <div class="icon-box">
-                <div class="icon"><i class="bx bx-home"></i></div>
+                <div class="icon"><i class="bx bx-usb"></i></div>
                 <h4><a><?php echo $service6->service_name ?></a></h4>
                 <p><?php echo $service6->service_subname ?></p>
               </div>
@@ -129,12 +130,10 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
           </div>
           <?}?>
       </div>
+      
     </div>
     </section>
 
   </main><!-- End #main -->
   <?php require_once 'C:\xampp\htdocs\SunnyDays\views\footer-html.php'; ?>
   </body>
-
-
-
