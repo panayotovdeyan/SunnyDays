@@ -29,6 +29,7 @@
             <h4>Нашите услуги</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="/login.php">Онлайн мониторинг</a></li>
+              <p style="text-align: center; color: grey"><em> (само за регистрирани потребители)</em></p>
             </ul>
           </div>
 
