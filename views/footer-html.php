@@ -28,7 +28,7 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Нашите услуги</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/login.php">Онлайн мониторинг</a></li>
+              <button class="btn btn-link" id="onlinMonitoring">Онлайн мониторинг</button>
               <p style="text-align: center; color: grey"><em> (само за регистрирани потребители)</em></p>
             </ul>
           </div>
@@ -55,7 +55,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>SUNNY DAYS</span></strong>. All Rights Reserved
+        2024 &copy; Copyright <strong><span>SUNNY DAYS</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -78,6 +78,11 @@
   <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Custom JS Files -->
+  <script src="../assets/js/form-validation.js"></script>
+  <script src="../assets/js/bom.js"></script>
+
 
   <!-- Template Main JS File -->
   <script src="/assets/js/main.js"></script>

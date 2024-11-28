@@ -1774,3 +1774,46 @@ section {
     text-align: center;
     color: black;
   } */
+
+  .error {
+    color: rgb(199, 18, 18);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
+  color: #970404;
+}
+
+.password-wrapper .eye-icon:hover {
+  color: #9e0808;
+}
+
+#city-select {
+  width: 15%;
+  height: 5%;
+}
+
+#enterButtonLogin {
+  position: relative;
+  margin-left: 105;
+  top: 10px;
+  font-weight: bold;
+  }
+
+#enterButtonReg {
+  position: relative;
+  top: 10px;
+  margin-left: 95px;
+  font-weight: bold;
+  }

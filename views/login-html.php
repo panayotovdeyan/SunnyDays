@@ -37,26 +37,21 @@ $activemenu = 'login'; // $activemenu - за активна страница
               <input type="hidden" name="login" value="0" id="login">
               <input type="hidden" name="csrf_token" value="<?=$_SESSION['csrf_token'] ?>" >
                 <div class="imput-wrapper">
-                    <label for="email">Имейл</label>
-                    <input type="email" name="email" id="email" required>
+                  <label for="email">Имейл</label>
+                  <input type="email" name="email" id="email" required>
                 </div>
                 <br>
                 <div class="imput-wrapper">
-                    <label for="password">Парола</label>
-                    <input type="password" name="password" id="password" required>
+                  <label for="" id="label">Парола<a style="color: red;">*</a></label>
+                  <input id="input" type="password" name="password" required>
+                  <span id="toggle-password" class="password-wrapper eye-icon">&#128065;</span> <!-- Икона за око -->
+                  <small class="error"></small>
                 </div>
                 <br>
-                <button class="btn btn-primary active" id="enterButton" type="submit" onclick="document.getElementById('login').value=1;">Влез</button>
-                <style>
-                #enterButton {
-                position: relative;
-                top: 10px;
-                left: 105px;
-                }
-                </style>
+                <button class="btn btn-primary active" id="enterButtonLogin" type="submit" onclick="document.getElementById('login').value=1;">Влез</button>
                 <br>
                 <br>
-                <a id="enterButton" style="font-weight: bold"; href='/reg.php' class="btn btn-link">Регистрация</a>
+                <a id="enterButtonReg" class="btn btn-link">Регистрация</a>
             </form>
     <br>
       </div>
