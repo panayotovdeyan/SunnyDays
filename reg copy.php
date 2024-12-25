@@ -19,7 +19,8 @@ if( isset($_REQUEST['register']) && $_REQUEST['register'] == 1 && !$loged ){
         die("Not found!");
     }
 
-    $email = cleanInput($_REQUEST['regEmail']);
+
+    $email = cleanInput($_REQUEST['registerEmail']);
     $email = mysqli_real_escape_string($conn, $email);
     $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 
@@ -32,26 +33,32 @@ if( isset($_REQUEST['register']) && $_REQUEST['register'] == 1 && !$loged ){
     $city = cleanInput($_REQUEST['regCity']);
     $city = mysqli_real_escape_string($conn, $city);
 
-    $pass = cleanInput($_REQUEST['regPassword']);
+    $pass = cleanInput($_REQUEST['registerPassword']);
     $pass = mysqli_real_escape_string($conn, $pass);
 
     $pass2 = cleanInput($_REQUEST['confirmPassword']);
     $pass2 = mysqli_real_escape_string($conn, $pass2);
 
+
+
     if( !empty($email)  //not empty email
-    
             && !empty($pass) 
             && !empty($pass2) 
             && !empty($name) 
             && !empty($family) 
-            && $pass == $pass2 
-            ){
+            && $pass == $pass2 ){
 
-        $passHashed = password_hash($pass, PASSWORD_DEFAULT);
+        $pass3 = password_hash($pass, PASSWORD_DEFAULT);
+
+    var_dump($pass, '<br>');
+    var_dump($pass3, '<br>');
+    var_dump(password_verify($pass, $pass3));
+    exit;
 
         // check if data already exists
         $sqlCheckEmail = "SELECT * FROM `users` WHERE `email` = '$email'";
         $resultCheckEmail = mysqli_query($conn, $sqlCheckEmail);
+
         if(mysqli_num_rows($resultCheckEmail) > 0) {
             // data already exists
             echo "Потребител с имейл - $email, вече има регистрация в сайта";
@@ -60,7 +67,7 @@ if( isset($_REQUEST['register']) && $_REQUEST['register'] == 1 && !$loged ){
             <?php
         } else {
                 $querySQL = "INSERT INTO `users`(`name`, `family`, `email`, `password`, `city`) 
-                                    VALUES ('$name','$family','$email','$passHashed', '$city')";
+                                    VALUES ('$name','$family','$email','$pass3', '$city')";
                 $result = mysqli_query($conn, $querySQL);
                 echo "Потребител $name $family е регистриран успешно!";
                 ?>
@@ -70,8 +77,6 @@ if( isset($_REQUEST['register']) && $_REQUEST['register'] == 1 && !$loged ){
                     $rformerror = true;
                 }
             }
-    }else{
-        die('Има празно поле, Моля прегледайте всички полета');
     }
 }
 

@@ -10,28 +10,11 @@ $activemenu = 'login'; // $activemenu - за активна страница
     <main id="main">
 
     <!-- ======= Section Login ======= -->
-    <style>
-    #login-form .imput-wrapper label { width:100px; display: inline-block; }
-    </style>
     <section class="inner-page" id="loginSection">
-      <div class="container" data-aos="fade-up">
-
+      <div class="login-container" data-aos="fade-up">
         <div class="section-header">
           <h2>Вход</h2>
-          <style>
-            body {
-            font-family: Arial, sans-serif;
-            background-color: #F5F5F5;
-            }
-            h2 {
-            color: #333333;
-            position: relative;
-            left: 105px;
-            }
-            /* Additional CSS rules go here */
-        </style>
         </div>
-        <br>
         <div class="col-lg-6">
             <form method="post" id="login-form">
               <input type="hidden" name="login" value="0" id="login">
@@ -40,23 +23,21 @@ $activemenu = 'login'; // $activemenu - за активна страница
                   <label for="email">Имейл</label>
                   <input type="email" name="email" id="email" required>
                 </div>
-                <br>
                 <div class="imput-wrapper">
-                  <label for="" id="label">Парола<a style="color: red;">*</a></label>
-                  <input id="input" type="password" name="password" required>
-                  <span id="toggle-password" class="password-wrapper eye-icon">&#128065;</span> <!-- Икона за око -->
+                  <label for="loginPassword" id="label">Парола<a style="color: red;">*</a></label>
+                  <div class="password-container">
+                      <input type="password" name="loginPassword" id="loginPassword" required>
+                      <img src="assets/img/Icons/visibility_18dp_000000.svg" alt="Показване на паролата" class="toggle-password" id="toggleLoginPassword">
+                  </div>
                   <small class="error"></small>
-                </div>
-                <br>
-                <button class="btn btn-primary active" id="enterButtonLogin" type="submit" onclick="document.getElementById('login').value=1;">Влез</button>
-                <br>
-                <br>
-                <a id="enterButtonReg" class="btn btn-link">Регистрация</a>
+                </div>                
+                <button class="btn btn-primary active login" id="enterButtonLogin" type="submit" onclick="document.getElementById('login').value=1;">Влез</button>
+                <a id="enterButtonReg" class="btn btn-link login">Регистрация</a>
             </form>
-    <br>
+        </div>
       </div>
     </section><!-- End Inner Page -->
-
   </main><!-- End #main -->
+</body>
 
-  <?php require_once 'footer-html.php'; ?>
+<?php require_once 'footer-html.php'; ?>

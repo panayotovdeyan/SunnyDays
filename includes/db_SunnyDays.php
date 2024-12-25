@@ -5,7 +5,7 @@ $dbpass = "";
 $db = "SunnyDays";
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Connection with db failed: " . mysqli_connect_error());
 }
 $GLOBALS['SQL'] = $conn;
 

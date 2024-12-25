@@ -1662,38 +1662,22 @@ section {
   position: relative;
 }
 
-#loginSection {
-  width: 100%;
-  height: calc(80 vh - 110px);
-  background: url("../img/welcome2.png") center;
-  background-size: cover;
-  position: relative;
-  
-}
-
 #myChart2 {
   height: 250px;
   position: relative;
 }
 
-#registerSection {
-  width: 100%;
-  height: 100%;
-  background: url("../img/Registration3.png") top center;
-  background-size: cover;
+.imput-wrapper label {
+  width:40%;
+  max-width: 100%;
+  display: inline-block;
+  font-family: sans-serif;
+  color:#ca9f11;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: x-large;
   position: relative;
 }
-
-#register-form .imput-wrapper label {
-   width:200px;
-   display: inline-block;
-   font-family: sans-serif;
-   color:#ca9f11;
-   font-weight: bold;
-   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-   font-size: x-large;
-
-  }
 
   .icon1 {
     margin-right: 5px;
@@ -1759,61 +1743,144 @@ section {
     text-align: right;
   }
   
-
-  /* .footer-body {
-    background-color: rgb(219, 255, 255);
-  }
-  
-  .footer-body p {
-    font-size: 20px;
-    color: #b46f08;
-  }
-  
-  .footer-body h2 {
-    font-size: 40px;
-    text-align: center;
-    color: black;
-  } */
-
-  .error {
-    color: rgb(199, 18, 18);
-    font-weight: bold;
-    font-size: 18px;
+.error {
+  color: rgb(131, 1, 1);
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #ccc;
 }
 
-.password-wrapper {
+.password-container .error {
+  position: absolute;
+  bottom: -30px; /* Под полето за парола */
+}
+
+
+.passInfo {
+  background: url(../img/Icons/info_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg);
+}
+
+.emailNewsletter {
+  display: block;
+}
+
+.section-header {
   position: relative;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #a33636;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  color: #ca9f11;
+  z-index: 999;
 }
 
-.password-wrapper .eye-icon {
+/* REGISTER FORM */
+.reg-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  max-width: 400%;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.input-wrapper,
+.password-container {
+  position: relative;
+  width: 100%; /* Ширината е унифицирана */
+  max-width: 600px;
+  margin-bottom: 20px; /* Отстояние между полетата */
+}
+
+.reg-container input,
+#regCity {
+  width: 100%; /* Унифицирана ширина */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.password-container {
+  display: flex;
+  align-items: center; /* Подравняване по вертикалата */
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px; /* Място за иконата */
+}
+
+.password-container .toggle-password {
   position: absolute;
   right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  font-size: 20px;
-  color: #970404;
 }
 
-.password-wrapper .eye-icon:hover {
-  color: #9e0808;
-}
-
-#city-select {
-  width: 15%;
-  height: 5%;
-}
-
-#enterButtonLogin {
-  position: relative;
-  margin-left: 105;
-  top: 10px;
-  font-weight: bold;
-  }
-
-#enterButtonReg {
+#enterButtonReg.reg {
   position: relative;
   top: 10px;
-  margin-left: 95px;
   font-weight: bold;
-  }
+  text-transform: uppercase;
+  display: inline-block;
+  margin-left: 230px;
+}
+
+#enterButtonLogin.reg {
+  position: relative;
+  top: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-left: 240px;
+}
+
+#registerSection {
+  width: auto;
+  height: auto;
+  background: url("../img/Registration3.png") top center;
+  background-size: 100%;
+  position: relative;
+}
+
+
+  /* LOGIN FORM */
+#loginSection {
+  width: 100%;
+  height: calc(80 vh - 110px);
+  background: url("../img/welcome2.png") right;
+  background-size:cover;
+  position: relative;
+}
+
+.login-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 425px;
+  margin-left: 50px;
+  padding: 20px;
+  /* background-color: #ece5e5; */
+}
+
+#enterButtonLogin.login {
+  position: relative;
+  margin-left: 20px;
+  top: 10px;
+  font-weight: bold;
+}
+
+#enterButtonReg.login {
+  position: relative;
+  top: 10px;
+  margin-left: 15px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #ca9f11;
+}

@@ -4,9 +4,6 @@
 $activemenu = 'services'; // $activemenu - за активна страница
 require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
 ?>
-
-
-
   <body>
   <main id="main">
 

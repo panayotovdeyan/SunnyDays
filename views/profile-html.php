@@ -19,7 +19,7 @@ require_once 'head-html.php';
       <div class="container">
         
         <div class="member">
-          <h4><?php echo "<p>{$_SESSION['user']['name']} {$_SESSION['user']['family']}, добре дошли!</p>"; ?></h4>
+          <h4><?php echo "<p>{$_SESSION['user']['name']} {$_SESSION['user']['family']}, от град {$_SESSION['user']['city']} добре дошли! </p>"; ?></h4>
         </div>
       
         <div class="section-title">

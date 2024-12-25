@@ -6,10 +6,9 @@ $activemenu = 'about'; // $activemenu - за активна страница
 require_once 'header-html.php';
 ?>
 
-<main id="main">
-
+<body>
 <!-- ======= Menu About ======= -->
-  <body class = "about-body">
+  <main class = "about-body" id="main">
     <section id="about1" class="inner-page" data-aos="fade-up">
       <div class="container">
 
@@ -72,11 +71,10 @@ require_once 'header-html.php';
               <?}
             ?>
 
-<!-- ======= End Menu About ======= -->
+          <!-- ======= End Menu About ======= -->
       </div>
     </section>
-  </body>
-</main><!-- End #main -->
-
+  </main><!-- End #main -->
+</body>
 
 <?php require_once 'footer-html.php'; ?>

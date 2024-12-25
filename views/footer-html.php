@@ -28,7 +28,7 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Нашите услуги</h4>
             <ul>
-              <button class="btn btn-link" id="onlinMonitoring">Онлайн мониторинг</button>
+              <button class="btn btn-link" id="onlineMonitoring">Онлайн мониторинг</button>
               <p style="text-align: center; color: grey"><em> (само за регистрирани потребители)</em></p>
             </ul>
           </div>
@@ -40,7 +40,7 @@
           Моля, въведете вашият email
           </p>
 
-            <div class="imput-wrapper">
+            <div class="imput-wrapper emailNewsletter e-hidden">
               <form method="post" action="/subscribed.php">
               <input type="email" name="email" class="form-control">
               <input type="submit" value="Subscribe">
@@ -79,13 +79,17 @@
   <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
     <!-- Custom JS Files -->
   <script src="../assets/js/form-validation.js"></script>
   <script src="../assets/js/bom.js"></script>
+  <!-- <script src="../assets/js/moment.js"></script> -->
 
 
-  <!-- Template Main JS File -->
-  <script src="/assets/js/main.js"></script>
+
+
 
 </body>
 

@@ -10,65 +10,66 @@ $activemenu = 'reg'; // $activemenu - за активна страница
     <main id="main">
 
     <!-- ======= Registration Section ======= -->
-    <style>
-    /* #register-form {display: none} */
-    #register-form .imput-wrapper label { width:200px; display: inline-block; }
-    </style>
     <section class="inner-page" id=registerSection>
-        <div class="container" data-aos="fade-up">
-
-    <br>
-    <form method="post" id="register-form" name="registration">
-        
-        <input type="hidden" name="register" value="0" id="register">
-        <input type="hidden" name="csrf_token" value="<?=$_SESSION['csrf_token'] ?>" >
-        <div class="imput-wrapper">
-            <label for="registerEmail">Email<a style="color: red;">*</a></label>
-            <input type="email" name="registerEmail" id="registerEmail" required>
-            <small class="error"></small>
+        <div class="reg-container" data-aos="fade-up">
+            <div class="section-header">
+                <h2>Регистрация</h2>
+            </div>
+            <br>
+            <br>
+            <form method="post" id="register-form"> 
+                
+                <input type="hidden" name="register" value="0" id="register">
+                <input type="hidden" name="csrf_token" value="<?=$_SESSION['csrf_token'] ?>" >
+                <div class="imput-wrapper">
+                    <label for="regEmail">Имейл</label>
+                    <input type="email" name="regEmail" id="regEmail" required>
+                    <small class="error"></small>
+                </div>
+                <br>
+                <div class="imput-wrapper">
+                    <label for="firstName">Име</label>
+                    <input type="text" name="firstName" id="firstName" required>
+                    <small class="error"></small>
+                </div>
+                <br>
+                <div class="imput-wrapper">
+                    <label for="lastName">Фамилия</label>
+                    <input type="text" name="lastName" id="lastName" required>
+                    <small class="error"></small>
+                </div>
+                <br>
+                <div class="imput-wrapper">
+                    <label for="regCity" id="label">Град</label>
+                    <select id="regCity" name="regCity">
+                        <option value="" selected >Изберете</option>
+                    </select>
+                </div>
+                <br>
+                <br>
+                <div class="imput-wrapper">
+                    <div class="password-container">
+                        <label for="regPassword">Парола</label>
+                        <input type="password" name="regPassword" id="regPassword" required>
+                        <img src="assets/img/Icons/visibility_18dp_000000.svg" alt="Показване на паролата" class="toggle-password eye-icon" id="toggleRegPassword">
+                        <small class="error"></small>
+                    </div>
+                </div>
+                <br>
+                <div class="imput-wrapper">
+                    <label for="confirmPassword">Повтори паролата</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" required>
+                    <small class="error"></small>
+                </div>
+                <br>
+                <button class="btn btn-primary active reg" id="enterButtonReg" type="submit" onclick="document.getElementById('register').value=1;">Регистрирай</button>
+                <br>
+                <a id="enterButtonLogin" style="color: orange; font-weight: bold;" href='/login.php' class="btn btn-link reg">Вход/Влез</a>
+            </form>
         </div>
         <br>
-        <div class="imput-wrapper">
-            <label for="" id="label">Име<a style="color: red;">*</a></label>
-            <input id="input" type="text" name="firstName" maxlength="21" required>
-            <small class="error"></small>
-        </div>
-        <br>
-        <div class="imput-wrapper">
-            <label for="" id="label">Фамилия</label>
-            <input id="input" type="text" name="lastName" maxlength="21">
-            <small class="error"></small>
-        </div>
-        <br>
-        <div class="imput-wrapper">
-            <label for="city-select" id="label">Град</label>
-            <select id="city-select">
-                <option value="" selected >Изберете</option>
-            </select>
-        </div>
-        <br>
-        <br>
-        <div class="imput-wrapper">
-            <label for="" id="label">Парола<a style="color: red;">*</a></label>
-            <input id="input" type="password" name="password" required>
-            <span id="toggle-password" class="password-wrapper eye-icon">&#128065;</span> <!-- Икона за око -->
-            <small class="error"></small>
-        </div>
-        <br>
-        <div class="imput-wrapper">
-            <label for="" id="label">Повтори паролата</label>
-            <input id="input" type="password"  name="confirmPassword" required>
-            <small class="error"></small>
-        </div>
-        <br>
-        <button class="btn btn-primary active" id="enterButtonReg" type="submit" onclick="document.getElementById('register').value=1;">Регистрирай</button>
-        <br>
-        <br>
-        <a id="enterButtonLogin" style="color: orange;" class="btn btn-link">Вход/Влез</a>
-    </form>
-    <br>
     </section><!-- End Inner Page -->
 
     </main><!-- End #main -->
-    
+
     <?php require_once 'footer-html.php'; ?>

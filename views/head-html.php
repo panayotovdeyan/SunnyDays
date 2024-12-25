@@ -29,6 +29,17 @@ if( !defined('SunnyDays') ) exit();
   <!-- Template Main CSS File -->
   <link href="/assets/css/style.css" rel="stylesheet">
 
+  <!-- Jquery Original -->
+  <script src="../assets/jquery/jquery.js"></script>
+
+  <!-- Jquery Custom -->
+  <script src="../assets/jquery/jquerySunnydays.js"></script>
+  <script src="../assets/jquery/jqueryHelpToggle.js"></script>
+
+  <!-- MOMENTJS URL -->
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+
+
   <!-- =======================================================
   * Template Name: Day
   * Updated: Mar 10 2023 with Bootstrap v5.2.3

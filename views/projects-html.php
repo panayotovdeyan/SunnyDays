@@ -6,11 +6,11 @@ if( !defined('SunnyDays') ) exit();
   ?>
   
 
-  <body class = "projects-body">
+  <body>
   
     <?php require_once 'header-html.php'; ?>
 
-  <main id="main">
+  <main class="projects-body" id="main">
 
 <!-- ======= Menu Projects ======= -->
     <section id="projects" class="inner-page" data-aos="fade-up">
@@ -49,6 +49,6 @@ if( !defined('SunnyDays') ) exit();
       </div>
     </section>
   </main><!-- End #main -->
-  </body>
+</body>
 
 <?php require_once 'footer-html.php'; ?>

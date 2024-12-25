@@ -15,25 +15,29 @@ console.log(height); // дава ни височината на видимата
 height = window.outerHeight;
 console.log(height); // дава ни височината на страницата но на цялата част на страницата
 
+var toLoginPage = () => window.location.href = '/login.php';
+var toRegPage = () => window.location.href = '/reg.php';
 
 //window.location.href -> отваря в СЪЩИЯТ прозорец
-document.getElementById('enterButtonLogin').addEventListener('click', () => {
+    document.getElementById('enterButtonLogin').addEventListener('click', () => {
+        toLoginPage();
+    });
 
-    window.location.href = '/login.php';
-});
-
+    document.getElementById('enterButtonReg').addEventListener('click', () => {
+        toRegPage();
+    });
 
 //window open() -> отваря в НОВ прозорец или промпт
 //window.open(url, windowName, [windowFeatures])
-document.getElementById('enterButtonReg').addEventListener('click', () => {
-    let url = '/reg.php';
-    let windowFeatures = 'height=500, width=500';
-    let windowRegPage = window.open(url, 'registrationForm', windowFeatures);
-    setTimeout(() => {
-        windowRegPage.resizeTo(1400, 700);
-        windowRegPage.moveTo(100, 300);
-    }, 5000)
-});
+// document.getElementById('enterButtonReg').addEventListener('click', () => {
+//     let url = '/reg.php';
+//     let windowFeatures = 'height=500, width=500';
+//     let windowRegPage = window.open(url, 'registrationForm', windowFeatures);
+//     setTimeout(() => {
+//         windowRegPage.resizeTo(1400, 700);
+//         windowRegPage.moveTo(100, 300);
+//     }, 5000)
+// });
 
 //setInterval()
 // let counter = 0;
@@ -49,14 +53,70 @@ document.getElementById('enterButtonReg').addEventListener('click', () => {
 
 // }, 2000);
 
-// confirm message във футъра "онлайн мониторинг"
-document.getElementById('onlinMonitoring').onclick = () => {
-    const userConfirmed = confirm('Необходима е регистрация');
-    if (userConfirmed) {
-        window.location.href = '/login.php';
-        console.log('Потребителят избра OK');
-    } else {
-        window.location.href = '#';
-        console.log('Потребителят избра Cancel');
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Регистрация
+    const toggleRegPassword = document.getElementById("toggleRegPassword");
+    if (toggleRegPassword) {
+        toggleRegPassword.addEventListener("click", function () {
+            const passwordInput = document.getElementById("regPassword");
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+
+            const newIconPath = type === "password" 
+                ? "/assets/img/Icons/visibility_18dp_000000.svg" 
+                : "/assets/img/Icons/visibility_off_18dp_000000.svg";
+            this.setAttribute("src", newIconPath);
+        });
     }
-};
+
+    // Вход
+    const toggleLoginPassword = document.getElementById("toggleLoginPassword");
+    if (toggleLoginPassword) {
+        toggleLoginPassword.addEventListener("click", function () {
+            const passwordInput = document.getElementById("loginPassword");
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+
+            const newIconPath = type === "password" 
+                ? "/assets/img/Icons/visibility_18dp_000000.svg" 
+                : "/assets/img/Icons/visibility_off_18dp_000000.svg";
+            this.setAttribute("src", newIconPath);
+        });
+    }
+});
+
+// За да вградите CSV файл с имената на градовете в HTML код и да запълните <select> елемента, 
+//може да използвате JavaScript и библиотека като PapaParse за четене на CSV файлове. 
+//Ето как да го направите:
+// Път към CSV файла
+const csvFilePath = '/assets/js/municipalities.csv';
+
+// Елементът <select>, в който ще добавим градовете
+const selectElement = document.getElementById('regCity');
+
+// Функция за зареждане на CSV файла
+function loadCSV(filePath, callback) {
+    fetch(filePath)
+        .then(response => response.text())
+        .then(data => {
+            const rows = data.split('\n');
+            callback(rows);
+        })
+        .catch(error => console.error('Грешка при зареждането на CSV файла:', error));
+}
+
+// Функция за добавяне на градове в <select>
+function populateSelect(cities) {
+    cities.forEach(city => {
+        if (city.trim()) { // Проверка за празни редове
+            const option = document.createElement('option');
+            option.value = city.trim();
+            option.textContent = city.trim();
+            selectElement.appendChild(option);
+        }
+    });
+}
+
+// Зареждане на CSV файла и добавяне на градове
+loadCSV(csvFilePath, populateSelect);

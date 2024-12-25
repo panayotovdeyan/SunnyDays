@@ -38,7 +38,7 @@ if( isset($_REQUEST['login']) && $_REQUEST['login'] == 1 && !$loged ){
         incrementWrongLogins();
         die("Not found!");
     }
-    $pass = cleanInput($_REQUEST['password']);
+    $pass = cleanInput($_REQUEST['loginPassword']);
     $pass = mysqli_real_escape_string($conn, $pass);
     $email = cleanInput($_REQUEST['email']);
     $email = mysqli_real_escape_string($conn, $email);
@@ -47,11 +47,18 @@ if( isset($_REQUEST['login']) && $_REQUEST['login'] == 1 && !$loged ){
 
         //check for valid user
 
-        $querySQL = "SELECT userId, name, family, email, password, admin FROM `users` WHERE email='$email'";
+        $querySQL = "SELECT userId, name, family, email, password, city, admin FROM `users` WHERE email='$email'";
         $result = mysqli_query($conn, $querySQL);
         if( !empty($result) ){
             $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
             $count = mysqli_num_rows($result);
+
+            // var_dump($pass, '<br>');
+            // var_dump($data[0]['password'], '<br>');
+            // var_dump(password_verify($pass, $data[0]['password']));
+            // exit;
+
+
             if( password_verify($pass, $data[0]['password']) ){
                 $loged = true;
                 $_SESSION['user']['userId'] = $data[0]['userId'];
@@ -59,6 +66,8 @@ if( isset($_REQUEST['login']) && $_REQUEST['login'] == 1 && !$loged ){
                 $_SESSION['user']['family'] = $data[0]['family'];
                 $_SESSION['user']['email'] = $data[0]['email'];
                 $_SESSION['user']['admin'] = $data[0]['admin'];
+                $_SESSION['user']['city'] = $data[0]['city'];
+                // var_dump($_SESSION['user']['city']); exit;
             }else{
                 $formerror = true;
                 incrementWrongLogins();
