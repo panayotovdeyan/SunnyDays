@@ -8,6 +8,7 @@ class User{
 	protected 	$password;
 	public		$city;
 	public		$avatar;
+	public		$regDate;
     
 	public function __construct(
 		$Uid='',
@@ -17,7 +18,8 @@ class User{
 		$Uemail='',
 		$Upass='',
 		$Ucity='',
-		$Uavatar=''
+		$Uavatar='',
+		$UregDate=''
 		)
 	{
 		if( (int)$Uid === $Uid && $Uid > 0 )
@@ -31,6 +33,7 @@ class User{
 		$this->password = $Upass;
 		$this->city = $Ucity;
 		$this->avatar = $Uavatar;
+		$this->regDate = $UregDate;
 		if( $this->userId > 0 )
 		{
 			$this->load();
@@ -52,9 +55,10 @@ class User{
 			$this->password = $row['password'];
 			$this->city = $row['city'];
 			$this->avatar = $row['avatar'];
+			$this->regDate = $row['regDate'];
 		}
-
 	}
+	
 	public function insert()
 	{
 		$con = $GLOBALS['SQL'];

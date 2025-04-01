@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', () => {
+
 var myName = 'Deyan Panayotov';
 
 var showName =() =>console.log(myName);
@@ -28,7 +30,7 @@ var toRegPage = () => window.location.href = '/reg.php';
     });
 
 //window open() -> отваря в НОВ прозорец или промпт
-//window.open(url, windowName, [windowFeatures])
+// window.open(url, windowName, [windowFeatures])
 // document.getElementById('enterButtonReg').addEventListener('click', () => {
 //     let url = '/reg.php';
 //     let windowFeatures = 'height=500, width=500';
@@ -54,7 +56,8 @@ var toRegPage = () => window.location.href = '/reg.php';
 // }, 2000);
 
 
-document.addEventListener('DOMContentLoaded', () => {
+//Видимост на паролата
+
     // Регистрация
     const toggleRegPassword = document.getElementById("toggleRegPassword");
     if (toggleRegPassword) {
@@ -84,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
             this.setAttribute("src", newIconPath);
         });
     }
-});
 
 // За да вградите CSV файл с имената на градовете в HTML код и да запълните <select> елемента, 
 //може да използвате JavaScript и библиотека като PapaParse за четене на CSV файлове. 
@@ -120,3 +122,22 @@ function populateSelect(cities) {
 
 // Зареждане на CSV файла и добавяне на градове
 loadCSV(csvFilePath, populateSelect);
+
+
+
+});
+
+// document.getElementById('enterButtonGoOn').addEventListener('click', function (e) {
+//     e.preventDefault(); // Спира стандартното изпращане на формата
+
+
+// });
+
+function setRegisterValue() {
+    if (document.activeElement.id === "enterButtonGoOn") {
+        document.getElementById('register').value = "1";
+    } else if (document.activeElement.id === "enterButtonReg") {
+        document.getElementById('register').value = "2";
+    }
+    return true; // Позволява формата да бъде изпратена
+}

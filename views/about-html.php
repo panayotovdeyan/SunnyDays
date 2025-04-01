@@ -30,7 +30,7 @@ require_once 'header-html.php';
           <!-- ======= Menu About 2 ======= -->
           <?php
             if( $pageAbout2->published == 1 ){?>
-              <section id="about2" class="inner-page">
+              <section id="about2" class="inner-page" data-aos="flip-up">
                 <div class="container">
                   <h2><?php echo $pageAbout2->title ?></h2>
                   <h3><?php echo $pageAbout2->subtitle ?></h3>
@@ -44,7 +44,7 @@ require_once 'header-html.php';
           <!-- ======= Menu About 3 ======= -->
           <?php
             if( $pageAbout3->published == 1 ){?>
-              <section id="about3" class="inner-page">
+              <section id="about3" class="inner-page" data-aos="flip-up">
                 <div class="container">
                   <h2><?php echo $pageAbout3->title ?></h2>
                     <a href="/menu/service/service_home.php" style="text-decoration: underline" >
@@ -60,7 +60,7 @@ require_once 'header-html.php';
           <!-- ======= Menu About 4 ======= -->
           <?php
             if( $pageAbout4->published == 1 ){?>
-              <section id="about4" class="inner-page">
+              <section id="about4" class="inner-page" data-aos="flip-up">
                 <div class="container">
                   <h2><?php echo $pageAbout4->title ?></h2>
                   <h3><?php echo $pageAbout4->subtitle ?></h3>

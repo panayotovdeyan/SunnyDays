@@ -1,6 +1,6 @@
 <?php if( !defined('SunnyDays') ) exit(); ?>
 
-<?php require_once 'C:\xampp\htdocs\SunnyDays\views\head-html.php'; 
+<?php require_once 'C:\xampp\htdocs\SunnyDays\views\head-services-html.php'; 
 $activemenu = 'services'; // $activemenu - за активна страница
 ?>
 
@@ -32,4 +32,4 @@ $activemenu = 'services'; // $activemenu - за активна страница
   </main><!-- End #main -->
 
 
-  <?php require_once 'C:\xampp\htdocs\SunnyDays\views\footer-html.php'; ?>
+  <?php require_once 'C:\xampp\htdocs\SunnyDays\views\footer-services-html.php'; ?>

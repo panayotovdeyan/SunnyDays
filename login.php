@@ -47,12 +47,11 @@ if( isset($_REQUEST['login']) && $_REQUEST['login'] == 1 && !$loged ){
 
         //check for valid user
 
-        $querySQL = "SELECT userId, name, family, email, password, city, admin FROM `users` WHERE email='$email'";
+        $querySQL = "SELECT userId, name, family, email, password, city, admin, regDate FROM `users` WHERE email='$email'";
         $result = mysqli_query($conn, $querySQL);
         if( !empty($result) ){
             $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
             $count = mysqli_num_rows($result);
-
             // var_dump($pass, '<br>');
             // var_dump($data[0]['password'], '<br>');
             // var_dump(password_verify($pass, $data[0]['password']));
@@ -67,7 +66,7 @@ if( isset($_REQUEST['login']) && $_REQUEST['login'] == 1 && !$loged ){
                 $_SESSION['user']['email'] = $data[0]['email'];
                 $_SESSION['user']['admin'] = $data[0]['admin'];
                 $_SESSION['user']['city'] = $data[0]['city'];
-                // var_dump($_SESSION['user']['city']); exit;
+                $_SESSION['user']['regDate'] = $data[0]['regDate'];
             }else{
                 $formerror = true;
                 incrementWrongLogins();

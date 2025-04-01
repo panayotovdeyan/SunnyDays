@@ -1,16 +1,15 @@
 <?php if( !defined('SunnyDays') ) exit(); ?>
 
-<?php require_once 'C:\xampp\htdocs\SunnyDays\views\head-html.php'; 
+<?php 
+require_once 'C:\xampp\htdocs\SunnyDays\views\head-services-html.php'; 
 $activemenu = 'services'; // $activemenu - за активна страница
 require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
 ?>
-  <body>
+<body>
   <main id="main">
-
     <!-- ======= Services Section ======= -->
     <section id="services" class="services" data-aos="fade-up">
       <div class="container">
-
         <div class="section-title">
           <span>Услуги</span>
           <h2>Услуги</h2>
@@ -43,8 +42,8 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
               </div>
             </a>
           </div>
-          <?}
-            ?>
+            <?php
+            }?>
 
         <!-- ======= Services Section 2 ======= -->
         <?php
@@ -67,7 +66,8 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
             </div>
           </a>
           </div>
-          <?}?>
+            <?php
+            }?>
 
         <!-- ======= Services Section 3 ======= -->
         <?php
@@ -81,7 +81,8 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
               </div>
             </a>
           </div>
-          <?}?>
+            <?php
+            }?>
       </div>
       
       <div class="row">          
@@ -97,7 +98,8 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
               </div>
             </a>
           </div>
-          <?}?>
+            <?php
+            }?>
 
                   <!-- ======= Services Section 5 ======= -->
         <?php
@@ -111,7 +113,8 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
               </div>
             </a>
           </div>
-          <?}?>
+            <?php
+            }?>
 
                   <!-- ======= Services Section 6 ======= -->
         <?php
@@ -125,12 +128,15 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
               </div>
             </a>
           </div>
-          <?}?>
+            <?php
+            }?>
       </div>
       
     </div>
     </section>
 
   </main><!-- End #main -->
-  <?php require_once 'C:\xampp\htdocs\SunnyDays\views\footer-html.php'; ?>
-  </body>
+  <?php 
+  require_once 'C:\xampp\htdocs\SunnyDays\views\footer-services-html.php'; 
+  ?>
+</body>

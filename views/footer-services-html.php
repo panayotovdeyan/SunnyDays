@@ -69,7 +69,7 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <div id="preloader"></div>
+  <!-- <div id="preloader"></div> не работи на страниците с услуги-->
 
   <!-- Vendor JS Files -->
   <script src="/assets/vendor/aos/aos.js"></script>
@@ -81,7 +81,8 @@
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
-  
+  <script src="../assets/vendor/aos/aos.js"></script>
+
     <!-- Custom JS Files -->
   <script src="../assets/js/form-validation.js"></script>
   <script src="../assets/js/jsSunnyDays.js"></script>

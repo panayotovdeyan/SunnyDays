@@ -31,7 +31,7 @@ if( !defined('admindp') ) exit();
               <th scope="col">Редакция</th>
             </tr>
           </thead>
-            <tbody class="tableBody">
+            <tbody class="tableBody" id="tableBodyAdmin">
               <?php
               foreach($pageAbout as $k=>$pageAbout){
                 echo "<tr>";

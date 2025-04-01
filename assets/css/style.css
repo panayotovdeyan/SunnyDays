@@ -1770,7 +1770,7 @@ section {
   text-decoration: underline;
   text-decoration-color: #a33636;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   color: #ca9f11;
   z-index: 999;
 }
@@ -1810,7 +1810,7 @@ section {
 }
 
 .password-container input {
-  width: 100%;
+  width: 150%;
   padding-right: 40px; /* Място за иконата */
 }
 
@@ -1828,16 +1828,25 @@ section {
   font-weight: bold;
   text-transform: uppercase;
   display: inline-block;
-  margin-left: 230px;
+  margin-left: 50px;
 }
 
-#enterButtonLogin.reg {
+#enterButtonGoOn.reg {
   position: relative;
   top: 10px;
   font-weight: bold;
   text-transform: uppercase;
   display: inline-block;
-  margin-left: 240px;
+  margin-left: 10px;
+}
+
+#enterButtonLogin.reg {
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: orange;
 }
 
 #registerSection {
@@ -1852,10 +1861,12 @@ section {
   /* LOGIN FORM */
 #loginSection {
   width: 100%;
-  height: calc(80 vh - 110px);
-  background: url("../img/welcome2.png") right;
+  height: calc(auto);
+  background: url("../img/welcome2.png");
   background-size:cover;
+  background-position: right;
   position: relative;
+  margin-bottom: 0px;
 }
 
 .login-container {
@@ -1863,24 +1874,50 @@ section {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 425px;
-  margin-left: 50px;
-  padding: 20px;
-  /* background-color: #ece5e5; */
+  height: calc(auto);
+  max-width: 400px;
+  margin-left: 140px;
+  background-color: #ece5e5;
+  background-color: rgba(236, 229, 229, 0.7); /* Полупрозрачен фон */
+  margin-bottom: 20px;
 }
+
+#loginEmail {
+  position: relative;
+  width: 150%; /* Ширината е унифицирана */
+  max-width: 600px;
+  margin-bottom: 20px; /* Отстояние между полетата */
+}
+
+#loginPassword {
+  position: relative;
+  width: 250%; /* Ширината е унифицирана */
+  padding-right: 40px; /* Място за иконата */
+}
+
 
 #enterButtonLogin.login {
   position: relative;
-  margin-left: 20px;
   top: 10px;
   font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 #enterButtonReg.login {
   position: relative;
   top: 10px;
-  margin-left: 15px;
+  margin-left: 10px;
   margin-top: 20px;
   font-weight: bold;
-  color: #ca9f11;
+  color: orange;
 }
+
+/* PROFIL MENU*/
+.member {
+  background-color: #ffffff;
+  max-width: fit-content;
+  padding: 10px;
+}
+

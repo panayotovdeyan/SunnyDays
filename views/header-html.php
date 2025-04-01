@@ -8,9 +8,6 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
   $loged = false;
 }
 ?>
-
-<body>
-
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -88,7 +85,7 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
             if( !$loged ){?>
               <li class="dropdown"><a <?php if ($activemenu == 'account'){ ?>class="active"<?php } ?> ><img src="/assets/img/Icons/person_white_24dp.svg"> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="active"<?php } ?>>Вход<img src="/assets/img/Icons/login_white_24dp.svg" class="icon1"></a></li>
+                  <li><a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="hidden"<?php } ?>>Вход<img src="/assets/img/Icons/login_white_24dp.svg" class="icon1"></a></li>
                   <li><a href="/reg.php" <?php if ($activemenu == 'reg'){ ?>class="hidden" <?php } ?>>Регистрация<img src="/assets/img/Icons/how_to_reg_24dp_FFFFFF.svg" class="icon1"></a></li>
                 </ul>
               </li>
