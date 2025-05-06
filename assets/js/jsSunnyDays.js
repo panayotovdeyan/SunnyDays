@@ -1,3 +1,9 @@
+console.log("jsSunnyDays.js е зареден");
+
+console.log("DOM напълно зареден");
+const forgotForm = document.getElementById("forgotPasswordForm");
+console.log("forgotForm е:", forgotForm);
+
 document.addEventListener('DOMContentLoaded', () => {
 
     //Видимост на паролата
@@ -31,6 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.setAttribute("src", newIconPath);
             });
         }
+
+        // при reset-password
+
+        const passwordToggles = [
+            { inputId: 'newPassword', toggleId: 'toggleNewPassword' },
+            { inputId: 'confirmPassword', toggleId: 'toggleConfirmPassword' }
+          ];
+        
+          passwordToggles.forEach(({ inputId, toggleId }) => {
+            const input = document.getElementById(inputId);
+            const toggle = document.getElementById(toggleId);
+            if (input && toggle) {
+              toggle.addEventListener('click', () => {
+                const type = input.type === 'password' ? 'text' : 'password';
+                input.type = type;
+                toggle.src = type === 'password'
+                  ? '/assets/img/Icons/visibility_18dp_000000.svg'
+                  : '/assets/img/Icons/visibility_off_18dp_000000.svg';
+              });
+            }
+          });
+
+
+
 
     // За да вградите CSV файл с имената на градовете в HTML код и да запълните <select> елемента, 
     //може да използвате JavaScript и библиотека като PapaParse за четене на CSV файлове. 
@@ -67,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Зареждане на CSV файла и добавяне на градове
     loadCSV(csvFilePath, populateSelect);
 
+    // ===== Маркиране на източника на регистрация =====
     function setRegisterValue() {
         if (document.activeElement.id === "enterButtonGoOn") {
             document.getElementById('register').value = "1";
@@ -76,15 +107,34 @@ document.addEventListener('DOMContentLoaded', () => {
         return true; // Позволява формата да бъде изпратена
     }
 
+    // ===== Забравена парола =====
+    const forgotForm = document.getElementById("forgotPasswordForm");
 
+    if (forgotForm && !forgotForm.classList.contains("handler-attached")) {
+      forgotForm.classList.add("handler-attached");
+  
+      forgotForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+  
+        const email = document.getElementById("email").value;
+  
+        fetch("forgot-password.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: "email=" + encodeURIComponent(email),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            alert(data.message);
+            if (data.success) {
+              window.location.href = "/";
+            }
+          })
+          .catch((err) => {
+            alert("Възникна грешка при заявката.");
+            console.error(err);
+          });
+      });
+    }
 });
-
-var width = window.innerWidth; // променлива за ширина
-console.log( 'ширината на видимата част', width); // дава ни ширината на страницата но само на видимата част на прозореца
-width = window.outerWidth; 
-console.log('ширината на цялата част', width);// дава ни ширината на страницата но на цялата част на страницата
-
-var height = window.innerHeight; // създаваме променлива за височина
-console.log('височината на видимата част', height); // дава ни височината на видимата част на страницата
-height = window.outerHeight;
-console.log('височината на цялата част', height); // дава ни височината на страницата но на цялата част на страницата
+  

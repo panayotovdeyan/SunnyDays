@@ -32,6 +32,7 @@ $activemenu = 'account'; // $activemenu - за активна страница �
                   <small class="error"></small>
                 </div>                
                 <button class="btn btn-primary active login" id="enterButtonLogin" type="submit" onclick="document.getElementById('login').value=1;">Влез</button>
+                <a href="/forgot-password-view.php" id="forgotPasswordBtn" class="btn btn-link login">Забравена парола</a>
                 <a href="/reg.php" id="enterButtonReg" class="btn btn-link login">Регистрация</a>
             </form>
         </div>

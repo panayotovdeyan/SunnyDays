@@ -84,7 +84,7 @@
   
     <!-- Custom JS Files -->
   <script src="../assets/js/form-validation.js"></script>
+  <script src="../assets/select2/dist/js/select2.min.js"></script>
   <script src="../assets/js/jsSunnyDays.js"></script>
   <!-- <script src="../assets/js/moment.js"></script> -->
-
 </body>

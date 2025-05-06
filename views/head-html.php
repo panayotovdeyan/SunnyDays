@@ -28,6 +28,7 @@ if( !defined('SunnyDays') ) exit();
 
   <!-- Template Main CSS File -->
   <link href="/assets/css/style.css" rel="stylesheet">
+  <link href="/assets/select2/dist/css/select2.min.css" rel="stylesheet">
 
   <!-- Jquery Original -->
   <script src="../assets/jquery/jquery.js"></script>

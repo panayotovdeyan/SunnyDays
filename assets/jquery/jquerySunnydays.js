@@ -76,6 +76,37 @@ $(document).ready(() => {
         
     });
     
-
+    $(document).ready(function () {
+        $("#forgotPasswordForm").on("submit", function (e) {
+            e.preventDefault(); // Спира стандартното изпращане на формата
+            
+            let email = $("#email").val().trim();
+            
+            if (email === "") {
+                alert("Моля, въведете имейл!");
+                return;
+            }
+            
+            // $.post("/forgot-password.php", { email: email }, function (response) {
+            //     console.log("SUCCESS response:", response);
+            //     $("#responseMessage").text(response.message || "OK");
+            // }, "json").fail(function (xhr, status, error) {
+            //     console.log("AJAX Error:", xhr.responseText);
+            //     alert("Възникна грешка. Опитайте отново.");
+            // });
+            // $.post("/forgot-password.php", { email: email }, function (response) {
+            //     $("#responseMessage").text(response.message);
+            // }, "json").fail(function () {
+            //     alert("Възникна грешка. Опитайте отново.");
+            // });
+        });
+    });
+    
+    $(document).ready(function() {
+        $('#regCity').select2({
+            placeholder: "Изберете град",
+            allowClear: true
+        });
+    });
 
 });
