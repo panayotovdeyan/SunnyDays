@@ -8,6 +8,7 @@ session_start();
 define("SunnyDays", true);
 
 require_once 'includes/db_SunnyDays.php';
+$config = require 'C:/xampp/config-sunnydays.php';
 
 header('Content-Type: application/json');
 $response = ["success" => false, "message" => "Нещо се обърка."];
@@ -40,13 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'])) {
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.gmail.com';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = 'panayotov.deyan@gmail.com';
-                $mail->Password   = 'nxduoejhdukhlcai';
+                $mail->Username   = $config['smtp_username'];
+                $mail->Password   = $config['smtp_password'];
                 $mail->SMTPSecure = 'ssl';
                 $mail->Port       = 465;
                 $mail->CharSet    = 'UTF-8';
 
-                $mail->setFrom('contact@sunnydays.com', 'SunnyDays');
+                $mail->setFrom($config['smtp_from_email'], $config['smtp_from_name']);
                 $mail->addAddress($email);
 
                 $mail->isHTML(true);

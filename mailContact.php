@@ -10,15 +10,15 @@ use PHPMailer\PHPMailer\Exception;
 require 'C:/xampp/htdocs/sunnydays/PHPMailer/src/Exception.php';
 require 'C:/xampp/htdocs/sunnydays/PHPMailer/src/PHPMailer.php';
 require 'C:/xampp/htdocs/sunnydays/PHPMailer/src/SMTP.php';
-
+$config = require 'C:/xampp/config-sunnydays.php';
 
 if(isset($_POST['send'])) {
 
 
     $name = htmlentities($_POST['name']);
     $email = htmlentities($_POST['email']);
-    $subject = "from SunnyDays Contact form";
-    $subjectClient = "Успешно изпратено запитване";
+    $subject = "SunnyDays Contact form";
+    $subjectClient = "Запитване";
     $message = htmlentities($_POST['message']);
     
     //Create an instance; passing `true` enables exceptions
@@ -28,16 +28,16 @@ if(isset($_POST['send'])) {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'panayotov.deyan@gmail.com';            //SMTP username
-    $mail->Password   = 'nxduoejhdukhlcai';                     //SMTP password //Real is in Google Account
+    $mail->Username   = $config['smtp_username'];               //SMTP username
+    $mail->Password   = $config['smtp_password'];               //SMTP password //Real is in Google Account
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     $mail->SMTPSecure = 'ssl';                                  //Enable implicit TLS encryption
     $mail->isHTML(true);                                        //Set email format to HTML
     
     $mail->CharSet = 'UTF-8';
     //Recipients
-    $mail->setFrom($email, $name);
-    $mail->addAddress("panayotov.deyan@gmail.com");             //Add a recipient
+    $mail->setFrom($config['smtp_from_email'], $name);
+    $mail->addAddress($config['smtp_username']);             //Add a recipient
     $mail->addCC($email);
     // $mail->addAddress($_POST['name']);                       //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
@@ -49,7 +49,7 @@ if(isset($_POST['send'])) {
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
     //Content
-    $mail->Subject = ("$email ($subjectClient - $subject)");
+    $mail->Subject = ("$subject ($subjectClient от $name - $email)");
     $mail->Body = $message;
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

@@ -10,14 +10,15 @@ require_once 'header-html.php';
 
     <!-- ======= Section forgotPassword ======= -->
     <section class="inner-page" id="forgotPasswordSection">
-
-      <form id="forgotPasswordForm" method="POST">
-        <label for="email">Въведете вашия имейл:</label>
-          <br><br>
-        <input type="email" id="email" name="email" required>
-          <br><br>
-        <button class="btn btn-primary active" id="forgotPasswordBtn" type="submit">Нова парола</button>
-      </form>
+      <div class="forgot-container" data-aos="fade-up">
+        <form id="forgotPasswordForm" method="POST">
+          <label for="email">Въведете вашият имейл:</label>
+            <br><br>
+          <input type="email" id="email" name="email" required>
+            <br><br>
+          <button class="btn btn-primary active" id="forgotPasswordBtn" type="submit">Нова парола</button>
+        </form>
+      </div>
 
     </section><!-- End Section forgotPassword -->
     

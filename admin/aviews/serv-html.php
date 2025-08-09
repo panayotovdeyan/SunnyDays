@@ -34,12 +34,16 @@ if( !defined('admindp') ) exit();
           </thead>
             <tbody class="tableBody">
               <?php
-              foreach($serv as $k=>$serv){
+              foreach($serv as $k=>$edit){
                 echo "<tr>";
-                echo "<th scope='row'>".$serv['id']."</th>";
-                echo "<td>".$serv['service_name']."</td>";
-                echo "<td>".$serv['published']."</td>";
-                echo "<td><a class='btn-get-started' href='services.php?id=".$serv['id']."'>Редактирай</a></td>";
+                echo "<th scope='row'>".$edit['id']."</th>";
+                echo "<td>".$edit['service_name']."</td>";
+                  if ($edit['published'] == 1) {
+                    echo "<td><span class='published-yes' title='Текстът е публикуван'>Yes <i class='fas fa-check-circle'></i></span></td>";
+                  } else {
+                    echo "<td><span class='published-no' title='Текстът НЕ Е публикуван'>No <i class='fas fa-times-circle'></span></td>";
+                  }
+                echo "<td><a class='btn-get-started' href='services.php?id=".$edit['id']."'>Редактирай</a></td>";
               }
               ?>
             </tbody>

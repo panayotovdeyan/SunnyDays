@@ -420,7 +420,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(100vh - 110px);
+  min-height: 100vh;
   background: url("../img/AdminBackground.jpg") top center;
   background-size: cover;
   position: relative;
@@ -1554,3 +1554,14 @@ section {
 /* [type="checkbox"]:not(:checked) ~ .save-box {
   display: none;
 } */
+
+/* Публикувано - Да или Не, оцветяване в админската част*/
+.published-yes {
+  color: rgb(15, 161, 2);
+  font-weight: bold;
+}
+
+.published-no {
+  color: red;
+  font-weight: bold;
+}

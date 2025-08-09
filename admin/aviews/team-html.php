@@ -34,13 +34,17 @@ if( !defined('admindp') ) exit();
           </thead>
             <tbody class="tableBody">
               <?php
-              foreach($member as $m=>$member){
+              foreach($member as $m=>$edit){
                 echo "<tr>";
-                echo "<th scope='row'>".$member['id']."</th>";
-                echo "<td>".$member['memberName']."</td>";
-                echo "<td>".$member['memberPosition']."</td>";
-                echo "<td>".$member['published']."</td>";
-                echo "<td><a class='btn-get-started' href='team.php?id=".$member['id']."'>Редактирай</a></td>";
+                echo "<th scope='row'>".$edit['id']."</th>";
+                echo "<td>".$edit['memberName']."</td>";
+                echo "<td>".$edit['memberPosition']."</td>";
+                  if ($edit['published'] == 1) {
+                    echo "<td><span class='published-yes' title='Текстът е публикуван'>Yes <i class='fas fa-check-circle'></i></span></td>";
+                  } else {
+                    echo "<td><span class='published-no' title='Текстът НЕ Е публикуван'>No <i class='fas fa-times-circle'></span></td>";
+                  }
+                echo "<td><a class='btn-get-started' href='team.php?id=".$edit['id']."'>Редактирай</a></td>";
               }
               ?>
             </tbody>

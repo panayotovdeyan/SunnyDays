@@ -8,21 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Видимост на паролата
 
-        // Регистрация
-        const toggleRegPassword = document.getElementById("toggleRegPassword");
-        if (toggleRegPassword) {
-            toggleRegPassword.addEventListener("click", function () {
-                const passwordInput = document.getElementById("regPassword");
-                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-                passwordInput.setAttribute("type", type);
-
-                const newIconPath = type === "password" 
-                    ? "/assets/img/Icons/visibility_18dp_000000.svg" 
-                    : "/assets/img/Icons/visibility_off_18dp_000000.svg";
-                this.setAttribute("src", newIconPath);
-            });
-        }
-
         // Вход
         const toggleLoginPassword = document.getElementById("toggleLoginPassword");
         if (toggleLoginPassword) {
@@ -38,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // при reset-password
+        // при registration and reset-password
 
         const passwordToggles = [
             { inputId: 'newPassword', toggleId: 'toggleNewPassword' },

@@ -16,6 +16,12 @@ if( !defined('admindp') ) exit();
 
             }
             ?>
+              <?php
+              if (isset($_GET['from'])) {
+                $activemenu = $_GET['from'];
+              }
+              ?>
+
         <div class="contact-info d-flex align-items-left">
 
             <!--End Profile -->

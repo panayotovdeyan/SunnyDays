@@ -33,12 +33,17 @@ if( !defined('admindp') ) exit();
           </thead>
             <tbody class="tableBody" id="tableBodyAdmin">
               <?php
-              foreach($pageAbout as $k=>$pageAbout){
+              foreach($pageAbout as $k => $edit){
                 echo "<tr>";
-                echo "<th scope='row'>".$pageAbout['id']."</th>";
-                echo "<td>".$pageAbout['title']."</td>";
-                echo "<td>".$pageAbout['published']."</td>";
-                echo "<td><a class='btn-get-started' href='pageAbout.php?id=".$pageAbout['id']."'>Редактирай</a></td>";
+                echo "<th scope='row'>" . $edit['id'] . "</th>";
+                echo "<td>" . $edit['title'] . "</td>";
+                  if ($edit['published'] == 1) {
+                    echo "<td><span class='published-yes' title='Текстът е публикуван'>Yes <i class='fas fa-check-circle'></i></span></td>";
+                  } else {
+                    echo "<td><span class='published-no' title='Текстът НЕ Е публикуван'>No <i class='fas fa-times-circle'></span></td>";
+                  }
+                echo "<td><a class='btn-get-started' href='pageAbout.php?id=" . $edit['id'] . "'>Редактирай</a></td>";
+                echo "</tr>";
               }
               ?>
             </tbody>

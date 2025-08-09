@@ -25,7 +25,7 @@ $activemenu = 'offer'; // $activemenu - за активна страница
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12">
             <div class="info-box mb-4">
-              <p><?php echo $offer1->text ?></p>
+              <p><?php echo nl2br(htmlspecialchars($offer1->text)) ?></p>
             </div>
           </div>
         </div>

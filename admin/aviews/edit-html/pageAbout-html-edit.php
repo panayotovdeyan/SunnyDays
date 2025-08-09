@@ -2,12 +2,11 @@
 if( !defined('admindp') ) exit(); 
 ?>
   <?php require_once 'aviews/head-html.php'; 
-  $activemenu = 'pageAbout'; // $activemenu - за активна страница
+  $activemenu = 'about'; // $activemenu - за активна страница
   ?>
-  
 
-  <body>
-    <?php require_once 'aviews/header-html.php'; ?>
+<body>
+  <?php require_once 'aviews/header-html.php'; ?>
 
   <main id="main">
 
@@ -24,21 +23,22 @@ if( !defined('admindp') ) exit();
             <input type="hidden" name="submited" value="1" >
 
                 <div class="col-md-6 form-group mt-3 mt-md-2">
-                <label for="title" id="editLabel">Въвеждане/Редактиране на заглавие</label>
+                <label for="title" id="editLabel">Заглавие</label>
                   <input type="text" class="form-control" name="title" id="title" value="<?= $pageAbout->title ?>" placeholder="Въведете заглавие" required>
                 </div>
 
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="subtitle" id="editLabel">Въвеждане/Редактиране на подзаглавие</label>
+              <label for="subtitle" id="editLabel">Подзаглавие</label>
                 <input type="text" class="form-control" name="subtitle" id="subtitle" value="<?= $pageAbout->subtitle ?>" placeholder="Въведете подзаглавие" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="image" id="editLabel">Въвеждане/Редактиране на път до изображението</label>          
+              <label for="image" id="editLabel">Път до снимка</label>
+                <br>
                 <input type="file" class="form-control-file" id="imageInput" onchange="updateImagePreview(this)">
                 <input type="text" class="form-control" name="image" id="image" value="<?= $pageAbout->image ?>" placeholder="Въведете път до картинката">
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
+              <label for="text" id="editLabel">Въвеждане и/или Редактиране на текст</label>
                 <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="6" placeholder="Въведете текст"><?= $pageAbout->text ?></textarea>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2, publish-box">
@@ -84,12 +84,10 @@ if( !defined('admindp') ) exit();
 
 
             </form>
+          </div>
+
         </div>
-
-    </div>
-  </section><!-- End Hero Section -->
-
-  </main>
-
-
-  <?php require_once 'aviews/footer-html.php'; ?>
+     </section><!-- End Hero Section -->
+    </main>
+  </body>
+<?php require_once 'aviews/footer-html.php'; ?>

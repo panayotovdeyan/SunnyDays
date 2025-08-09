@@ -20,20 +20,47 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
       </div>
 
             <!-- Profile -->
-            <div class="profile-info d-flex align-items-left" title="Моят профил">
+            <div class="profile-info d-flex align-items-left">
               <?php
               if (isset ($_SESSION['user']['name'])){
                 ?>
-                  <a href="/profile.php" aria-expanded="false" id="profileMenuLink" role="button"><img src="/assets/img/Icons/person_white_24dp.svg" class="icon1">
-                    <span class="af-user">
+                  <img src="/assets/img/Icons/person_white_24dp.svg" class="profilIcon" >
+                    <span class="profileMenuLink">
                       <span class="dd-text d-none d-md-inline">
-                        <span style="text-decoration: underline">
+                        <span style="text-decoration-color: #eca21a">
                           <?php
                           if(  $_SESSION['user']['admin'] == 1 ){ 
-                            // print_r($_SESSION); die('D2');
-                            echo "АДМИН ПАНЕЛ - Администратор: {$_SESSION['user']['name']} {$_SESSION['user']['family']} ({$_SESSION['user']['email']})";
+                            echo "{$_SESSION['user']['name']} {$_SESSION['user']['family']} ({$_SESSION['user']['email']})";
+                            $currentPage = basename($_SERVER['PHP_SELF']); // примерно: about.php
+                            $adminLink = '';
+
+                            switch ($currentPage) {
+                              case 'about.php':
+                                $adminLink = '/admin/pageAbout.php?from=about';
+                                break;
+                              case 'service_home.php':
+                                $adminLink = '/admin/services.php?from=serv';
+                                break;
+                              case 'projects.php':
+                                $adminLink = '/admin/projects.php?from=projects';
+                                break;
+                              case 'offer.php':
+                                $adminLink = '/admin/offers.php?from=offer';
+                                break;
+                              case 'team.php':
+                                $adminLink = '/admin/team.php?from=team';
+                                break;
+                              default:
+                                $adminLink = '/admin/index.php';
+                            }
+                            ?>
+                            <a href="<?= $adminLink ?>" class="btn btn-outline-light btn-sm ms-2" title="Админ панел (текуща секция)">Админ панел</a>
+                            <?php
                           }else{
-                            echo "{$_SESSION['user']['name']} {$_SESSION['user']['family']}";
+                            echo "Потребител: {$_SESSION['user']['name']} {$_SESSION['user']['family']}";
+                            ?>
+                            <a href="/profile.php" aria-expanded="false" id="profileMenuLink" role="button" class="btn btn-outline-light btn-sm ms-2" title="Потребителски профил">Профил</a>
+                            <?php
                           }
                           ?>
                         </span>
@@ -47,7 +74,6 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
               <!--End Profile -->
 
       <div class="social-links d-none d-md-block">
-        <a href="https://twitter.com/" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
         <a href="https://www.facebook.com/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="https://www.instagram.com/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></i></a>

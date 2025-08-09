@@ -49,16 +49,17 @@ $activemenu = 'account'; // $activemenu - за активна страница �
                 <br>
                 <div class="imput-wrapper reg-hidden">
                     <div class="password-container">
-                        <label for="regPassword">Парола</label>
-                        <input type="password" name="regPassword" id="regPassword" >
-                        <img src="assets/img/Icons/visibility_18dp_000000.svg" alt="Показване на паролата" class="toggle-password eye-icon" id="toggleRegPassword">
-                        <small class="error"></small>
+                    <label for="regPassword">Парола</label>
+                    <input type="password" id="newPassword" name="new_password" required>
+                    <img id="toggleNewPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:5px;" />
+                    <small class="error"></small>
                     </div>
                 </div>
                 <br>
                 <div class="imput-wrapper reg-hidden">
                     <label for="confirmPassword">Повтори паролата</label>
-                    <input type="password" name="confirmPassword" id="confirmPassword" >
+                      <input type="password" id="confirmPassword" name="confirm_password" required>
+                      <img id="toggleConfirmPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:5px;" />
                     <small class="error"></small>
                 </div>
                 <br>

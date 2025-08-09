@@ -1436,8 +1436,8 @@ section {
 
 #hero {
   width: 100%;
-  height: calc(100vh - 110px);
-  background: url("../img/hero-bg.jpg") top center;
+  min-height: 100vh;
+  background: url("../img/background/hero-bg.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -1641,7 +1641,7 @@ section {
 .profile {
   width: 100%;
   height: calc(100vh - 110px);
-  background: url("../img/profile3.jpg") top center;
+  background: url("../img/profile/profile3.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -1657,7 +1657,7 @@ section {
 #logoutSection {
   width: 100%;
   height: 100%;
-  background: url("../img/logout.png") top center;
+  background: url("../img/background/logout.png") top center;
   background-size: cover;
   position: relative;
 }
@@ -1771,21 +1771,20 @@ section {
   text-decoration-color: #ca9f11;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
-  color: #ca9f11;
+  color: #9c7a08;
   z-index: 999;
 }
 
 /* REGISTER FORM */
 .reg-container {
-  border: 1px solid #ddd;
+  display: flex; /* Използваме Flexbox за подредба */
+  flex-direction: column; /* Елементите да са подредени в колона */
+  max-width: 600px;
+  margin: 20px left; /* Центриране на формата */
+  padding: 20px;
+  border: 2px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 40%;
-  max-width: 400%;
-  margin-bottom: 10px;
-  margin-left: 40px;
-  padding: 10px;
-  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .input-wrapper,
@@ -1852,7 +1851,7 @@ section {
 #registerSection {
   width: auto;
   height: auto;
-  background: url("../img/Registration3.png") top center;
+  background: url("../img/background/Registration3.png") top center;
   background-size: 100%;
   position: relative;
 }
@@ -1862,7 +1861,7 @@ section {
 #loginSection {
   width: 100%;
   height: calc(auto);
-  background: url("../img/welcome2.png");
+  background: url("../img/background/welcome2.png");
   background-size:cover;
   background-position: right;
   position: relative;
@@ -1870,24 +1869,25 @@ section {
 }
 
 .login-container {
-  border: 1px solid #ddd;
+  display: flex; /* Използваме Flexbox за подредба */
+  flex-direction: column; /* Елементите да са подредени в колона */
+  max-width: 600px;
+  margin: 20px left; /* Центриране на формата */
+  padding: 20px;
+  border: 3px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: calc(auto);
-  max-width: 400px;
-  margin-left: 140px;
-  background-color: #ece5e5;
-  background-color: rgba(236, 229, 229, 0.7); /* Полупрозрачен фон */
-  margin-bottom: 20px;
-  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #loginEmail {
-  position: relative;
-  width: 150%; /* Ширината е унифицирана */
+  display: flex; /* Използваме Flexbox за подредба */
+  flex-direction: column; /* Елементите да са подредени в колона */
   max-width: 600px;
-  margin-bottom: 20px; /* Отстояние между полетата */
+  margin: 20px left; /* Центриране на формата */
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #loginPassword {
@@ -1929,7 +1929,7 @@ section {
 #forgotPasswordSection {
   width: 100%;
   height: 100%;
-  background: url("../img/forgot-password.jpg");
+  background: url("../img/background/forgot-password.jpg");
   background-size:cover;
   background-position: right;
   position: relative;
@@ -1939,6 +1939,47 @@ section {
 #forgotPasswordForm {
   border: 1px solid #ddd;
   border-radius: 8px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  height: calc(auto);
+  background-color: #ece5e5;
+  background-color: rgba(236, 229, 229, 0.7); /* Полупрозрачен фон */
+  margin-bottom: 20px;
+  margin: 20px left; /* Центриране на формата */
+  padding: 20px;
+  display: flex; /* Използваме Flexbox за подредба */
+  flex-direction: column; /* Елементите да са подредени в колона */
+}
+
+input[type="email"] {
+  width: 300px;
+  padding: 6px;
+  font-size: 16px;
+}
+
+/* Reset Password*/
+
+#resetPasswordSection {
+  width: 100%;
+  height: auto;
+  background: url("../img/background/resetPassword.jpg");
+  background-size:cover;
+  background-position: right;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+.changePassword {
+    height: calc(auto);
+    max-width: 100%;
+
+}
+
+#resetPasswordForm {
+  border: 1px solid #ddd;
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: calc(auto);
@@ -1946,11 +1987,44 @@ section {
   margin-left: 140px;
   background-color: #ece5e5;
   background-color: rgba(236, 229, 229, 0.7); /* Полупрозрачен фон */
-  margin-bottom: 20px;
-  padding: 10px;
+  padding: 20px;
 }
 
+#resetPasswordForm.changePassword {
+  display: flex; /* Използваме Flexbox за подредба */
+  flex-direction: column; /* Елементите да са подредени в колона */
+  max-width: 600px;
+  margin: 20px auto; /* Центриране на формата */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+#resetPasswordSection h2 {
+  display: flex; /* Използваме Flexbox за подредба */
+  flex-direction: column; /* Елементите да са подредени в колона */
+  max-width: 600px;
+  margin: 20px auto; /* Центриране на формата */
+  padding: 20px;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #222658;
+  background-color: rgba(145, 201, 253, 0.76); /* Полупрозрачен фон */
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type="password"] {
+  width: 300px;
+  padding: 6px;
+  font-size: 16px;
+}
+
+#reset {
+  margin-top: 20px;
+}
 
 /* PROFIL MENU*/
 .member {
@@ -1959,3 +2033,14 @@ section {
   padding: 10px;
 }
 
+#profileMenuLink:hover {
+  background-color: #eca21a;
+}
+
+.profilIcon {
+  margin-right: 5px;
+}
+
+.profileMenuLink {
+  color:#eca21a;
+}
