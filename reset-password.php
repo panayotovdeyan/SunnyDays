@@ -52,11 +52,13 @@ require_once 'views/header-html.php';
           $token = $_POST['token'] ?? '';
           $newPassword = $_POST['new_password'] ?? '';
           $confirmPassword = $_POST['confirm_password'] ?? '';
-
-          if (empty($newPassword) || empty($confirmPassword)) {
-              echo "<p>Моля, попълнете и двете полета.</p>";
-          } elseif ($newPassword !== $confirmPassword) {
-              echo "<p>Паролите не съвпадат.</p>";
+          
+          if ($newPassword !== $confirmPassword) {
+              echo "<script>
+                      alert('Паролите не съвпадат.');
+                      window.location.href = 'reset-password.php?token=" . urlencode($token) . "';
+                    </script>";
+              exit;
           } else {
               $query = "SELECT email FROM password_resets WHERE token = '$token' AND expires_at > NOW()";
               $result = mysqli_query($conn, $query);
