@@ -79,7 +79,7 @@ if( !defined('SunnyDays') ) exit();
         <?php
           if( $member4->published == 1 ){?>
         <div class="row">
-          <div class="col-lg-4 col-md-6 mt-md-2 align-items-stretch" data-aos="zoom-in">
+          <div class="col-lg-4 col-md-6 mt-md-2 d-flex align-items-stretch" data-aos="zoom-in">
           <div class="member" title="<?php echo $member4->memberName ?>">
             <?php echo "<img src='" . $member4->memberImage . "'>"; ?>
               <h4><?php echo $member4->memberName ?></h4>

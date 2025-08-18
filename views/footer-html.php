@@ -55,7 +55,7 @@
 
     <div class="container">
       <div class="copyright">
-        2024 &copy; Copyright <strong><span>SUNNY DAYS</span></strong>. All Rights Reserved
+        2021 - 2025 &copy; Copyright <strong><span>SUNNY DAYS</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

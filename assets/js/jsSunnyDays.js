@@ -122,4 +122,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("forgotPasswordForm");
+  const btn = document.getElementById("forgotPasswordBtn");
+  const preloader = document.getElementById("form-preloader");
+
+  form.addEventListener("submit", function() {
+    // Показваме preloader-а
+    preloader.style.display = "block";
+
+    // Деактивираме бутона
+    btn.disabled = true;
+    btn.innerText = "Изпращане...";
+  });
+});
+
+
   

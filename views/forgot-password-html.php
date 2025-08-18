@@ -18,6 +18,8 @@ require_once 'header-html.php';
             <br><br>
           <button class="btn btn-primary active" id="forgotPasswordBtn" type="submit">Нова парола</button>
         </form>
+        <!-- Preloader (скрит по начало) -->
+        <div id="form-preloader" style="display:none;"></div>
       </div>
 
     </section><!-- End Section forgotPassword -->

@@ -1557,7 +1557,7 @@ section {
 
 /* Публикувано - Да или Не, оцветяване в админската част*/
 .published-yes {
-  color: rgb(15, 161, 2);
+  color: greenyellow;
   font-weight: bold;
 }
 

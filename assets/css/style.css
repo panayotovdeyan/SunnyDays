@@ -2029,7 +2029,8 @@ input[type="password"] {
 /* PROFIL MENU*/
 .member {
   background-color: #ffffff;
-  max-width: fit-content;
+  width: 100%;
+  height: auto;
   padding: 10px;
 }
 
@@ -2043,4 +2044,32 @@ input[type="password"] {
 
 .profileMenuLink {
   color:#eca21a;
+}
+
+#form-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: transparent ;
+}
+
+#form-preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #eca21a;
+  border-top-color: #efefef;
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

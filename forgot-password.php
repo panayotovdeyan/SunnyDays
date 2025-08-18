@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'])) {
                 $mail->isHTML(true);
                 $mail->Subject = 'Генериране на нова парола';
                 $resetLink = "http://sunnydays/reset-password.php?token=$token";
-                $mail->Body    = "Здравей,<br><br>Кликни върху линкa, за да създадеш нова парола:<br><a href='$resetLink'>$resetLink</a><br><br>Поздрави,<br>Екипът на SunnyDays";
+                $mail->Body    = "Здравейте,<br><br>Кликнете върху линкa, за да създадете нова парола:<br><a href='$resetLink'>$resetLink</a><br>Линкът важи един час, след което е необходимо да генерирате нов<br>Поздрави,<br>Екипът на SunnyDays";
 
                 $mail->send();
                 $response = ["success" => true, "message" => "Проверете имейла си за генериране на нова парола."];
