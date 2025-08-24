@@ -1,17 +1,12 @@
 <?php 
 if( !defined('SunnyDays') ) exit(); 
+$activemenu = 'team'; // $activemenu - за активна страница
+require_once __DIR__ . '/../config.php';
+require_once PROJECT_ROOT . '/views/head-html.php';
+require_once PROJECT_ROOT . '/views/header-html.php';
 ?>
-  <?php require_once 'head-html.php'; 
-  $activemenu = 'team'; // $activemenu - за активна страница
-  ?>
-  
-
-  <body class = "team-body">
-  
-    <?php require_once 'header-html.php'; ?>
-
+<body class = "team-body">
   <main id="main">
-
     <!-- ======= Team Section ======= -->
     <section id="team" class="team" data-aos="fade-up">
       <div class="container">
@@ -128,13 +123,10 @@ if( !defined('SunnyDays') ) exit();
           </div>
           <?}?>
         </div>
-
-
       </div>
     </section><!-- End Team Section -->
-
-    </section>
   </main><!-- End #main -->
-  </body>
-
-<?php require_once 'footer-html.php'; ?>
+  <?php 
+  require_once PROJECT_ROOT . '/views/footer-html.php'; 
+  ?>
+</body>

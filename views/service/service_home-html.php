@@ -1,9 +1,10 @@
 <?php if( !defined('SunnyDays') ) exit(); ?>
 
 <?php 
-require_once 'C:\xampp\htdocs\SunnyDays\views\head-services-html.php'; 
-$activemenu = 'services'; // $activemenu - за активна страница
-require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
+require_once __DIR__ . '/../../config.php';
+$activemenu = 'services';
+require_once PROJECT_ROOT . '/views/head-html.php';
+require_once PROJECT_ROOT . '/views/header-html.php';
 ?>
 <body>
   <main id="main">
@@ -137,6 +138,6 @@ require_once 'C:\xampp\htdocs\SunnyDays\views\header-html.php';
 
   </main><!-- End #main -->
   <?php 
-  require_once 'C:\xampp\htdocs\SunnyDays\views\footer-services-html.php'; 
+  require_once PROJECT_ROOT . '/views/footer-html.php'; 
   ?>
 </body>

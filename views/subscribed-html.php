@@ -1,12 +1,9 @@
-<?php if( !defined('SunnyDays') ) exit(); ?>
-
-<?php
-require_once 'head-html.php';
-
+<?php if( !defined('SunnyDays') ) exit(); 
+require_once __DIR__ . '/../config.php';
+require_once PROJECT_ROOT . '/views/head-html.php';
+require_once PROJECT_ROOT . '/views/header-html.php';
 ?>
 <body>
-    <?php require_once 'header-html.php'; ?>
-
     <main id="main">
 
     <!-- ======= Subscribed Section ======= -->
@@ -20,5 +17,7 @@ require_once 'head-html.php';
     </section><!-- End Inner Page -->
 
     </main><!-- End #main -->
-
-    <?php require_once 'footer-html.php'; ?>
+  <?php 
+  require_once PROJECT_ROOT . '/views/footer-html.php'; 
+  ?>
+</body>

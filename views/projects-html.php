@@ -1,18 +1,13 @@
 <?php 
 if( !defined('SunnyDays') ) exit(); 
+$activemenu = 'projects'; // $activemenu - за активна страница
+require_once __DIR__ . '/../config.php';
+require_once PROJECT_ROOT . '/views/head-html.php';
+require_once PROJECT_ROOT . '/views/header-html.php';
 ?>
-  <?php require_once 'head-html.php'; 
-  $activemenu = 'projects'; // $activemenu - за активна страница
-  ?>
-  
-
-  <body>
-  
-    <?php require_once 'header-html.php'; ?>
-
+<body>
   <main class="projects-body" id="main">
-
-<!-- ======= Menu Projects ======= -->
+    <!-- ======= Menu Projects ======= -->
     <section id="projects" class="inner-page" data-aos="fade-up">
       <div class="container">
 
@@ -28,7 +23,6 @@ if( !defined('SunnyDays') ) exit();
                 </div>
               </section>
               <?}?>
-
           <!-- ======= End Menu Project 1 ======= -->
 
           <!-- ======= Menu Project 2 ======= -->
@@ -43,12 +37,12 @@ if( !defined('SunnyDays') ) exit();
             </div>
           </section>
           <?}?>
-
           <!-- ======= End Menu Project 2 ======= -->
 
       </div>
     </section>
   </main><!-- End #main -->
+  <?php 
+  require_once PROJECT_ROOT . '/views/footer-html.php'; 
+  ?>
 </body>
-
-<?php require_once 'footer-html.php'; ?>

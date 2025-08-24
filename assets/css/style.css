@@ -2034,8 +2034,9 @@ input[type="password"] {
   padding: 10px;
 }
 
-#profileMenuLink:hover {
+#profileMenuLink {
   background-color: #eca21a;
+  font-weight: bold;
 }
 
 .profilIcon {

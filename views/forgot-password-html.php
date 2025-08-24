@@ -25,5 +25,7 @@ require_once 'header-html.php';
     </section><!-- End Section forgotPassword -->
     
   </main><!-- End #main -->
-
-  <?php require_once 'footer-html.php'; ?>
+  <?php 
+  require_once PROJECT_ROOT . '/views/footer-html.php'; 
+  ?>
+</body>

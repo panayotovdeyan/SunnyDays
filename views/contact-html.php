@@ -1,17 +1,13 @@
 <?php 
 if( !defined('SunnyDays') ) exit(); 
-?>
 
-<?php
-require_once 'head-html.php';
 $activemenu = 'contact'; // $activemenu - за активна страница
+require_once __DIR__ . '/../config.php';
+require_once PROJECT_ROOT . '/views/head-html.php';
+require_once PROJECT_ROOT . '/views/header-html.php';
 ?>
 <body>
-    <?php require_once 'header-html.php'; ?>
-
-    <main id="main">
-
-
+  <main id="main">
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
@@ -75,12 +71,11 @@ $activemenu = 'contact'; // $activemenu - за активна страница
               </div>
             </form>
           </div>
-
         </div>
-
       </div>
     </section><!-- End Contact Section -->
-
-    </main><!-- End #main -->
-
-<?php require_once 'footer-html.php'; ?>
+  </main><!-- End #main -->
+  <?php 
+  require_once PROJECT_ROOT . '/views/footer-html.php'; 
+  ?>
+</body>

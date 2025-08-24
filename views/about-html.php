@@ -1,11 +1,10 @@
 <?php 
 if( !defined('SunnyDays') ) exit(); 
-
-require_once 'head-html.php'; 
 $activemenu = 'about'; // $activemenu - за активна страница
-require_once 'header-html.php';
+require_once __DIR__ . '/../config.php';
+require_once PROJECT_ROOT . '/views/head-html.php';
+require_once PROJECT_ROOT . '/views/header-html.php';
 ?>
-
 <body>
 <!-- ======= Menu About ======= -->
   <main class = "about-body" id="main">
@@ -70,11 +69,11 @@ require_once 'header-html.php';
               </section>
               <?}
             ?>
-
           <!-- ======= End Menu About ======= -->
       </div>
     </section>
   </main><!-- End #main -->
+  <?php 
+  require_once PROJECT_ROOT . '/views/footer-html.php'; 
+  ?>
 </body>
-
-<?php require_once 'footer-html.php'; ?>

@@ -1,25 +1,19 @@
 <?php 
-// print_r($_SESSION);die; 
 if( !defined('SunnyDays') ) exit();
-
-require_once 'C:\xampp\htdocs\SunnyDays\includes\db_SunnyDays.php';
-require_once 'C:\xampp\htdocs\SunnyDays\includes\functions.php';
-require_once 'C:\xampp\htdocs\SunnyDays\classes\reporting.php';
-require_once 'C:\xampp\htdocs\SunnyDays\classes\user.php';
-
-require_once 'head-html.php';
-
+require_once __DIR__ . '/../config.php';
+$activemenu = 'account'; // $activemenu - за активна страница
+require_once PROJECT_ROOT . '/views/head-html.php';
+require_once PROJECT_ROOT . '/views/header-html.php';
+require_once PROJECT_ROOT . '/includes/db_SunnyDays.php';
+require_once PROJECT_ROOT . '/includes/functions.php';
+require_once PROJECT_ROOT . '/classes/reporting.php';
+require_once PROJECT_ROOT . '/classes/user.php';
 ?>
-
-  <body>
-    <?php require_once 'header-html.php'; ?>
-
+<body>
   <main id="main">
-
-      <!-- ======= Profile Section ======= -->
-      <section id="profile" class="profile">
+    <!-- ======= Profile Section ======= -->
+    <section id="profile" class="profile">
       <div class="container">
-        
         <div class="member">
           <h4><?php echo "Здравейте, {$_SESSION['user']['name']} {$_SESSION['user']['family']} <br>"; ?></h4>
           <h4><?php echo "Вашите данни:"; ?></h4>
@@ -27,7 +21,6 @@ require_once 'head-html.php';
           <p><?php echo"<p> Имена: {$_SESSION['user']['name']} {$_SESSION['user']['family']}</p>"; ?></h4>
           <p><?php echo"<p> Град: {$_SESSION['user']['city']} </p>"; ?></h4>
           <p><?php echo"<p> Регистриран на: {$_SESSION['user']['regDate']} </p>";?></h4>
-          
         </div>
       
         <div class="section-title">
@@ -151,7 +144,6 @@ require_once 'head-html.php';
         <div id="tableHistoricalData" class="section-title">
           <h2>Месечни данни с натрупване</h2>
         </div>
-
         <table class="table">
           <thead>
           <h4><center>Исторически данни за произведенато и консумираното</center></h4>
@@ -182,15 +174,14 @@ require_once 'head-html.php';
                 echo "<td>".$report['UoMMC']."</td>";
                 echo "<td>".$report['TTLconsumption']."</td>";
                 echo "<td>".$report['UoMTC']."</td>";
-
               }
               ?>
             </tbody>
         </table>
       </div>
-    </div>
-  </section><!-- End Hero Section -->
-
-</main><!-- End #main -->
-
-<?php require_once 'views/footer-html.php'; ?>
+    </section><!-- End Hero Section -->
+  </main><!-- End #main -->
+<?php 
+require_once PROJECT_ROOT . '/views/footer-html.php'; 
+?>
+</body>

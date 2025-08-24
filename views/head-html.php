@@ -4,7 +4,7 @@ if( !defined('SunnyDays') ) exit();
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="=X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>SUNNY DAYS-Фотоволтаични системи за дома</title>
@@ -31,11 +31,11 @@ if( !defined('SunnyDays') ) exit();
   <link href="/assets/select2/dist/css/select2.min.css" rel="stylesheet">
 
   <!-- Jquery Original -->
-  <script src="../assets/jquery/jquery.js"></script>
+  <script src="/assets/jquery/jquery.js"></script>
 
   <!-- Jquery Custom -->
-  <script src="../assets/jquery/jquerySunnydays.js"></script>
-  <script src="../assets/jquery/jqueryHelpToggle.js"></script>
+  <script src="/assets/jquery/jquerySunnydays.js"></script>
+  <script src="/assets/jquery/jqueryHelpToggle.js"></script>
 
   <!-- MOMENTJS URL -->
   <script src="https://momentjs.com/downloads/moment.js"></script>
