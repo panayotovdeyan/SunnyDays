@@ -15,9 +15,10 @@ $config = require 'C:/xampp/config-sunnydays.php';
 if(isset($_POST['send'])) {
 
 
-    $name = htmlentities($_POST['name']);
+    $name = htmlentities(trim($_POST['name']));
     $email = htmlentities($_POST['email']);
-    $subject = "SunnyDays Contact form";
+    $phone = htmlentities(trim($_POST['phone']));
+    $subject = "From SunnyDays <Contact form>";
     $subjectClient = "Запитване";
     $message = htmlentities($_POST['message']);
     
@@ -39,10 +40,7 @@ if(isset($_POST['send'])) {
     $mail->setFrom($config['smtp_from_email'], $name);
     $mail->addAddress($config['smtp_username']);             //Add a recipient
     $mail->addCC($email);
-    // $mail->addAddress($_POST['name']);                       //Name is optional
-    // $mail->addReplyTo('info@example.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
+    $mail->addReplyTo($email, $name);
 
     //Attachments
     // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
@@ -50,13 +48,16 @@ if(isset($_POST['send'])) {
 
     //Content
     $mail->Subject = ("$subject ($subjectClient от $name - $email)");
-    $mail->Body = $message;
-    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->Body = ("Изпратено от: <strong>$name</strong><br>
+                    Email: <strong>$email</strong><br>
+                    Телефон: <strong>$phone</strong><br>
+                    Запитване: <strong>$message</strong>");
+    
 
     $mail->send();
 
     echo "<script> 
-    alert ('Съобщението е изпратено успешно')
+    alert ('Запитването е изпратено успешно')
     document.location.href = 'index.php';
     </script>";
 }

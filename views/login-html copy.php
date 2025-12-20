@@ -1,15 +1,18 @@
-<?php if( !defined('SunnyDays') ) exit(); ?>
+<?php if( !defined('SunnyDays') ) exit();
 
-<?php
-require_once 'head-html.php';
+if (session_status() !== PHP_SESSION_ACTIVE) { session_start(); }
+if (function_exists('show_flash_alert_and_clear')) {
+    show_flash_alert_and_clear();
+}
+
 $activemenu = 'account'; // $activemenu - за активна страница в header-html.php
+require_once __DIR__ . '/../config.php';
+require_once PROJECT_ROOT . '/views/head-html.php';
+require_once PROJECT_ROOT . '/views/header-html.php';
 ?>
 <body>
-    <?php require_once 'header-html.php'; ?>
-
-    <main id="main">
-
-    <!-- ======= Section Login ======= -->
+  <main id="main">
+   <!-- ======= Section Login ======= -->
     <section class="inner-page" id="loginSection">
       <div class="login-container" data-aos="fade-up">
         <div class="section-header">
@@ -39,6 +42,7 @@ $activemenu = 'account'; // $activemenu - за активна страница �
       </div>
     </section><!-- End Inner Page -->
   </main><!-- End #main -->
+  <?php 
+  require_once PROJECT_ROOT . '/views/footer-html.php'; 
+  ?>
 </body>
-
-<?php require_once 'footer-html.php'; ?>

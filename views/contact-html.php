@@ -32,7 +32,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
             <div class="info-box  mb-4">
               <a href='/'><i class="bx bx-envelope"></i></a>
               <h3>Пишете ни</h3>
-              <p>contact@sunnydays.com</p>
+              <p>info@sunnydays.com</p>
             </div>
           </div>
 
@@ -60,6 +60,11 @@ require_once PROJECT_ROOT . '/views/header-html.php';
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Вашият имейл" required>
+                </div>
+                <br>
+                <br>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="phone" class="form-control" name="phone" id="phone" placeholder="Вашият телефон" required>
                 </div>
               </div>
               <div class="form-group mt-3">

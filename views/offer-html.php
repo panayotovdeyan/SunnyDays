@@ -33,7 +33,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
           </div>
 
           <div class="col-lg-6">
-          <form action="/mailOffer.php" method="post" role="form">
+          <form action="/mailOffer.php" method="post" enctype="multipart/form-data" role="form">
               <div class="row">
               <div class="col-md-6 form-group mt-3 mt-md-0">
                 <label for="name">Име</label>
@@ -58,6 +58,11 @@ require_once PROJECT_ROOT . '/views/header-html.php';
               <div class="col-md-6 form-group mt-3 mt-md-2">
                 <label for="quadrature">Kвадратура на покрива</label>
                 <input class="form-control" name="quadrature" id="quadrature" >
+              </div>
+              <div class="form-group mt-3">
+                <label for="attachment">Прикачете файл (снимка на обекта, проект или др.)</label>
+                <input type="file" name="attachment" id="attachment" class="form-control" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.txt">
+                <small class="text-muted">Максимален размер: 10MB</small>
               </div>
               <div class="form-group mt-2">
                 <label for="message">Добавете коментар ако желаете</label>

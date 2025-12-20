@@ -12,7 +12,7 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope-fill"></i><a href="/menu/contact.php">contact@sunnydays.com</a>
+        <i class="bi bi-envelope-fill"></i><a href="/menu/contact.php">info@sunnydays.com</a>
         <i class="call-icon"><img src="/assets/img/Icons/call_white_18dp.svg"></i>
           <span>
             <a href="tel://+35988123456">088 123 4567</a>
@@ -24,7 +24,7 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
               <?php
               if (isset ($_SESSION['user']['name'])){
                 ?>
-                  <img src="/assets/img/Icons/person_white_24dp.svg" class="profilIcon" >
+                  <img <?php if ($activemenu == 'account'){ ?>class="active"<?php } ?> src="/assets/img/Icons/person_white_24dp.svg" class="profilIcon" >
                     <span class="profileMenuLink">
                       <span class="dd-text d-none d-md-inline">
                         <span style="text-decoration-color: #eca21a">
@@ -111,12 +111,12 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
             if( !$loged ){?>
               <li class="dropdown"><a <?php if ($activemenu == 'account'){ ?>class="active"<?php } ?> ><img src="/assets/img/Icons/person_white_24dp.svg"> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="/login.php" <?php if ($activemenu == 'account'){ ?>class="hidden"<?php } ?>>Вход<img src="/assets/img/Icons/login_white_24dp.svg" class="icon1"></a></li>
-                  <li><a href="/reg.php" <?php if ($activemenu == 'account'){ ?>class="hidden" <?php } ?>>Регистрация<img src="/assets/img/Icons/how_to_reg_24dp_FFFFFF.svg" class="icon1"></a></li>
+                  <li><a href="/login.php" <?php if ($activemenu == 'login'){ ?>class="hidden"<?php } ?>>Вход<img src="/assets/img/Icons/login_white_24dp.svg" class="icon1"></a></li>
+                  <li><a href="/reg.php" <?php if ($activemenu == 'reg'){ ?>class="hidden" <?php } ?>>Регистрация<img src="/assets/img/Icons/how_to_reg_24dp_FFFFFF.svg" class="icon1"></a></li>
                 </ul>
               </li>
             <?}else{?>
-              <a href="/logout.php" <?php if ($activemenu == 'logout'){ ?>class="active"<?php } ?>>Изход<img src="/assets/img/Icons/logout_white_24dp.svg" class="icon2"></a>
+              <a href="/logout.php" <?php if ($activemenu == 'account'){ ?>class="active"<?php } ?>>Изход<img src="/assets/img/Icons/logout_white_24dp.svg" class="icon2"></a>
             <?}?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

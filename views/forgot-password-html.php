@@ -1,9 +1,9 @@
 <?php
 if( !defined('SunnyDays') ) exit();
-
-require_once 'head-html.php'; 
 $activemenu = 'account'; // $activemenu - за активна страница
-require_once 'header-html.php';
+require_once __DIR__ . '/../config.php';
+require_once PROJECT_ROOT . '/views/head-html.php';
+require_once PROJECT_ROOT . '/views/header-html.php';
 ?>
 
   <main id="main">

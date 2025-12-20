@@ -18,6 +18,7 @@ if ( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] > 5){
 
 if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
     $loged = true;
+    session_start();
 
     
 }else{

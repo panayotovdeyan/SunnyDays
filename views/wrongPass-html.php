@@ -2,6 +2,11 @@
 define("SunnyDays", true);
 session_start();
 
+if (session_status() !== PHP_SESSION_ACTIVE) { session_start(); }
+if (function_exists('show_flash_alert_and_clear')) {
+    show_flash_alert_and_clear();
+}
+
 require_once __DIR__ . '/../config.php';
 require_once PROJECT_ROOT . '/views/head-html.php';
 require_once PROJECT_ROOT . '/views/header-html.php';

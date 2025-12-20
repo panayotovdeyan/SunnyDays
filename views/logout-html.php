@@ -1,6 +1,6 @@
 <?php 
 if( !defined('SunnyDays') ) exit();
-$activemenu = 'logout'; // $activemenu - за активна страница
+$activemenu = 'account'; // $activemenu - за активна страница
 require_once __DIR__ . '/../config.php';
 require_once PROJECT_ROOT . '/views/head-html.php';
 require_once PROJECT_ROOT . '/views/header-html.php';
