@@ -9,6 +9,18 @@ if( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] == 3 ){
     </script>";
 }
 
+if( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] == 4 ){
+    echo "<script> 
+    alert ('Имате още 2 (два) опита за влизане в сайта, въвеждайте внимателно данните си или използвайте <Забравена парола!>')
+    </script>";
+}
+
+if( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] == 5 ){
+    echo "<script> 
+    alert ('Това е последният Ви опит за влизане в сайта, най-добре използвайте <Забравена парола!>')
+    </script>";
+}
+
 if ( isset($_SESSION['wrong_logins']) && $_SESSION['wrong_logins'] > 5){
     die("<script> 
         alert ('Изчерпахте опитите си за влизане в сайта!')

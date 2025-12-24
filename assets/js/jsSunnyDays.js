@@ -1,142 +1,136 @@
-console.log("jsSunnyDays.js е зареден");
+/**
+ * SunnyDays Main JavaScript File
+ */
 
-console.log("DOM напълно зареден");
-const forgotForm = document.getElementById("forgotPasswordForm");
-console.log("forgotForm е:", forgotForm);
+console.log("jsSunnyDays.js е зареден успешно");
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM е напълно зареден");
 
-    //Видимост на паролата
+    // ==========================================
+    // 1. ВИДИМОСТ НА ПАРОЛИТЕ (Login, Reg, Reset)
+    // ==========================================
+    const passwordToggles = [
+        { inputId: 'loginPassword', toggleId: 'toggleLoginPassword' },
+        { inputId: 'newPassword', toggleId: 'toggleNewPassword' },
+        { inputId: 'confirmPassword', toggleId: 'toggleConfirmPassword' }
+    ];
 
-        // Вход
-        const toggleLoginPassword = document.getElementById("toggleLoginPassword");
-        if (toggleLoginPassword) {
-            toggleLoginPassword.addEventListener("click", function () {
-                const passwordInput = document.getElementById("loginPassword");
-                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-                passwordInput.setAttribute("type", type);
-
-                const newIconPath = type === "password" 
-                    ? "/assets/img/Icons/visibility_18dp_000000.svg" 
-                    : "/assets/img/Icons/visibility_off_18dp_000000.svg";
-                this.setAttribute("src", newIconPath);
+    passwordToggles.forEach(({ inputId, toggleId }) => {
+        const input = document.getElementById(inputId);
+        const toggle = document.getElementById(toggleId);
+        
+        if (input && toggle) {
+            toggle.addEventListener('click', function() {
+                const isPassword = input.type === 'password';
+                input.type = isPassword ? 'text' : 'password';
+                
+                // Смяна на иконата
+                this.src = isPassword 
+                    ? "/assets/img/Icons/visibility_off_18dp_000000.svg" 
+                    : "/assets/img/Icons/visibility_18dp_000000.svg";
             });
         }
+    });
 
-        // при registration and reset-password
-
-        const passwordToggles = [
-            { inputId: 'newPassword', toggleId: 'toggleNewPassword' },
-            { inputId: 'confirmPassword', toggleId: 'toggleConfirmPassword' }
-          ];
-        
-          passwordToggles.forEach(({ inputId, toggleId }) => {
-            const input = document.getElementById(inputId);
-            const toggle = document.getElementById(toggleId);
-            if (input && toggle) {
-              toggle.addEventListener('click', () => {
-                const type = input.type === 'password' ? 'text' : 'password';
-                input.type = type;
-                toggle.src = type === 'password'
-                  ? '/assets/img/Icons/visibility_18dp_000000.svg'
-                  : '/assets/img/Icons/visibility_off_18dp_000000.svg';
-              });
-            }
-          });
-
-
-
-
-    // За да вградите CSV файл с имената на градовете в HTML код и да запълните <select> елемента, 
-    //може да използвате JavaScript и библиотека като PapaParse за четене на CSV файлове. 
-    //Ето как да го направите:
-    // Път към CSV файла
-    const csvFilePath = '/assets/js/municipalities.csv';
-
-    // Елементът <select>, в който ще добавим градовете
+    // ==========================================
+    // 2. ЗАРЕЖДАНЕ НА ГРАДОВЕ (Само ако елементът съществува)
+    // ==========================================
     const selectElement = document.getElementById('regCity');
+    if (selectElement) {
+        const csvFilePath = '/assets/js/municipalities.csv';
 
-    // Функция за зареждане на CSV файла
-    function loadCSV(filePath, callback) {
-        fetch(filePath)
-            .then(response => response.text())
+        fetch(csvFilePath)
+            .then(response => {
+                if (!response.ok) throw new Error("CSV файлът не беше намерен");
+                return response.text();
+            })
             .then(data => {
                 const rows = data.split('\n');
-                callback(rows);
+                rows.forEach(city => {
+                    const cleanCity = city.trim();
+                    if (cleanCity) {
+                        const option = document.createElement('option');
+                        option.value = cleanCity;
+                        option.textContent = cleanCity;
+                        selectElement.appendChild(option);
+                    }
+                });
             })
-            .catch(error => console.error('Грешка при зареждането на CSV файла:', error));
+            .catch(error => console.warn('Инфо: Елементът за градове не е запълнен:', error.message));
     }
 
-    // Функция за добавяне на градове в <select>
-    function populateSelect(cities) {
-        cities.forEach(city => {
-            if (city.trim()) { // Проверка за празни редове
-                const option = document.createElement('option');
-                option.value = city.trim();
-                option.textContent = city.trim();
-                selectElement.appendChild(option);
+    // ==========================================
+    // 3. ЗАБРАВЕНА ПАРОЛА (AJAX + reCAPTCHA)
+    // ==========================================
+    const forgotForm = document.getElementById("forgotPasswordForm");
+    if (forgotForm) {
+        forgotForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Проверка за Google reCAPTCHA
+            if (typeof grecaptcha === 'undefined') {
+                alert("Системата за сигурност Google reCAPTCHA не е заредена. Моля, опреснете страницата.");
+                return;
             }
+
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse.length === 0) {
+                alert("Моля, потвърдете, че не сте робот.");
+                return;
+            }
+
+            // Визуална обратна връзка
+            const btn = document.getElementById("forgotPasswordBtn");
+            const preloader = document.getElementById("form-preloader");
+
+            if (btn) {
+                btn.disabled = true;
+                btn.innerText = "Изпращане...";
+            }
+            if (preloader) preloader.style.display = "block";
+
+            const email = document.getElementById("email").value;
+
+            // Изпращане на данните
+            fetch("forgot-password.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "email=" + encodeURIComponent(email) + "&g-recaptcha-response=" + encodeURIComponent(recaptchaResponse)
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) {
+                    window.location.href = "login.php";
+                }
+            })
+            .catch(err => {
+                console.error("Fetch Error:", err);
+                alert("Възникна грешка при връзката със сървъра.");
+            })
+            .finally(() => {
+                // Възстановяване на формата
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerText = "Нова парола";
+                }
+                if (preloader) preloader.style.display = "none";
+                grecaptcha.reset(); 
+            });
         });
     }
-
-    // Зареждане на CSV файла и добавяне на градове
-    loadCSV(csvFilePath, populateSelect);
-
-    // ===== Маркиране на източника на регистрация =====
-    function setRegisterValue() {
-        if (document.activeElement.id === "enterButtonGoOn") {
-            document.getElementById('register').value = "1";
-        } else if (document.activeElement.id === "enterButtonReg") {
-            document.getElementById('register').value = "2";
-        }
-        return true; // Позволява формата да бъде изпратена
-    }
-
-    // ===== Забравена парола =====
-    const forgotForm = document.getElementById("forgotPasswordForm");
-
-    if (forgotForm && !forgotForm.classList.contains("handler-attached")) {
-      forgotForm.classList.add("handler-attached");
-  
-      forgotForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-  
-        const email = document.getElementById("email").value;
-  
-        fetch("forgot-password.php", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: "email=" + encodeURIComponent(email),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            alert(data.message);
-            if (data.success) {
-              window.location.href = "/";
-            }
-          })
-          .catch((err) => {
-            alert("Възникна грешка при заявката.");
-            console.error(err);
-          });
-      });
-    }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById("forgotPasswordForm");
-  const btn = document.getElementById("forgotPasswordBtn");
-  const preloader = document.getElementById("form-preloader");
+// Функцията за източник на регистрация (извън DOMContentLoaded, ако се вика от HTML)
+function setRegisterValue() {
+    const regInput = document.getElementById('register');
+    if (!regInput) return true;
 
-  form.addEventListener("submit", function() {
-    // Показваме preloader-а
-    preloader.style.display = "block";
-
-    // Деактивираме бутона
-    btn.disabled = true;
-    btn.innerText = "Изпращане...";
-  });
-});
-
-
-  
+    if (document.activeElement.id === "enterButtonGoOn") {
+        regInput.value = "1";
+    } else if (document.activeElement.id === "enterButtonReg") {
+        regInput.value = "2";
+    }
+    return true;
+}

@@ -49,7 +49,7 @@
 
   <div class="container">
     <div class="copyright">
-      2021 - 2025 &copy; Copyright <strong><span>SUNNY DAYS</span></strong>. All Rights Reserved
+      2026 &copy; Copyright <strong><span>SUNNY DAYS</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       Designed by <a href="https://github.com/panayotovdeyan?tab=projects">Deyan Panayotov</a>

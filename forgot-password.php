@@ -25,6 +25,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     // Взимаме имейла и го почистваме
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+    
+    // 1. Проверка на reCAPTCHA
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = [
+        'secret' => $config['recaptcha_secret_key'],
+        'response' => $recaptchaResponse
+    ];
+
+    $options = [
+        'http' => [
+            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($data)
+        ]
+    ];
+    
+    $context  = stream_context_create($options);
+    $verify = file_get_contents($url, false, $context);
+    $captchaSuccess = json_decode($verify);
+
+    if (!$captchaSuccess->success) {
+        $response["message"] = "Неуспешна проверка за ботове. Моля, опитайте пак.";
+        echo json_encode($response);
+        exit;
+    }
+    // Край на 1. Проверка на reCAPTCHA
 
     if (empty($email)) {
         $response["message"] = "Моля, въведете имейл адрес.";
@@ -32,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    // 1. Проверка дали имейлът съществува (Prepared Statement)
+    // 2. Проверка дали имейлът съществува (Prepared Statement)
     $stmt = $conn->prepare("SELECT email FROM users WHERE email = ? LIMIT 1");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -40,10 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($result && $result->num_rows > 0) {
         
-        // 2. Генериране на токен
+        // 3. Генериране на токен
         $token = bin2hex(random_bytes(32));
         
-        // 3. Запис на токена в базата (Използваме REPLACE или първо DELETE, за да няма стари токени)
+        // 4. Запис на токена в базата (Използваме REPLACE или първо DELETE, за да няма стари токени)
         $delStmt = $conn->prepare("DELETE FROM password_resets WHERE email = ?");
         $delStmt->bind_param("s", $email);
         $delStmt->execute();
@@ -53,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         if ($insStmt->execute()) {
             
-            // 4. Изпращане на имейл с PHPMailer
+            // 5. Изпращане на имейл с PHPMailer
             $mail = new PHPMailer(true);
 
             try {
