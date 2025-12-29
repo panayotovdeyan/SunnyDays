@@ -123,14 +123,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Функцията за източник на регистрация (извън DOMContentLoaded, ако се вика от HTML)
-function setRegisterValue() {
-    const regInput = document.getElementById('register');
-    if (!regInput) return true;
 
-    if (document.activeElement.id === "enterButtonGoOn") {
-        regInput.value = "1";
-    } else if (document.activeElement.id === "enterButtonReg") {
-        regInput.value = "2";
+function validateRegForm() {
+    const registerType = document.getElementById('register').value;
+    const recaptchaResponse = grecaptcha.getResponse();
+
+    // Ако се опитваме да направим финална регистрация (бутон 2)
+    if (registerType === "2") {
+        if (recaptchaResponse.length === 0) {
+            alert("Моля, потвърдете, че не сте робот чрез отметката.");
+            return false; // Спира изпращането на формата
+        }
     }
-    return true;
+
+    // Логиката за задаване на стойността (оригинален код)
+    if (document.activeElement.id === "enterButtonGoOn") {
+        document.getElementById('register').value = "1";
+    } else if (document.activeElement.id === "enterButtonReg") {
+        document.getElementById('register').value = "2";
+    }
+    
+    const preloader = document.getElementById("form-preloader");
+    if (preloader) preloader.style.display = "block"; // Показваме го при изпращане на потвърдителен имейл
+
+    return true; // Позволява изпращането
 }

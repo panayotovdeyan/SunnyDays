@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $mail->Username   = $config['smtp_username'];
                 $mail->Password   = $config['smtp_password']; // Вашият App Password
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL
-                $mail->Port       = 465;
+                $mail->Port       = $config['smtp_port'];
                 $mail->CharSet    = 'UTF-8';
 
                 // Получатели

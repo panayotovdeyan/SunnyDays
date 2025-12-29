@@ -1,6 +1,19 @@
 <?php
 session_start();
 define("SunnyDays", true);
+
+// Път към базата данни и конфигурацията
+require_once 'includes/db_SunnyDays.php';
+$config = require 'C:/xampp/config-sunnydays.php';
+
+// Импорт на PHPMailer класовете
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'C:/xampp/htdocs/sunnydays/PHPMailer/src/Exception.php';
+require 'C:/xampp/htdocs/sunnydays/PHPMailer/src/PHPMailer.php';
+require 'C:/xampp/htdocs/sunnydays/PHPMailer/src/SMTP.php';
+
 if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
     $loged = true;
     require_once 'profile.php';
@@ -46,6 +59,23 @@ if( isset($_REQUEST['register']) && $_REQUEST['register'] == 1 && !$loged ){
 if( isset($_REQUEST['register']) && $_REQUEST['register'] == 2 && !$loged ){
     //register new user
     require_once 'includes/db_SunnyDays.php';
+
+    $config = require 'C:/xampp/config-sunnydays.php'; // Зареждаме Secret Key
+
+    // --- НАЧАЛО RECAPTCHA ПРОВЕРКА ---
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
+    $secretKey = $config['recaptcha_secret_key'];
+    $userIp = $_SERVER['REMOTE_ADDR'];
+    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaResponse&remoteip=$userIp";
+
+    $verify = @file_get_contents($url);
+    $captchaSuccess = json_decode($verify);
+
+    if (!$captchaSuccess || $captchaSuccess->success !== true) {
+        die("<script>alert('Грешка: Моля, потвърдете, че не сте робот (reCAPTCHA).'); history.back();</script>");
+    }
+    // --- КРАЙ RECAPTCHA ПРОВЕРКА ---
+
     $csrf = cleanInput($_REQUEST['csrf_token']);
     $csrf = mysqli_real_escape_string($conn, $csrf);
     if( $_SESSION['csrf_token'] != $csrf ){
@@ -96,14 +126,64 @@ if( isset($_REQUEST['register']) && $_REQUEST['register'] == 2 && !$loged ){
                         <a href="/login.php" class="btn btn-primary active"><h4>Вход/Влез</h4></a>
                         <?php
         } else {
-                $querySQL = "INSERT INTO `users`(`name`, `family`, `email`, `password`, `city`) 
-                                    VALUES ('$name','$family','$email','$passHashed', '$city')";
+                //Генерираме уникален токен
+                $activationToken = bin2hex(random_bytes(16));
+                //Генерираме INSERT заявката
+                $querySQL = "INSERT INTO `users`(`name`, `family`, `email`, `password`, `city`, `activation_token`, `is_active`) 
+                                VALUES ('$name','$family','$email','$passHashed', '$city', '$activationToken', 0)";
                 $result = mysqli_query($conn, $querySQL);
-                echo    "<script> 
-                        alert ('Потребител $name $family е регистриран успешно!')
-                        document.location.href = '/login.php'
-                        </script>";
+                if ($result) {
+                    // === ИЗПРАЩАНЕ НА ИМЕЙЛ ЗА ДОБРЕ ДОШЛИ ===
 
+
+                    $activationLink = "http://sunnydays/activate.php?token=" . $activationToken;
+
+                    $mail = new PHPMailer(true);
+
+                    try {
+                        // Настройки на сървъра
+                        $mail->isSMTP();
+                        $mail->Host       = 'smtp.gmail.com';
+                        $mail->SMTPAuth   = true;
+                        $mail->Username   = $config['smtp_username'];
+                        $mail->Password   = $config['smtp_password']; // Вашият App Password
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL
+                        $mail->Port       = $config['smtp_port'];
+                        $mail->CharSet    = 'UTF-8';
+
+                        // Получатели
+                        $mail->setFrom($config['smtp_from_email'], $config['smtp_from_name']);
+                        $mail->addAddress($email);
+
+                        // Subject
+                        $mail->isHTML(true);
+                        $mail->Subject = 'Добре дошли в SunnyDays!';
+                        
+                        // HTML шаблон за имейла
+                        $mail->Body    = "
+                            <div style='font-family: Arial, sans-serif; border: 1px solid #ddd; padding: 20px;'>
+                                <h2 style='color: #2c3e50;'>Здравейте, $name!</h2>
+                                <p>Благодарим ви за регистрацията. За да влезете в профила си, моля първо го активирайте чрез бутона по-долу:</p>
+                                <br>
+                                <a href='$activationLink' style='background-color: #27ae60; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;'>АКТИВИРАЙ ПРОФИЛА СИ</a>
+                                <br><br>
+                                <p>Ако бутонът не работи, копирайте този линк в браузъра си:</p>
+                                <p>$activationLink</p>
+                            </div>";
+
+                        $mail->send();
+                    } catch (Exception $e) {
+                        // Не спираме регистрацията, ако само имейлът се провали, 
+                        // но записваме грешката в лога за теб
+                        error_log("Имейлът не можа да бъде изпратен. Mailer Error: {$mail->ErrorInfo}");
+                    }
+
+                    // Твоят съществуващ alert и пренасочване
+                    echo    "<script> 
+                                alert ('Регистрацията е успешна! Моля, проверете имейла си, за да активирате профила.');
+                                document.location.href = '/login.php';
+                            </script>";
+                }
                 if( empty($result) ){
                     $rformerror = true;
                 }
@@ -112,6 +192,6 @@ if( isset($_REQUEST['register']) && $_REQUEST['register'] == 2 && !$loged ){
         die('Има празно поле, Моля прегледайте всички полета');
     }
 }
-require_once 'views/register-html.php';
+require_once 'views/reg-html.php';
 
 ?>
