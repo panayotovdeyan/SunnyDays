@@ -38,7 +38,7 @@ if( !defined('admindp') ) exit();
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
               <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
-                <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= $project->text ?></textarea>
+                <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= stripslashes($project->text) ?></textarea>
               </div>
               <br>
               <label for="published" id="editLabel">Публикуване</label>
@@ -66,5 +66,5 @@ if( !defined('admindp') ) exit();
 
   </main><!-- End #main -->
 
-
   <?php require_once 'aviews/footer-html.php'; ?>
+</body>

@@ -1066,7 +1066,7 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team .member {
-  text-align: center;
+  /* text-align: center; */
   margin-bottom: 20px;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
   padding: 30px 20px;
@@ -1082,21 +1082,21 @@ section {
 .team .member h4 {
   font-weight: 700;
   margin-bottom: 2px;
-  font-size: 18px;
+  /* font-size: 18px; */
 }
 
 .team .member span {
   font-style: italic;
   display: block;
-  font-size: 13px;
+  /* font-size: 13px; */
 }
 
-.team .member p {
+/* .team .member p {
   padding-top: 10px;
   font-size: 15x;
   font-style: italic;
   color: #aaaaaa;
-}
+} */
 
 .team .member .social {
   margin-top: 15px;
@@ -1611,7 +1611,7 @@ section {
   background: #e82d2d;
 }
 
-.about-body {
+/* .about-body {
   background-color: rgb(219, 255, 255);
 }
 
@@ -1624,7 +1624,7 @@ section {
   font-size: 40px;
   text-align: center;
   color: black;
-}
+} */
 
 #tableHistoricalData {
   padding-top: 100px;
@@ -1705,25 +1705,25 @@ section {
     position: relative;
   }
 
-  #projects {
+  /* #projects {
     color: rgb(5, 5, 117);
-  }
+  } */
 
   .projects-body {
     background-color: rgb(219, 255, 255);
   }
 
-  .projects-body p {
+  /* .projects-body p {
     font-size: 20px;
     color: #b46f08;
     text-size-adjust: 100%;
-  }
+  } */
 
-  .projects-body h2 {
+  /* .projects-body h2 {
     font-size: 30px;
     color: black;
     text-align: center;
-  }
+  } */
 
   #topbar .contact-info .call-icon {
     margin-left: 15px;

@@ -41,6 +41,24 @@ if( isset($_SESSION['loged']) && $_SESSION['loged'] ){
                               case 'service_home.php':
                                 $adminLink = '/admin/services.php?from=serv';
                                 break;
+                              case 'service_1.php':
+                                $adminLink = '/admin/services.php?from=serv';
+                                break;
+                              case 'service_2.php':
+                                $adminLink = '/admin/services.php?from=serv';
+                                break;
+                              case 'service_3.php':
+                                $adminLink = '/admin/services.php?from=serv';
+                                break;
+                              case 'service_4.php':
+                                $adminLink = '/admin/services.php?from=serv';
+                                break;
+                              case 'service_5.php':
+                                $adminLink = '/admin/services.php?from=serv';
+                                break;
+                              case 'service_6.php':
+                                $adminLink = '/admin/services.php?from=serv';
+                                break;                                                                                                                            
                               case 'projects.php':
                                 $adminLink = '/admin/projects.php?from=projects';
                                 break;

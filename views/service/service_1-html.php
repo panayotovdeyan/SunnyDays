@@ -18,7 +18,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
         <br>
         <h4><a><?php echo $service1->service_subname ?></a></h4>
         <br>
-        <p><?php echo $service1->service_description ?></p>
+        <div><?php echo stripslashes($service1->service_description) ?></div>
         <br>
         <center><?php echo "<img src='" . $service1->service_image . "' style='width: 70%;'>";?></center>
      </div>

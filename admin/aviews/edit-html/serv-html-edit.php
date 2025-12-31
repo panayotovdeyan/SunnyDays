@@ -38,7 +38,7 @@ if( !defined('admindp') ) exit();
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
               <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
-                <textarea class="form-control" name="service_description" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= $serv->service_description ?></textarea>
+                <textarea class="form-control" name="service_description" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= stripslashes($serv->service_description) ?></textarea>
               </div>
               <br>
               <label for="published" id="editLabel">Публикуване</label>

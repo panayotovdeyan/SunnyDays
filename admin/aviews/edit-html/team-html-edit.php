@@ -38,7 +38,7 @@ if( !defined('admindp') ) exit();
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
               <label for="title" id="editLabel">Въвеждане/Редактиране - Описание за длъжността</label>
-                <textarea class="form-control" name="memberDescription" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= $member->memberDescription ?></textarea>
+                <textarea class="form-control" name="memberDescription" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= stripslashes($member->memberDescription) ?></textarea>
               </div>
               <br>
               <label for="published" id="editLabel">Публикуване</label>

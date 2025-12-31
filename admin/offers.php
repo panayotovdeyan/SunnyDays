@@ -21,7 +21,7 @@ if( isset($_REQUEST['submited']) && $_REQUEST['submited'] == 4 ){
             $subtitle = mysqli_real_escape_string($conn, $subtitle);
             $image = ($_REQUEST['image']);
             $image = mysqli_real_escape_string($conn, $image);
-            $text = ($_REQUEST['text']);
+            $text = $_REQUEST['text'];
             $text = mysqli_real_escape_string($conn, $text);
 
             $offer = new Offer($id);

@@ -21,7 +21,10 @@ if( isset($_REQUEST['submited']) && $_REQUEST['submited'] == 1 ){
             $subtitle = mysqli_real_escape_string($conn, $subtitle);
             $image = cleanInput($_REQUEST['image']);
             $image = mysqli_real_escape_string($conn, $image);
-            $text = cleanInput($_REQUEST['text']);
+            $text = $_REQUEST['text'];
+                // if (get_magic_quotes_gpc()) {
+                //     $text = stripslashes($text); // Махаме чертите, ако сървърът ги добавя сам
+                // }
             $text = mysqli_real_escape_string($conn, $text);
             $published = ($_REQUEST['published']);
             $published = mysqli_real_escape_string($conn, $published);

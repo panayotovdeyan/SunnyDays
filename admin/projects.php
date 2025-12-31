@@ -19,7 +19,7 @@ if( isset($_REQUEST['submited']) && $_REQUEST['submited'] == 3 ){
             $title = mysqli_real_escape_string($conn, $title);
             $subtitle = cleanInput($_REQUEST['subtitle']);
             $subtitle = mysqli_real_escape_string($conn, $subtitle);
-            $text = cleanInput($_REQUEST['text']);
+            $text = $_REQUEST['text'];
             $text = mysqli_real_escape_string($conn, $text);
             $image = cleanInput($_REQUEST['image']);
             $image = mysqli_real_escape_string($conn, $image);

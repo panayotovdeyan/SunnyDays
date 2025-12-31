@@ -26,7 +26,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
             <?php echo "<img src='" . $member1->memberImage . "'>"; ?>
               <h4><?php echo $member1->memberName ?></h4>
               <span><?php echo $member1->memberPosition ?></span>
-              <p><?php echo $member1->memberDescription ?></p>
+              <div><?php echo stripslashes($member1->memberDescription) ?></div>
               <div class="social">
                 <a href="tel://+35988123456"><i class="bi bi-phone"></i></a>
                 <a href="/menu/contact.php"><i class="bi bi-envelope"></i></a>
@@ -43,7 +43,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
             <?php echo "<img src='" . $member2->memberImage . "'>"; ?>
               <h4><?php echo $member2->memberName ?></h4>
               <span><?php echo $member2->memberPosition ?></span>
-              <p><?php echo $member2->memberDescription ?></p>
+              <div><?php echo stripslashes($member2->memberDescription) ?></div>
               <div class="social">
               <a href="tel://+35988123456"><i class="bi bi-phone"></i></a>
                 <a href="/menu/contact.php"><i class="bi bi-envelope"></i></a>
@@ -60,7 +60,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
             <?php echo "<img src='" . $member3->memberImage . "'>"; ?>
               <h4><?php echo $member3->memberName ?></h4>
               <span><?php echo $member3->memberPosition ?></span>
-              <p><?php echo $member3->memberDescription ?></p>
+              <div><?php echo stripslashes($member3->memberDescription) ?></div>
               <div class="social">
               <a href="tel://+35988123456"><i class="bi bi-phone"></i></a>
                 <a href="/menu/contact.php"><i class="bi bi-envelope"></i></a>
@@ -79,7 +79,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
             <?php echo "<img src='" . $member4->memberImage . "'>"; ?>
               <h4><?php echo $member4->memberName ?></h4>
               <span><?php echo $member4->memberPosition ?></span>
-              <p><?php echo $member4->memberDescription ?></p>
+              <div><?php echo stripslashes($member4->memberDescription) ?></div>
               <div class="social">
               <a href="tel://+35988123456"><i class="bi bi-phone"></i></a>
                 <a href="/menu/contact.php"><i class="bi bi-envelope"></i></a>
@@ -96,7 +96,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
             <?php echo "<img src='" . $member5->memberImage . "'>"; ?>
               <h4><?php echo $member5->memberName ?></h4>
               <span><?php echo $member5->memberPosition ?></span>
-              <p><?php echo $member5->memberDescription ?></p>
+              <div><?php echo stripslashes($member5->memberDescription) ?></div>
               <div class="social">
                 <a href="tel://+35988123456"><i class="bi bi-phone"></i></a>
                 <a href="/menu/contact.php"><i class="bi bi-envelope"></i></a>
@@ -113,7 +113,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
             <?php echo "<img src='" . $member6->memberImage . "'>"; ?>
               <h4><?php echo $member6->memberName ?></h4>
               <span><?php echo $member6->memberPosition ?></span>
-              <p><?php echo $member6->memberDescription ?></p>
+              <div><?php echo stripslashes($member6->memberDescription) ?></div>
               <div class="social">
                 <a href="tel://+35988123456"><i class="bi bi-phone"></i></a>
                 <a href="/menu/contact.php"><i class="bi bi-envelope"></i></a>

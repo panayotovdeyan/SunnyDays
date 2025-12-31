@@ -18,7 +18,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
                 <div class="container">
                   <h2><?php echo $pageAbout1->title ?></h2>
                   <h3><?php echo $pageAbout1->subtitle ?></h3>
-                  <p><?php echo $pageAbout1->text ?></p>
+                  <div><?php echo stripslashes($pageAbout1->text) ?></div>
                   <center><video controls="" hide-on-mobile="" loop="" muted="" playsinline="" preload="metadata" width="60%">
                     <?php echo "<source src='" . $pageAbout1->image . "'>";?>>
                   </video></center>
@@ -33,7 +33,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
                 <div class="container">
                   <h2><?php echo $pageAbout2->title ?></h2>
                   <h3><?php echo $pageAbout2->subtitle ?></h3>
-                  <p><?php echo $pageAbout2->text ?></p>
+                  <div><?php echo stripslashes($pageAbout2->text) ?></div>
                   <center><?php echo "<img src='" . $pageAbout2->image . "'>"; ?></center>
                 </div>
               </section>
@@ -48,7 +48,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
                   <h2><?php echo $pageAbout3->title ?></h2>
                     <a href="/menu/service/service_home.php" style="text-decoration: underline" >
                     <h3><?php echo $pageAbout3->subtitle ?></h3>
-                    <p><?php echo $pageAbout3->text ?></p>
+                    <div><?php echo stripslashes($pageAbout3->text) ?></div>
                     <?php echo "<img src='" . $pageAbout3->image . "'>"; ?>
                     </a>
                 </div>
@@ -63,7 +63,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
                 <div class="container">
                   <h2><?php echo $pageAbout4->title ?></h2>
                   <h3><?php echo $pageAbout4->subtitle ?></h3>
-                  <p><?php echo $pageAbout4->text ?></p>
+                  <div><?php echo stripslashes($pageAbout4->text) ?></div>
                   <?php echo "<img src='" . $pageAbout4->image . "'>"; ?>
                 </div>
               </section>

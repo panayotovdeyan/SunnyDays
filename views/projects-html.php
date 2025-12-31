@@ -14,11 +14,11 @@ require_once PROJECT_ROOT . '/views/header-html.php';
           <!-- ======= Menu Project 1 ======= -->
           <?php
             if( $project1->published == 1 ){?>
-              <section id="about1" class="inner-page">
+              <section id="projects" class="inner-page">
                 <div class="container">
                   <h2><?php echo $project1->title ?></h2>
                   <h3><?php echo $project1->subtitle ?></h3>
-                  <p><?php echo $project1->text ?></p>
+                  <p><?php echo stripslashes($project1->text) ?></p>
                   <center><?php echo "<img src='" . $project1->image . "'>"; ?></center>
                 </div>
               </section>
@@ -32,7 +32,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
             <div class="container">
               <h2><?php echo $project2->title ?></h2>
               <h4><?php echo $project2->subtitle ?></h4>
-              <p><?php echo $project2->text ?></p>
+              <p><?php echo stripslashes($project2->text) ?></p>
               <center><?php echo "<img src='" . $project2->image . "'>"; ?></center>
             </div>
           </section>

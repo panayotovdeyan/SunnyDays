@@ -21,7 +21,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12">
             <div class="info-box mb-4">
-              <p><?php echo nl2br(htmlspecialchars($offer1->text)) ?></p>
+              <div><?php echo stripslashes($offer1->text) ?></div>
             </div>
           </div>
         </div>

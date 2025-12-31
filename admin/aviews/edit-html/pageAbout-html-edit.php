@@ -39,7 +39,7 @@ if( !defined('admindp') ) exit();
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
               <label for="text" id="editLabel">Въвеждане и/или Редактиране на текст</label>
-                <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="6" placeholder="Въведете текст"><?= $pageAbout->text ?></textarea>
+                <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="6" placeholder="Въведете текст"><?= stripslashes($pageAbout->text) ?></textarea>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2, publish-box">
                 <label for="checkboxUnChecked" id="editLabel">Публикуване</label>
