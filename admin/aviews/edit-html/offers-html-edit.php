@@ -41,9 +41,43 @@ if( !defined('admindp') ) exit();
                 <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= stripslashes($offer->text) ?></textarea>
               </div>
               <br>
-              <div class="text-left mt-3">
-                <button class="btn-get-started" type="submit" value="1">Запис</button>
-                <a href="offers.php" class="btn-get-started">Отказ</a>
+              <div class="col-md-6 form-group mt-3 mt-md-2, publish-box">
+                <label for="checkboxUnChecked" id="editLabel">Публикуване</label>
+                <br><br>
+                  <?php
+                  $publishedYes=$offer->published;
+                  if( $publishedYes == 0 ){?>
+                    <input type="checkbox" id="checkboxUnChecked" name="published" value="1">
+                    <label for="checkboxUnChecked" id="checkboxUnChecked">Маркирай за публикуване</label>
+                    <div class="text-left mt-3, checked-box">
+                      <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис/Публикуване</button>
+                      <a href="offers.php" class="btn-get-started">Отказ</a>
+                    </div>
+                    <div class="text-left mt-3, save-box">
+                      <button  name="save-box" class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис на промените</button>
+                      <a href="offers.php" class="btn-get-started">Отказ</a>
+                    </div>
+
+                    <?}else{?>
+                    <input type="checkbox" checked name="published" id="checkboxChecked" value="1">
+                    <label for="checkboxChecked">Публикувано </label>
+                    <div class="editLabel">
+                      <br>
+                      <label for="checkboxChecked" id="checkboxChecked">
+                        * Размаркирай за сваляне на публикацията
+                      </label>
+                    </div>
+                    <div class="text-left mt-3, unchecked-box">
+                      <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис/сваляне</button>
+                      <a href="offers.php" class="btn-get-started">Отказ</a>
+                    </div>
+                    <div class="text-left mt-3, save-box1" >
+                      <button name="save-box1" class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис на промените</button>
+                      <a href="offers.php" class="btn-get-started">Отказ</a>
+                    </div>
+
+                  <?}
+                  ?>
               </div>
             </form>
         </div><!-- End Contact Form -->

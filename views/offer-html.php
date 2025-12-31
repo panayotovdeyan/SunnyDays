@@ -9,7 +9,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
 <body>
   <main id="main">
     <!-- ======= Offer Section ======= -->
-    <section id="offer" class="contact">
+    <section id="offer" class="offer">
       <div class="container">
 
         <div class="section-title">
@@ -19,12 +19,14 @@ require_once PROJECT_ROOT . '/views/header-html.php';
         </div>
 
         <div class="row" data-aos="fade-up">
-          <div class="col-lg-12">
+            <?php
+            if( $offer1->published == 1 ){?>
             <div class="info-box mb-4">
-              <div><?php echo stripslashes($offer1->text) ?></div>
+              <?php echo stripslashes($offer1->text) ?>
             </div>
-          </div>
+            <?}?>
         </div>
+      </div>
 
         <div class="row" data-aos="fade-up">
 

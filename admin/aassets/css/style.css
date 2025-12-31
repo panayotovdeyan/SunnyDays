@@ -1453,6 +1453,10 @@ section {
   opacity: 0.6;
 }
 
+#headerTable {
+  background: rgba(36, 55, 221, 0.95);
+}
+
 .tableBody {
   transition: all 0.5s;
   z-index: 997;

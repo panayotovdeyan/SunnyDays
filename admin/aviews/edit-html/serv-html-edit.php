@@ -41,25 +41,46 @@ if( !defined('admindp') ) exit();
                 <textarea class="form-control" name="service_description" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= stripslashes($serv->service_description) ?></textarea>
               </div>
               <br>
-              <label for="published" id="editLabel">Публикуване</label>
-              <br><br>
-              <?php
-              $publishedYes=$serv->published;
+              <div class="col-md-6 form-group mt-3 mt-md-2, publish-box">
+                <label for="checkboxUnChecked" id="editLabel">Публикуване</label>
+                <br><br>
+                  <?php
+                  $publishedYes=$serv->published;
                   if( $publishedYes == 0 ){?>
-                    Маркирай за публикуване: <input type="checkbox" name="published" value="1">
-                    <div class="editLabel"><br><p>*  Моля, отбележете за да Публикувате.</p></div>
-                  <?}else{?>
-                    Публикувано: <input type="checkbox" checked id="checkboxChecked" name="published" value="1">
-                <div class="editLabel"><br><p>* Размаркирайте за сваляне на публикацията</p></div>
+                    <input type="checkbox" id="checkboxUnChecked" name="published" value="1">
+                    <label for="checkboxUnChecked" id="checkboxUnChecked">Маркирай за публикуване</label>
+                    <div class="text-left mt-3, checked-box">
+                      <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис/Публикуване</button>
+                      <a href="services.php" class="btn-get-started">Отказ</a>
+                    </div>
+                    <div class="text-left mt-3, save-box">
+                      <button  name="save-box" class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис на промените</button>
+                      <a href="services.php" class="btn-get-started">Отказ</a>
+                    </div>
+
+                    <?}else{?>
+                    <input type="checkbox" checked name="published" id="checkboxChecked" value="1">
+                    <label for="checkboxChecked">Публикувано </label>
+                    <div class="editLabel">
+                      <br>
+                      <label for="checkboxChecked" id="checkboxChecked">
+                        * Размаркирай за сваляне на публикацията
+                      </label>
+                    </div>
+                    <div class="text-left mt-3, unchecked-box">
+                      <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис/сваляне</button>
+                      <a href="services.php" class="btn-get-started">Отказ</a>
+                    </div>
+                    <div class="text-left mt-3, save-box1" >
+                      <button name="save-box1" class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис на промените</button>
+                      <a href="services.php" class="btn-get-started">Отказ</a>
+                    </div>
+
                   <?}
-                ?>
-                <br>
-              <div class="text-left mt-3">
-                <button class="btn-get-started" type="submit" value="1" onclick="getValue()">Запис</button>
-                <a href="services.php" class="btn-get-started">Отказ</a>
+                  ?>
               </div>
             </form>
-        </div><!-- End Contact Form -->
+        </div><!-- End Services Form -->
     </div>
   </section><!-- End Hero Section -->
 

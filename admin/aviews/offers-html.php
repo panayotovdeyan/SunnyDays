@@ -27,16 +27,22 @@ if( !defined('admindp') ) exit();
             <tr class="tr">
               <th scope="col">№</th>
               <th scope="col">Заглавие</th>
+              <th scope="col">Публикувано</th>
               <th scope="col">Редакция</th>
             </tr>
           </thead>
             <tbody class="tableBody">
               <?php
-              foreach($offer as $k=>$offer){
+              foreach($offer as $k=>$edit){
                 echo "<tr>";
-                echo "<th scope='row'>".$offer['id']."</th>";
-                echo "<td>".$offer['title']."</td>";
-                echo "<td><a class='btn-get-started' href='offers.php?id=".$offer['id']."'>Редактирай</a></td>";
+                echo "<th scope='row'>".$edit['id']."</th>";
+                echo "<td>".$edit['title']."</td>";
+                  if ($edit['published'] == 1) {
+                    echo "<td><span class='published-yes' title='Текстът е публикуван'>Yes <i class='fas fa-check-circle'></i></span></td>";
+                  } else {
+                    echo "<td><span class='published-no' title='Текстът НЕ Е публикуван'>No <i class='fas fa-times-circle'></span></td>";
+                  }
+                echo "<td><a class='btn-get-started' href='offers.php?id=".$edit['id']."'>Редактирай</a></td>";
               }
               ?>
             </tbody>

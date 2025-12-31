@@ -18,5 +18,6 @@ $member3 = new Team(3);
 $member4 = new Team(4);
 $member5 = new Team(5);
 $member6 = new Team(6);
+$member7 = new Team(7);
 
 require_once 'C:\xampp\htdocs\SunnyDays\views\team-html.php';

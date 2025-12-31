@@ -23,12 +23,15 @@ if( isset($_REQUEST['submited']) && $_REQUEST['submited'] == 4 ){
             $image = mysqli_real_escape_string($conn, $image);
             $text = $_REQUEST['text'];
             $text = mysqli_real_escape_string($conn, $text);
+            $published = ($_REQUEST['published']);
+            $published = mysqli_real_escape_string($conn, $published);            
 
             $offer = new Offer($id);
             $offer->title = $title;
             $offer->subtitle = $subtitle;
             $offer->image = $image;
             $offer->text = $text;
+            $offer->published = $published;
             if( !empty($offer->title) ){
                 $offer->update();
                 $saveEdit = $offer->title;

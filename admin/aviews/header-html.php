@@ -40,7 +40,7 @@ if( !defined('admindp') ) exit();
           <li><a href="pageAbout.php"<?php if ($activemenu == 'about'){ ?>class="active"<?php } ?>>Меню: За нас</a></li>
           <li><a href="services.php"<?php if ($activemenu == 'serv'){ ?>class="active"<?php } ?> ><span>Меню: Услуги</span></a></li>
           <li><a href="projects.php"<?php if ($activemenu == 'projects'){ ?>class="active"<?php } ?>>Меню: Проекти</a></li>
-          <li><a href="offers.php"<?php if ($activemenu == 'offer'){ ?>class="active"<?php } ?>>Меню: Поискай ферта</a></li>
+          <li><a href="offers.php"<?php if ($activemenu == 'offer'){ ?>class="active"<?php } ?>>Меню: Поискай оферта</a></li>
           <li><a href="team.php"<?php if ($activemenu == 'team'){ ?>class="active"<?php } ?>>Меню: Екип</a></li>
           <li><a <?php if ($activemenu == 'about'){?>href="/menu/about.php" <?}?>
                  <?php if ($activemenu == 'serv'){?>href="/menu/service/service_home.php" <?}?>
