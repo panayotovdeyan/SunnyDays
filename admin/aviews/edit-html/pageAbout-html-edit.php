@@ -23,23 +23,26 @@ if( !defined('admindp') ) exit();
             <input type="hidden" name="submited" value="1" >
 
                 <div class="col-md-6 form-group mt-3 mt-md-2">
-                <label for="title" id="editLabel">Заглавие</label>
-                  <input type="text" class="form-control" name="title" id="title" value="<?= $pageAbout->title ?>" placeholder="Въведете заглавие" required>
+                  <label for="title" id="editLabel">Заглавие</label>
+                    <input type="text" class="form-control" name="title" id="title" value="<?= $pageAbout->title ?>" placeholder="Въведете заглавие" required>
                 </div>
 
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="subtitle" id="editLabel">Подзаглавие</label>
-                <input type="text" class="form-control" name="subtitle" id="subtitle" value="<?= $pageAbout->subtitle ?>" placeholder="Въведете подзаглавие" >
+                <label for="subtitle" id="editLabel">Подзаглавие</label>
+                  <input type="text" class="form-control" name="subtitle" id="subtitle" value="<?= $pageAbout->subtitle ?>" placeholder="Въведете подзаглавие" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="image" id="editLabel">Път до снимка</label>
-                <br>
-                <input type="file" class="form-control-file" id="imageInput" onchange="updateImagePreview(this)">
-                <input type="text" class="form-control" name="image" id="image" value="<?= $pageAbout->image ?>" placeholder="Въведете път до картинката">
+                <label for="image" id="editLabel">Път до снимка</label>
+                  <br>
+                  <input type="file" class="form-control-file" id="imageInput" onchange="updateImagePreview(this)">
+                  <input type="text" class="form-control" name="image" id="image" value="<?= $pageAbout->image ?>" placeholder="Въведете път до картинката">
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="text" id="editLabel">Въвеждане и/или Редактиране на текст</label>
+                <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label><br>
                 <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="6" placeholder="Въведете текст"><?= stripslashes($pageAbout->text) ?></textarea>
+                <button type="button" class="btn btn-danger btn-sm" onclick="clearEditorContent()">
+                    <i class="fas fa-trash-alt"></i> Изчисти всичко
+                </button>                
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2, publish-box">
                 <label for="checkboxUnChecked" id="editLabel">Публикуване</label>

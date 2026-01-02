@@ -45,6 +45,9 @@ if( !defined('admindp') ) exit();
                 <div class="form-group mt-3">
                     <label><?= ($member->id == 7) ? "Текст на презентацията" : "Описание на отговорностите" ?></label>
                     <textarea class="form-control" name="memberDescription" id="exampleFormControlTextarea1" rows="10"><?= stripslashes($member->memberDescription) ?></textarea>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="clearEditorContent()">
+                        <i class="fas fa-trash-alt"></i> Изчисти всичко
+                    </button>                  
                 </div>
 
                 <div class="mt-4">

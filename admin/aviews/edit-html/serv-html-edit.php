@@ -24,21 +24,24 @@ if( !defined('admindp') ) exit();
             <input type="hidden" name="submited" value="2" >
               <div class="row">
                 <div class="col-md-6 form-group mt-3 mt-md-2">
-                <label for="title" id="editLabel">Въвеждане/Редактиране на заглавие</label>
+                  <label for="title" id="editLabel">Въвеждане/Редактиране на заглавие</label>
                   <input type="text" class="form-control" name="service_name" id="service_name" value="<?= $serv->service_name ?>" placeholder="Въведете заглавие" required>
                 </div>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="subtitle" id="editLabel">Въвеждане/Редактиране на подзаглавие</label>
+                <label for="subtitle" id="editLabel">Въвеждане/Редактиране на подзаглавие</label>
                 <input type="text" class="form-control" name="service_subname" id="service_subname" value="<?= $serv->service_subname ?>" placeholder="Въведете подзаглавие" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="image" id="editLabel">Въвеждане/Редактиране на път до изображението</label>
+                <label for="image" id="editLabel">Въвеждане/Редактиране на път до изображението</label>
                 <input type="text" class="form-control" name="service_image" id="service_image" value="<?= $serv->service_image ?>" placeholder="Въведете път до изображението" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
+                <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
                 <textarea class="form-control" name="service_description" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= stripslashes($serv->service_description) ?></textarea>
+                <button type="button" class="btn btn-danger btn-sm" onclick="clearEditorContent()">
+                    <i class="fas fa-trash-alt"></i> Изчисти всичко
+                </button>                
               </div>
               <br>
               <div class="col-md-6 form-group mt-3 mt-md-2, publish-box">

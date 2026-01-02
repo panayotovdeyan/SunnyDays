@@ -24,21 +24,24 @@ if( !defined('admindp') ) exit();
             <input type="hidden" name="submited" value="3" >
               <div class="row">
                 <div class="col-md-6 form-group mt-3 mt-md-2">
-                <label for="title" id="editLabel">Въвеждане/Редактиране на заглавие</label>
+                  <label for="title" id="editLabel">Въвеждане/Редактиране на заглавие</label>
                   <input type="text" class="form-control" name="title" id="title" value="<?= $project->title ?>" placeholder="Въведете заглавие" required>
                 </div>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="subtitle" id="editLabel">Въвеждане/Редактиране на подзаглавие</label>
+                <label for="subtitle" id="editLabel">Въвеждане/Редактиране на подзаглавие</label>
                 <input type="text" class="form-control" name="subtitle" id="subtitle" value="<?= $project->subtitle ?>" placeholder="Въведете подзаглавие" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="image" id="editLabel">Въвеждане/Редактиране на път до изображението</label>
+                <label for="image" id="editLabel">Въвеждане/Редактиране на път до изображението</label>
                 <input type="text" class="form-control" name="image" id="image" value="<?= $project->image ?>" placeholder="Въведете път до изображението" >
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-2">
-              <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
+                <label for="text" id="editLabel">Въвеждане/Редактиране на текст</label>
                 <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="4" placeholder="Въведете текст"><?= stripslashes($project->text) ?></textarea>
+                <button type="button" class="btn btn-danger btn-sm" onclick="clearEditorContent()">
+                    <i class="fas fa-trash-alt"></i> Изчисти всичко
+                </button>                
               </div>
               <br>
               <div class="col-md-6 form-group mt-3 mt-md-2, publish-box">

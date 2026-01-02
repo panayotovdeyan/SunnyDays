@@ -2074,3 +2074,49 @@ input[type="password"] {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Стилизиране на контейнера на изображението, който CKEditor генерира */
+figure.image {
+    display: table;
+    clear: both;
+    text-align: center;
+    margin: 1em auto; /* Центриране по подразбиране */
+}
+
+/* Подравняване вляво */
+figure.image.image-style-align-left,
+figure.image.image-style-side {
+    float: left;
+    margin-right: 1.5em;
+    margin-top: 0;
+    max-width: 50%;
+}
+
+/* Подравняване вдясно */
+figure.image.image-style-align-right {
+    float: right;
+    margin-left: 1.5em;
+    margin-top: 0;
+    max-width: 50%;
+}
+
+/* Центриране */
+figure.image.image-style-align-center {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
+
+/* Подсигуряване, че снимката не излиза извън контейнера */
+figure.image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Изчистване на флоат-а след текста */
+.member-description::after {
+    content: "";
+    display: table;
+    clear: both;
+}
