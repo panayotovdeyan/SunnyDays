@@ -5,7 +5,7 @@
 console.log("jsSunnyDays.js е зареден успешно");
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM е напълно зареден");
+    console.log("DOM-jsSunnyDays.js е напълно зареден");
 
     // ==========================================
     // 1. ВИДИМОСТ НА ПАРОЛИТЕ (Login, Reg, Reset)

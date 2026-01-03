@@ -69,27 +69,29 @@ require_once 'views/header-html.php';
                       <h2>Смяна на парола</h2>
                   </div>
                   <br><br>
-                  <form method="POST" action="reset-password.php" id="resetPasswordForm" class="changePassword">
-                      <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
-                      
-                      <div class="form-group mb-3">
-                        <label for="new_password">Нова парола:</label><br>
-                        <div class="password-container d-flex align-items-center">
-                            <input type="password" id="newPassword" name="new_password" class="form-control" style="max-width: 300px;" required>
-                            <img id="toggleNewPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:10px;" />
+                    <form method="POST" action="reset-password.php" id="resetPasswordForm" class="changePassword">
+                        <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
+                        
+                        <div class="form-group mb-3">
+                            <label for="newPassword">Нова парола:</label><br>
+                            <div class="password-container d-flex align-items-center">
+                                <input type="password" id="newPassword" name="new_password" class="form-control" style="max-width: 300px;" required>
+                                <img id="toggleNewPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:10px;" />
+                            </div>
+                            <div class="error" style="color: red; font-size: 0.85rem; min-height: 20px;"></div>
                         </div>
-                      </div>
 
-                      <div class="form-group mb-4">
-                        <label for="confirm_password">Потвърди паролата:</label><br>
-                        <div class="password-container d-flex align-items-center">
-                            <input type="password" id="confirmPassword" name="confirm_password" class="form-control" style="max-width: 300px;" required>
-                            <img id="toggleConfirmPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:10px;" />
+                        <div class="form-group mb-4">
+                            <label for="confirmPassword">Потвърди паролата:</label><br>
+                            <div class="password-container d-flex align-items-center">
+                                <input type="password" id="confirmPassword" name="confirm_password" class="form-control" style="max-width: 300px;" required>
+                                <img id="toggleConfirmPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:10px;" />
+                            </div>
+                            <div class="error" style="color: red; font-size: 0.85rem; min-height: 20px;"></div>
                         </div>
-                      </div>
 
-                      <button type="submit" name="reset" id="reset" class="btn btn-primary">Смени паролата</button>
-                  </form>
+                        <button type="submit" name="reset" id="reset" class="btn btn-primary">Смени паролата</button>
+                    </form>
                   <?php
               } else {
                   echo "<script> alert('Линкът е невалиден, вече сте го използвали или е изтекъл.  Моля, генерирайте нов.'); window.location.href = 'forgot-password-view.php'; </script>";

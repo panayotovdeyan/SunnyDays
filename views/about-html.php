@@ -16,8 +16,8 @@ require_once PROJECT_ROOT . '/views/header-html.php';
             if( $pageAbout1->published == 1 ){?>
               <section id="about1" class="inner-page">
                 <div class="container">
-                  <h2><?php echo $pageAbout1->title ?></h2>
-                  <h3><?php echo $pageAbout1->subtitle ?></h3>
+                  <h1 class="section-title"><?php echo $pageAbout1->title ?></h1>
+                  <h2 class="section-title"><?php echo $pageAbout1->subtitle ?></h2>
                   <div><?php echo stripslashes($pageAbout1->text) ?></div>
                   <center><video controls="" hide-on-mobile="" loop="" muted="" playsinline="" preload="metadata" width="60%">
                     <?php echo "<source src='" . $pageAbout1->image . "'>";?>>

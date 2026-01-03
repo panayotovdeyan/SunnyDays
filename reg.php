@@ -41,7 +41,7 @@ if( isset($_REQUEST['register']) && $_REQUEST['register'] == 1 && !$loged ){
     
     if ($resultCheckEmail) {
         if (mysqli_num_rows($resultCheckEmail) > 0) {
-            $response = ["success" => true, "registered" => true, "message" => "Имейлът вече е регистриран."];
+            $response = ["success" => true, "registered" => true, "message" => "Този имейл адрес вече е регистриран. Моля, влезте в профила си или използвайте 'Забравена парола', ако не я помните."];
         } else {
             $response = ["success" => true, "registered" => false, "message" => "Имейлът не е регистриран."];
         }
