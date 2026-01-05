@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         function validateField(selector, validationRules) {
             const field = document.querySelector(selector);
             if (!field) return; // Спри, ако полето го няма на тази страница
-            const errorElem = field.closest('.form-group').querySelector('.error');
+            
+            const parent = field.closest('.input-wrapper');
+            if (!parent) return; 
+            const errorElem = parent.querySelector('.error');
             
             field.addEventListener('keyup', () => {
                 const value = field.value;
@@ -30,7 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const field = document.querySelector(selector);
             const relatedField = document.querySelector(relatedSelector);
             if (!field || !relatedField) return; // Спри, ако полетата ги няма
-            const errorElem = field.closest('.form-group').querySelector('.error');
+            
+            const parent = field.closest('.input-wrapper');
+            if (!parent) return; 
+            const errorElem = parent.querySelector('.error');
 
             field.addEventListener('keyup', () => {
                 const value = field.value;

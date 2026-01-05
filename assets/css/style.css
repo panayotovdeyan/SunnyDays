@@ -1668,18 +1668,6 @@ section {
   position: relative;
 }
 
-.imput-wrapper label {
-  width:40%;
-  max-width: 100%;
-  display: inline-block;
-  font-family: sans-serif;
-  color:#ca9f11;
-  font-weight: bold;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  font-size: x-large;
-  position: relative;
-}
-
   .icon1 {
     margin-right: 5px;
     font-variation-settings:
@@ -1751,12 +1739,6 @@ section {
   background-color: #ccc;
 }
 
-.password-container .error {
-  position: absolute;
-  bottom: -30px; /* Под полето за парола */
-}
-
-
 .passInfo {
   background: url(../img/Icons/info_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg);
 }
@@ -1776,50 +1758,80 @@ section {
   z-index: 999;
 }
 
+.section-header.resetPassword h2 {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #0413a0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  color: #0413a0;
+  z-index: 999;
+}
+
 /* REGISTER FORM */
 .reg-container {
-  display: flex; /* Използваме Flexbox за подредба */
-  flex-direction: column; /* Елементите да са подредени в колона */
-  max-width: 600px;
-  margin: 20px left; /* Центриране на формата */
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  max-width: 400px;
+  margin-left: 40px;
+  padding: 30px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Цвят #ece5e5 превърнат в RGBA с 50% прозрачност */
+  background-color: rgba(236, 229, 229, 0.8);
 }
 
-.input-wrapper,
+.input-wrapper {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-wrapper label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #0413a0;
+}
+
+.form-control {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Важно за ширината */
+}
+
+/* Стил за съобщенията за грешка */
+.error {
+    margin-top: 4px;
+    font-weight: 500;
+}
+
 .password-container {
-  position: relative;
-  width: 100%; /* Ширината е унифицирана */
-  max-width: 600px;
-  margin-bottom: 20px; /* Отстояние между полетата */
+    position: relative;
+    display: block;
 }
 
-.reg-container input,
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px !important; /* Фиксиран размер */
+    height: 20px !important;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
 #regCity {
   width: 100%; /* Унифицирана ширина */
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-}
-
-.password-container {
-  display: flex;
-  align-items: center; /* Подравняване по вертикалата */
-}
-
-.password-container input {
-  width: 150%;
-  padding-right: 40px; /* Място за иконата */
-}
-
-.password-container .toggle-password {
-  position: absolute;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
+  flex-direction: column; /* Елементите да са подредени в колона */
 }
 
 #enterButtonReg.reg {
@@ -1828,7 +1840,22 @@ section {
   font-weight: bold;
   text-transform: uppercase;
   display: inline-block;
-  margin-left: 50px;
+}
+
+.btn-primary.reg {
+    width: 100%;
+    padding: 10px;
+    background-color: #106eea;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-primary.reg:hover {
+    background-color: #1b58a7;
 }
 
 #enterButtonGoOn.reg {
@@ -1837,16 +1864,15 @@ section {
   font-weight: bold;
   text-transform: uppercase;
   display: inline-block;
-  margin-left: 10px;
 }
 
 #enterButtonLogin.reg {
-  position: relative;
-  top: 10px;
-  margin-left: 10px;
-  margin-top: 20px;
-  font-weight: bold;
-  color: orange;
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #106eea;
+  font-size: 0.9em;
 }
 
 #registerSection {
@@ -1873,27 +1899,24 @@ section {
   display: flex; /* Използваме Flexbox за подредба */
   flex-direction: column; /* Елементите да са подредени в колона */
   max-width: 600px;
-  margin: 20px left; /* Центриране на формата */
+  margin-left: 40px;
   padding: 20px;
   border: 3px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Цвят #ece5e5 превърнат в RGBA с 50% прозрачност */
+  background-color: rgba(236, 229, 229, 0.5);
 }
 
 #loginEmail {
   display: flex; /* Използваме Flexbox за подредба */
-  flex-direction: column; /* Елементите да са подредени в колона */
-  max-width: 600px;
-  margin: 20px left; /* Центриране на формата */
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 280px;
+  padding: 5px;
 }
 
 #loginPassword {
   position: relative;
-  width: 250%; /* Ширината е унифицирана */
+  width: 300%; /* Ширината е унифицирана */
   padding-right: 40px; /* Място за иконата */
 }
 
@@ -1910,18 +1933,17 @@ section {
 #forgotPasswordBtn.login {
   position: center;
   top: 10px;
-  margin-left: 10px;
+
+  margin-top: 20px;
   font-weight: bold;
   color: rgb(77, 15, 177);
   padding: 10px;
 }
 
 #enterButtonReg.login {
-  position: relative;
   top: 10px;
-  margin-left: 10px;
   font-weight: bold;
-  color: orange;
+  color: rgb(212, 132, 12);
   padding: 10px;
 }
 
@@ -1938,24 +1960,17 @@ section {
 }
 
 #forgotPasswordForm {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  border: 2px solid #ccc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
-  height: calc(auto);
-  background-color: #ece5e5;
-  background-color: rgba(236, 229, 229, 0.7); /* Полупрозрачен фон */
-  margin-bottom: 20px;
-  margin: 20px left; /* Центриране на формата */
-  padding: 20px;
-  display: flex; /* Използваме Flexbox за подредба */
-  flex-direction: column; /* Елементите да са подредени в колона */
+  max-width: 400px;
+  margin-left: 40px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Цвят #ece5e5 превърнат в RGBA с 50% прозрачност */
+  background-color: rgba(236, 229, 229, 0.8);
 }
 
 input[type="email"] {
-  width: 300px;
+  width: 100%;
   padding: 6px;
   font-size: 16px;
 }
@@ -2018,7 +2033,7 @@ input[type="email"] {
 }
 
 input[type="password"] {
-  width: 300px;
+  width: 100%;
   padding: 6px;
   font-size: 16px;
 }

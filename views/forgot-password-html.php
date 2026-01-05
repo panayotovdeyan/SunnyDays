@@ -24,9 +24,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
         <form id="forgotPasswordForm" method="POST">
             <label for="regEmail">Въведете вашият имейл:</label>
             <input class="form-control" type="email" id="email" name='regEmail' required>
-            <div class="error" style="color: red; font-size: 0.85rem; min-height: 20px;"></div>
             <div class="g-recaptcha mt-3 mb-3" data-sitekey="<?php echo $config['recaptcha_site_key']; ?>"></div>
-            
             <button class="btn btn-primary active" id="forgotPasswordBtn" type="submit">Нова парола</button>
         </form>
         

@@ -28,63 +28,59 @@ require_once PROJECT_ROOT . '/views/header-html.php';
                     <input type="hidden" name="register" value="0" id="register">
                     <input type="hidden" name="csrf_token" value="<?=$_SESSION['csrf_token'] ?>" >
 
-                    <div class="imput-wrapper">
-                        <label for="regEmail">Имейл</label>
-                        <input type="email" name="regEmail" id="regEmail">
-                        <small class="error"></small>
+                    <div class="input-wrapper">
+                        <label for="regEmail">Email</label>
+                        <input class="form-control" type="email" name="regEmail" id="regEmail" required>
                     </div>
-                    <br>
 
-                    <div class="imput-wrapper reg-hidden">
+                    <div class="input-wrapper reg-hidden">
                         <label for="firstName">Име</label>
-                        <input type="text" name="firstName" id="firstName">
+                        <input class="form-control" type="text" name="firstName" id="firstName">
                         <small class="error"></small>
                     </div>
-                    <br>
 
-                    <div class="imput-wrapper reg-hidden">
+                    <div class="input-wrapper reg-hidden">
                         <label for="lastName">Фамилия</label>
-                        <input type="text" name="lastName" id="lastName">
+                        <input class="form-control" type="text" name="lastName" id="lastName">
                         <small class="error"></small>
                     </div>
-                    <br>
 
-                    <div class="imput-wrapper reg-hidden">
+                    <div class="input-wrapper reg-hidden">
                         <label for="regCity" id="label">Град</label>
-                        <select id="regCity" name="regCity">
+                        <select class="form-control" id="regCity" name="regCity">
                             <option value="" selected>Изберете</option>
                         </select>
                     </div>
-                    <br><br>
 
-                    <div class="imput-wrapper reg-hidden">
+                    <div class="input-wrapper reg-hidden">
+                        <label for="newPassword">Парола</label>
                         <div class="password-container">
-                            <label for="newPassword">Парола</label>
-                            <input type="password" id="newPassword" name="regPassword" required>
-                            <img id="toggleNewPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:5px;" />
-                            <small class="error"></small>
+                            <input class="form-control" type="password" id="newPassword" name="regPassword" required>
+                            <img id="toggleNewPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" />
                         </div>
-                    </div>
-                    <br>
-
-                    <div class="imput-wrapper reg-hidden">
-                        <label for="confirmPassword">Повтори паролата</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required>
-                        <img id="toggleConfirmPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:5px;" />
                         <small class="error"></small>
                     </div>
-                    <br>
+
+                    <div class="input-wrapper reg-hidden">
+                        <label for="confirmPassword">Повтори паролата</label>
+                        <div class="password-container">
+                            <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" required>
+                            <img id="toggleConfirmPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" />
+                        </div>
+                        <small class="error"></small>
+                    </div>
 
                     <div class="g-recaptcha mt-3 mb-3 reg-hidden" data-sitekey="<?php echo $config['recaptcha_site_key']; ?>"></div>
-                    <br>
+
 
                     <button class="btn btn-primary active reg" id="enterButtonGoOn" type="submit" onclick="document.getElementById('register').value=1;">Продължи</button>
-                    <button class="btn btn-primary active reg" id="enterButtonReg" type="submit" style="display: none" onclick="document.getElementById('register').value=2;">Регистрирай</button>
-                    <br>
-                    <a id="enterButtonLogin" href='/login.php' class="btn btn-link reg-hidden reg">Вход/Влез</a>
+
+                        <button class="btn btn-primary active reg" id="enterButtonReg" type="submit" style="display: none" onclick="document.getElementById('register').value=2;">Регистрирай</button>
+                        <br>
+                        <a id="enterButtonLogin" href='/login.php' class="btn btn-link reg-hidden reg">Вход за регистрирани потребители</a>
                 </form>
             </div>
-            <br>
+
         </section></main><?php 
     require_once PROJECT_ROOT . '/views/footer-html.php'; 
     ?>

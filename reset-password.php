@@ -72,22 +72,22 @@ require_once 'views/header-html.php';
                     <form method="POST" action="reset-password.php" id="resetPasswordForm" class="changePassword">
                         <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
                         
-                        <div class="form-group mb-3">
+                        <div class="input-wrapper mb-3">
                             <label for="newPassword">Нова парола:</label><br>
                             <div class="password-container d-flex align-items-center">
-                                <input type="password" id="newPassword" name="new_password" class="form-control" style="max-width: 300px;" required>
-                                <img id="toggleNewPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:10px;" />
+                                <input type="password" id="newPassword" name="new_password" class="form-control" required>
+                                <img id="toggleNewPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" />
                             </div>
-                            <div class="error" style="color: red; font-size: 0.85rem; min-height: 20px;"></div>
+                            <div class="error"></div>
                         </div>
 
-                        <div class="form-group mb-4">
+                        <div class="input-wrapper mb-4">
                             <label for="confirmPassword">Потвърди паролата:</label><br>
                             <div class="password-container d-flex align-items-center">
-                                <input type="password" id="confirmPassword" name="confirm_password" class="form-control" style="max-width: 300px;" required>
-                                <img id="toggleConfirmPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" style="cursor:pointer; margin-left:10px;" />
+                                <input type="password" id="confirmPassword" name="confirm_password" class="form-control" required>
+                                <img id="toggleNewPassword" src="/assets/img/Icons/visibility_18dp_000000.svg" class="toggle-password" />
                             </div>
-                            <div class="error" style="color: red; font-size: 0.85rem; min-height: 20px;"></div>
+                            <div class="error"></div>
                         </div>
 
                         <button type="submit" name="reset" id="reset" class="btn btn-primary">Смени паролата</button>

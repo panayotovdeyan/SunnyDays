@@ -67,8 +67,11 @@ if( isset($_REQUEST['login']) && $_REQUEST['login'] == 1 && !$loged ){
             $count = mysqli_num_rows($result);
 
             if ($data[0]['is_active'] == 0) {
-                die("<script>alert('Профилът ви още не е активиран. Проверете имейла си за линк за активация.'); history.back();</script>");
-            }
+                die("<script>
+                alert('Нямате регистрация или профилът ви още не е активиран. Проверете имейла си за линк за активация.');
+                document.location.href = 'reg.php';
+                </script>");
+            }   
 
             if( password_verify($pass, $data[0]['password']) ){
                 $loged = true;
