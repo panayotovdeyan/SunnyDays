@@ -101,12 +101,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // Съдържание
                 $resetLink = "http://sunnydays/reset-password.php?token=$token";
                 $mail->isHTML(true);
-                $mail->Subject = 'Възстановяване на парола - SunnyDays';
+                $mail->Subject = 'Създаване на нова парола.';
                 $mail->Body    = "
                     <div style='font-family: Arial, sans-serif; border: 1px solid #eee; padding: 20px; max-width: 600px;'>
                         <h2 style='color: #ed5b5b;'>Забравена парола?</h2>
                         <p>Здравейте, получихме заявка за нова парола за вашия профил.</p>
-                        <p>Кликнете върху бутона по-долу, за да я смените. Този линк е валиден 1 час:</p>
+                        <p>Кликнете върху бутона по-долу, за да създадете нова парола. Този линк е валиден 1 час:</p>
                         <a href='$resetLink' style='display: inline-block; padding: 10px 20px; background-color: #ed5b5b; color: #fff; text-decoration: none; border-radius: 5px;'>Смяна на паролата</a>
                         <p style='margin-top: 20px; font-size: 12px; color: #777;'>Ако не сте поискали тази промяна, можете спокойно да игнорирате този имейл.</p>
                     </div>";

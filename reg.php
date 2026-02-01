@@ -157,7 +157,7 @@ if( isset($_REQUEST['register']) && $_REQUEST['register'] == 2 && !$loged ){
 
                         // Subject
                         $mail->isHTML(true);
-                        $mail->Subject = 'Добре дошли в SunnyDays!';
+                        $mail->Subject = 'Добре дошли! Aктивирайте профила си.';
                         
                         // HTML шаблон за имейла
                         $mail->Body    = "

@@ -15,6 +15,7 @@ require_once PROJECT_ROOT . '/views/header-html.php';
         <div class="section-title">
           <span><?php echo $offer1->title ?></span>
           <br>
+          <br>
           <p><?php echo $offer1->subtitle ?></p>
         </div>
 
